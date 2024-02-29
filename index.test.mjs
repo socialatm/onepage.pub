@@ -20,6 +20,7 @@ process.env.OPP_DATABASE = ':memory:'
 
 const MAIN_PORT = 50941 // V
 const REMOTE_PORT = 51996 // Cr
+const BLOCKED_PORT = 51998 // Cr
 const CLIENT_PORT = 54938 // Mn
 const THIRD_PORT = 55845 // Fe
 const FOURTH_PORT = 58933 // Co
@@ -350,17 +351,20 @@ async function signRequest (keyId, privateKey, method, url, date) {
 describe('onepage.pub', { only: true }, () => {
   let child = null
   let remote = null
+  let blocked = null
   let client = null
 
   before(async () => {
     child = await startServer(MAIN_PORT)
     remote = await startServer(REMOTE_PORT)
+    blocked = await startServer(BLOCKED_PORT)
     client = await startClientServer(CLIENT_PORT)
   })
 
   after(() => {
     child.kill('SIGTERM')
     remote.kill('SIGTERM')
+    blocked.kill('SIGTERM')
     client.close()
   })
 
@@ -4205,12 +4209,9 @@ describe('onepage.pub', { only: true }, () => {
     let server = null
     let created = null
     before(async () => {
-      // TODO: figure out how to set the path for the blocklist better
-      server = await startServer(FOURTH_PORT,
-        { OPP_BLOCK_LIST: path.join('.', 'blocklist.csv') }
-      );
+      server = await startServer(FOURTH_PORT, {});
       [actor1, token1] = await registerActor(MAIN_PORT);
-      [actor2, token2] = await registerActor(REMOTE_PORT);
+      [actor2, token2] = await registerActor(BLOCKED_PORT);
       [actor3, token3] = await registerActor(FOURTH_PORT)
       created = await doActivity(actor3, token3, {
         to: [PUBLIC],
@@ -4226,7 +4227,7 @@ describe('onepage.pub', { only: true }, () => {
     })
     after(async () => {
       await settle(MAIN_PORT)
-      await settle(REMOTE_PORT)
+      await settle(BLOCKED_PORT)
       await settle(FOURTH_PORT)
       server.kill()
     })
@@ -4257,7 +4258,7 @@ describe('onepage.pub', { only: true }, () => {
           }
         }
       })
-      await settle(REMOTE_PORT)
+      await settle(BLOCKED_PORT)
       assert.ok(!await isInStream(actor3.inbox, activity, token3))
     })
 
