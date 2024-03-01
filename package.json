@@ -25,6 +25,7 @@
     "standard": "^17.1.0"
   },
   "scripts": {
+    "production": "set NODE_ENV=production && node --env-file=.env index.mjs",
     "start": "node --env-file=.env index.mjs",
     "test": "node --env-file=.env --test --test-reporter=spec",
     "test:only": "node --env-file=.env --test --test-only --test-reporter=spec",

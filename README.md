@@ -39,10 +39,15 @@ npm install
 
 ## Usage
 
-You should be able to run it with Node.js.
+Run in development:
 
 ```
-node index.mjs
+npm start
+```
+Run in production:
+
+```
+npm run production
 ```
 
 It takes a few environment variables as configuration options:
