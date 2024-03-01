@@ -17,6 +17,7 @@ if (process.env.NODE_ENV != 'production') {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 }
 process.env.OPP_DATABASE = ':memory:'
+process.env.OPP_INVITE_CODE = 'test-invite-code'
 
 const MAIN_PORT = 50941 // V
 const REMOTE_PORT = 51996 // Cr
@@ -32,6 +33,7 @@ const AS2 = 'application/ld+json; profile="https://www.w3.org/ns/activitystreams
 const AS2_CONTEXT = 'https://www.w3.org/ns/activitystreams'
 const AS2_MEDIA_TYPE = 'application/activity+json; charset=utf-8'
 const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
+const INVITE_CODE = process.env.OPP_INVITE_CODE || ""
 
 const generateKeyPair = promisify(crypto.generateKeyPair)
 
@@ -105,13 +107,15 @@ const registerUser = (() => {
     i++
     const username = `testuser${i}`
     const password = `testpassword${i}`
+    const invitecode = INVITE_CODE
     const reg = await fetch(`https://localhost:${port}/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: querystring.stringify({
         username,
         password,
-        confirmation: password
+        confirmation: password,
+        invitecode
       })
     })
     const text = await reg.text()
@@ -400,13 +404,15 @@ describe('onepage.pub', { only: true }, () => {
     it('can register a user', async () => {
       const username = 'testuser1'
       const password = 'testpassword1'
+      const invitecode = INVITE_CODE
       const res = await fetch(`https://localhost:${MAIN_PORT}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: querystring.stringify({
           username,
           password,
-          confirmation: password
+          confirmation: password,
+          invitecode
         })
       })
       const body = await res.text()
@@ -3320,13 +3326,15 @@ describe('onepage.pub', { only: true }, () => {
     it('can get cookie from registration', async () => {
       const username = 'testregcookie'
       const password = 'testregcookiepass'
+      const invitecode = INVITE_CODE
       const reg = await fetch(`https://localhost:${MAIN_PORT}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: querystring.stringify({
           username,
           password,
-          confirmation: password
+          confirmation: password,
+          invitecode
         })
       })
       const text = await reg.text()
@@ -3756,13 +3764,15 @@ describe('onepage.pub', { only: true }, () => {
     it('bootstrap in registration results', async () => {
       const username = 'testbootstrap'
       const password = 'testbootstrap'
+      const invitecode = INVITE_CODE
       const res = await fetch(`https://localhost:${MAIN_PORT}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: querystring.stringify({
           username,
           password,
-          confirmation: password
+          confirmation: password,
+          invitecode
         })
       })
       const body = await res.text()
@@ -4121,7 +4131,7 @@ describe('onepage.pub', { only: true }, () => {
   })
 
   describe('Invitation code', () => {
-    const CODE = 'icky-serving-18750'
+    const CODE = INVITE_CODE
     let server = null
     before(async () => {
       server = await startServer(THIRD_PORT, { OPP_INVITE_CODE: CODE })
@@ -4385,13 +4395,15 @@ describe('onepage.pub', { only: true }, () => {
     it('can register a user', async () => {
       const username = 'proxyuser1'
       const password = 'proxypassword1'
+      const invitecode = INVITE_CODE
       const reg = await fetch(`http://localhost:${THIRD_PORT}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: querystring.stringify({
           username,
           password,
-          confirmation: password
+          confirmation: password,
+          invitecode
         })
       })
       const text = await reg.text()
