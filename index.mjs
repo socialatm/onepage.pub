@@ -3609,7 +3609,7 @@ const server = (process.env.OPP_ORIGIN)
 db.init().then(() => {
   logger.info('Database initialized')
   server.listen(PORT, () => {
-    console.log(`Listening on ${PORT}`)
+    console.log(`Server started at ${ORIGIN}`)
     // Database fixes go here
     User.updateAllKeys().then(() => {
       logger.info('Updated all keys')
