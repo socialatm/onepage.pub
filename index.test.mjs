@@ -18,6 +18,8 @@ if (process.env.NODE_ENV != 'production') {
 }
 process.env.OPP_DATABASE = ':memory:'
 process.env.OPP_INVITE_CODE = 'test-invite-code'
+// increase rate limit for testing
+process.env.OPP_RATE_LIMIT = "100000"
 
 const MAIN_PORT = 50941 // V
 const REMOTE_PORT = 51996 // Cr

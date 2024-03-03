@@ -8,6 +8,7 @@
     "express": "^4.18.3",
     "express-async-handler": "^1.2.0",
     "express-jwt": "^8.4.1",
+    "express-rate-limit": "^7.2.0",
     "express-session": "^1.18.0",
     "http-errors": "^2.0.0",
     "https": "^1.0.0",
@@ -29,7 +30,8 @@
     "start": "node --env-file=.env index.mjs",
     "test": "node --env-file=.env --test --test-reporter=spec",
     "test:only": "node --env-file=.env --test --test-only --test-reporter=spec",
-    "ver": "echo $npm_package_version"
+    "ver": "echo $npm_package_version",
+    "rate-limit-test": "node --env-file=.env rate-limit.test.mjs"
   },
   "version": "0.8.2",
   "engine": {
