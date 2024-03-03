@@ -51,7 +51,7 @@ const startServer = (port = MAIN_PORT, props = {}) => {
     })
     server.on('error', reject)
     server.stdout.on('data', (data) => {
-      if (data.toString().includes('Listening')) {
+      if (data.toString().includes('Server started')) {
         resolve(server)
       }
       console.log(`SERVER ${port}: ${data.toString()}`)
