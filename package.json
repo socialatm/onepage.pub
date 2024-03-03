@@ -31,7 +31,7 @@
     "test": "node --env-file=.env --test --test-reporter=spec",
     "test:only": "node --env-file=.env --test --test-only --test-reporter=spec",
     "ver": "echo $npm_package_version",
-    "rate-limit-test": "node --env-file=.env rate-limit.test.mjs"
+    "rate-limit-test": "node --env-file=.env rate-limit.mjs"
   },
   "version": "0.8.2",
   "engine": {
