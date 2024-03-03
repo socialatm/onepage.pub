@@ -33,7 +33,7 @@ const AS2 = 'application/ld+json; profile="https://www.w3.org/ns/activitystreams
 const AS2_CONTEXT = 'https://www.w3.org/ns/activitystreams'
 const AS2_MEDIA_TYPE = 'application/activity+json; charset=utf-8'
 const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
-const INVITE_CODE = process.env.OPP_INVITE_CODE || ""
+const INVITE_CODE = process.env.OPP_INVITE_CODE
 
 const generateKeyPair = promisify(crypto.generateKeyPair)
 
