@@ -23,6 +23,7 @@ import multer from 'multer'
 import mime from 'mime'
 import path from 'path'
 import { tmpdir } from 'os'
+import { isSSRFSafeURL } from 'ssrfcheck'
 
 // Configuration
 
@@ -501,7 +502,12 @@ class ActivityObject {
     }
     const signature = new HTTPSignature(keyId, privKey, 'GET', id, date)
     headers.Signature = signature.header
-    const res = await fetch(id, { headers })
+    //if(isSSRFSafeURL(id) && process.env.NODE_ENV === 'production') {
+      const test = isSSRFSafeURL(id)
+      console.log(`is safe URL: ${test}`)
+      console.log(`is safe URL: ${id}`)
+      const res = await fetch(id, { headers })
+    //}
     if (res.status !== 200) {
       logger.warn(`Error fetching ${id}: ${res.status} ${res.statusText}`)
       return null
