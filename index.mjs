@@ -502,12 +502,11 @@ class ActivityObject {
     }
     const signature = new HTTPSignature(keyId, privKey, 'GET', id, date)
     headers.Signature = signature.header
-    //if(isSSRFSafeURL(id) && process.env.NODE_ENV === 'production') {
-      const test = isSSRFSafeURL(id)
-      console.log(`is safe URL: ${test}`)
-      console.log(`is safe URL: ${id}`)
+    if(!isSSRFSafeURL(id) && process.env.NODE_ENV === 'production') {
+      logger.warn(`unsafe URL: ${id}`)
+      return null
+    }
       const res = await fetch(id, { headers })
-    //}
     if (res.status !== 200) {
       logger.warn(`Error fetching ${id}: ${res.status} ${res.statusText}`)
       return null
