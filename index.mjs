@@ -2619,6 +2619,7 @@ passport.deserializeUser(function (username, done) {
   })()
 })
 
+app.use('/icons', express.static('node_modules/bootstrap-icons/font/')); 
 app.use('/bootswatch/', express.static('node_modules/bootswatch/dist/'))
 app.use('/bootstrap/', express.static('node_modules/bootstrap/dist/'))
 app.use('/popper/', express.static('node_modules/@popperjs/core/dist/umd'))
@@ -2652,6 +2653,7 @@ const page = (title, body, user = null) => {
     <head>
       <title>${title} - ${NAME}</title>
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
+      <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
       <style>
       .outer {
         margin-bottom: 100px; /* Margin bottom by footer height */
@@ -2666,6 +2668,142 @@ const page = (title, body, user = null) => {
       </style>
     </head>
     <body>
+
+    <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
+    <div class="container">
+      <a href="https://bootswatch.com/" class="navbar-brand">${NAME}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown" data-bs-theme="light">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="https://bootswatch.com/united/#" id="themes">Themes</a>
+            <div class="dropdown-menu" aria-labelledby="themes">
+              <a class="dropdown-item" href="https://bootswatch.com/default/">Default</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="https://bootswatch.com/cerulean/">Cerulean</a>
+              <a class="dropdown-item" href="https://bootswatch.com/cosmo/">Cosmo</a>
+              <a class="dropdown-item" href="https://bootswatch.com/cyborg/">Cyborg</a>
+              <a class="dropdown-item" href="https://bootswatch.com/darkly/">Darkly</a>
+              <a class="dropdown-item" href="https://bootswatch.com/flatly/">Flatly</a>
+              <a class="dropdown-item" href="https://bootswatch.com/journal/">Journal</a>
+              <a class="dropdown-item" href="https://bootswatch.com/litera/">Litera</a>
+              <a class="dropdown-item" href="https://bootswatch.com/lumen/">Lumen</a>
+              <a class="dropdown-item" href="https://bootswatch.com/lux/">Lux</a>
+              <a class="dropdown-item" href="https://bootswatch.com/materia/">Materia</a>
+              <a class="dropdown-item" href="https://bootswatch.com/minty/">Minty</a>
+              <a class="dropdown-item" href="https://bootswatch.com/morph/">Morph</a>
+              <a class="dropdown-item" href="https://bootswatch.com/pulse/">Pulse</a>
+              <a class="dropdown-item" href="https://bootswatch.com/quartz/">Quartz</a>
+              <a class="dropdown-item" href="https://bootswatch.com/sandstone/">Sandstone</a>
+              <a class="dropdown-item" href="https://bootswatch.com/simplex/">Simplex</a>
+              <a class="dropdown-item" href="https://bootswatch.com/sketchy/">Sketchy</a>
+              <a class="dropdown-item" href="https://bootswatch.com/slate/">Slate</a>
+              <a class="dropdown-item" href="https://bootswatch.com/solar/">Solar</a>
+              <a class="dropdown-item" href="https://bootswatch.com/spacelab/">Spacelab</a>
+              <a class="dropdown-item" href="https://bootswatch.com/superhero/">Superhero</a>
+              <a class="dropdown-item" href="https://bootswatch.com/united/">United</a>
+              <a class="dropdown-item" href="https://bootswatch.com/vapor/">Vapor</a>
+              <a class="dropdown-item" href="https://bootswatch.com/yeti/">Yeti</a>
+              <a class="dropdown-item" href="https://bootswatch.com/zephyr/">Zephyr</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://bootswatch.com/help/">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.bootswatch.com/">Blog</a>
+          </li>
+          <li class="nav-item dropdown" data-bs-theme="light">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="https://bootswatch.com/united/#" id="download" aria-expanded="false">United</a>
+            <div class="dropdown-menu" aria-labelledby="download">
+              <a class="dropdown-item" rel="noopener" target="_blank" href="https://jsfiddle.net/bootswatch/1d0z57y6/">Open in JSFiddle</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="./Bootswatch_ United_files/bootstrap.css" download="">bootstrap.css</a>
+              <a class="dropdown-item" href="https://bootswatch.com/5/united/bootstrap.min.css" download="">bootstrap.min.css</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="https://bootswatch.com/5/united/bootstrap.rtl.css" download="">bootstrap.rtl.css</a>
+              <a class="dropdown-item" href="https://bootswatch.com/5/united/bootstrap.rtl.min.css" download="">bootstrap.rtl.min.css</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="https://bootswatch.com/5/united/_variables.scss" download="">_variables.scss</a>
+              <a class="dropdown-item" href="https://bootswatch.com/5/united/_bootswatch.scss" download="">_bootswatch.scss</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-md-auto">
+          <li class="nav-item">
+            <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/thomaspark/bootswatch/"><i class="bi bi-github"></i><span class="d-lg-none ms-2">GitHub</span></a>
+          </li>
+          <li class="nav-item">
+            <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i><span class="d-lg-none ms-2">Twitter</span></a>
+          </li>
+          <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+            <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+            <hr class="d-lg-none my-2 text-white-50">
+          </li>
+          <li class="nav-item dropdown" data-bs-theme="light">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="version-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+              <span class="d-lg-none me-2">Bootstrap </span>
+              <span>v5.3</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a href="https://bootswatch.com/" class="dropdown-item d-flex align-items-center justify-content-between" aria-current="true">
+                  <span class="ms-2">v5.3.x</span><i class="bi bi-check"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://bootswatch.com/4/" class="dropdown-item d-flex align-items-center justify-content-between">
+                  <span class="ms-2">v4.6.2</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://bootswatch.com/3/" class="dropdown-item d-flex align-items-center justify-content-between">
+                  <span class="ms-2">v3.4.1</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://bootswatch.com/2/" class="dropdown-item d-flex align-items-center justify-content-between">
+                  <span class="ms-2">v2.3.2</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <a href="https://github.com/thomaspark/bootswatch/tags" class="dropdown-item d-flex align-items-center justify-content-between">
+                  <span class="ms-2">All versions</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+            <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+            <hr class="d-lg-none my-2 text-white-50">
+          </li>
+          <li class="nav-item dropdown" data-bs-theme="light">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+              <i class="bi bi-circle-half"></i>
+              <span class="d-lg-none ms-2">Toggle theme</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                  <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                  <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
       <div class="container mx-auto outer" style="max-width: 600px;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -2701,7 +2839,7 @@ const page = (title, body, user = null) => {
         <div class="container">
           <div class="row">
             <div class="col">
-              <h1>${title}</h1>
+              <h1>${title}<i class="bi bi-alarm"></i></h1>
               ${body}
             </div>
           </div>
