@@ -2619,6 +2619,7 @@ passport.deserializeUser(function (username, done) {
   })()
 })
 
+app.use('/bootswatch/', express.static('node_modules/bootswatch/dist/'))
 app.use('/bootstrap/', express.static('node_modules/bootstrap/dist/'))
 app.use('/popper/', express.static('node_modules/@popperjs/core/dist/umd'))
 
@@ -2650,7 +2651,7 @@ const page = (title, body, user = null) => {
   <html>
     <head>
       <title>${title} - ${NAME}</title>
-      <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
       <style>
       .outer {
         margin-bottom: 100px; /* Margin bottom by footer height */
