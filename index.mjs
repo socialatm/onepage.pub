@@ -2647,8 +2647,7 @@ app.get('/key', wrap(async (req, res) => {
 
 const page = (title, body, user = null) => {
   const version = process.env.npm_package_version
-  return `
-  <!DOCTYPE html>
+  return `<!DOCTYPE html>
   <html>
     <head>
       <title>${title} - ${NAME}</title>
@@ -2737,7 +2736,7 @@ const page = (title, body, user = null) => {
             <div class="dropdown-menu" aria-labelledby="download">
               <a class="dropdown-item" rel="noopener" target="_blank" href="https://jsfiddle.net/bootswatch/1d0z57y6/">Open in JSFiddle</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./Bootswatch_ United_files/bootstrap.css" download="">bootstrap.css</a>
+              <a class="dropdown-item" href="./Bootswatch_United_files/bootstrap.css" download="">bootstrap.css</a>
               <a class="dropdown-item" href="https://bootswatch.com/5/united/bootstrap.min.css" download="">bootstrap.min.css</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="https://bootswatch.com/5/united/bootstrap.rtl.css" download="">bootstrap.rtl.css</a>
@@ -2826,10 +2825,10 @@ const page = (title, body, user = null) => {
       
         <div class="container mt-5">
           <div class="row mt-4">
-            <div class="col">
-            <p>
+            <div class="col mt-3">
+              
               <h2>${title}<i class="bi bi-alarm"></i></h2>
-            </p>
+              
               ${body}
             </div>
           </div>
@@ -2841,7 +2840,6 @@ const page = (title, body, user = null) => {
     <span>
       One Page Pub ${(version) ? `<span class="version">${version}</span>` : ''}
       <a href="https://github.com/socialatm/onepage.pub" target="_blank">GitHub</a>
-          
     </span>
   </div>
 </footer>
@@ -2862,7 +2860,7 @@ app.get('/register', csrf, wrap(async (req, res) => {
   res.type('html')
   res.status(200)
   res.end(page('Register', `
-    <div class="container mx-auto" style="max-width: 600px;">
+    <div class="container mx-auto">
     <form method="POST" action="/register">
       ${(!INVITE_CODE || INVITE_CODE.length === 0)
         ? ''
@@ -2875,7 +2873,7 @@ app.get('/register', csrf, wrap(async (req, res) => {
       <div class="form-group row mb-3">
         <label for="username" class="col-sm-4 col-form-label text-right">Username</label>
         <div class="col-sm-8">
-        <input type="text" name="username" id="username" class="form-control" placeholder="Username" />
+        <input type="text" name="username" id="username" class="form-control" placeholder="Username">
         </div>
       </div>
       <div class="form-group row mb-3">
@@ -2945,8 +2943,15 @@ app.post('/register', csrf, wrap(async (req, res) => {
     res.type('html')
     res.status(200)
     res.end(page('Registered', `
-      <p>Registered <a class="actor" href="${user.actorId}">${username}</a></p>
-      <p>Personal access token is <span class="token">${token}</span>`, user))
+      <p>
+        Registered <a class="actor" href="${user.actorId}">${username}</a>
+      </p>
+      <p>
+        Personal access token is <span class="token">${token}</span>
+      </p>
+      <!-- new stuff goes here -->
+      <!-- end new stuff -->
+      `, user))
   })
 }))
 
@@ -2954,28 +2959,30 @@ app.get('/login', csrf, wrap(async (req, res) => {
   res.type('html')
   res.status(200)
   res.end(page('Log in', `
-    <div class="container mx-auto" style="max-width: 600px;">
-    <form method="POST" action="/login">
-    <div class="form-group row mb-3">
-      <label for="username" class="col-sm-4 col-form-label text-right">Username</label>
-      <div class="col-sm-8">
-        <input type="text" name="username" id="username" class="form-control" placeholder="Username" />
-      </div>
-    </div>
-    <div class="form-group row mb-3">
-      <label for="password" class="col-sm-4 col-form-label text-right">Password</label>
-      <div class="col-sm-8">
-        <input type="password" class="form-control" name="password" id="password">
-      </div>
-    </div>
-    <div class="form-group row">
-       <div class="col-sm-4"></div> <!-- Empty space equivalent to label width -->
-       <div class="col-sm-8">
-        <button type="submit" class="btn btn-primary">Login</button>
-        <a href='/' class="btn btn-secondary">Cancel</a>
-      </div>
-    </div>
-    </form>`))
+    <div class="container mx-auto">
+      <form method="POST" action="/login">
+        <div class="form-group row mb-3">
+          <label for="username" class="col-sm-4 col-form-label text-right">Username</label>
+          <div class="col-sm-8">
+            <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+          </div>
+        </div>
+        <div class="form-group row mb-3">
+          <label for="password" class="col-sm-4 col-form-label text-right">Password</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" name="password" id="password">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+          </div> <!-- Empty space equivalent to label width -->
+          <div class="col-sm-8">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href='/' class="btn btn-secondary">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>`))
 }))
 
 app.post('/login', (req, res, next) => {

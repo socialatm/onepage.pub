@@ -3751,14 +3751,14 @@ describe('onepage.pub', { only: true }, () => {
     it('bootstrap in registration form', async () => {
       const res = await fetch(`https://localhost:${MAIN_PORT}/register`)
       const body = await res.text()
-      assert.match(body, /<link rel="stylesheet" href="\/bootstrap\/css\/bootstrap.min.css">/)
+      assert.match(body, /<link rel="stylesheet" href="\/bootswatch\/united\/bootstrap.min.css">/)
       assert.match(body, /<script src="\/bootstrap\/js\/bootstrap.min.js"><\/script>/)
       assert.match(body, /<script src="\/popper\/popper.min.js"><\/script>/)
     })
     it('bootstrap in login form', async () => {
       const res = await fetch(`https://localhost:${MAIN_PORT}/login`)
       const body = await res.text()
-      assert.match(body, /<link rel="stylesheet" href="\/bootstrap\/css\/bootstrap.min.css">/)
+      assert.match(body, /<link rel="stylesheet" href="\/bootswatch\/united\/bootstrap.min.css">/)
       assert.match(body, /<script src="\/bootstrap\/js\/bootstrap.min.js"><\/script>/)
       assert.match(body, /<script src="\/popper\/popper.min.js"><\/script>/)
     })
@@ -3777,7 +3777,7 @@ describe('onepage.pub', { only: true }, () => {
         })
       })
       const body = await res.text()
-      assert.match(body, /<link rel="stylesheet" href="\/bootstrap\/css\/bootstrap.min.css">/)
+      assert.match(body, /<link rel="stylesheet" href="\/bootswatch\/united\/bootstrap.min.css">/)
       assert.match(body, /<script src="\/bootstrap\/js\/bootstrap.min.js"><\/script>/)
       assert.match(body, /<script src="\/popper\/popper.min.js"><\/script>/)
     })
@@ -3798,7 +3798,7 @@ describe('onepage.pub', { only: true }, () => {
         headers: { Cookie: cookie }
       })
       const body2 = await res2.text()
-      assert.match(body2, /<link rel="stylesheet" href="\/bootstrap\/css\/bootstrap.min.css">/)
+      assert.match(body2, /<link rel="stylesheet" href="\/bootswatch\/united\/bootstrap.min.css">/)
       assert.match(body2, /<script src="\/bootstrap\/js\/bootstrap.min.js"><\/script>/)
       assert.match(body2, /<script src="\/popper\/popper.min.js"><\/script>/)
     })
@@ -3822,7 +3822,7 @@ describe('onepage.pub', { only: true }, () => {
         headers: { Cookie: cookie }
       })
       const body = await res.text()
-      assert.match(body, /<link rel="stylesheet" href="\/bootstrap\/css\/bootstrap.min.css">/)
+      assert.match(body, /<link rel="stylesheet" href="\/bootswatch\/united\/bootstrap.min.css">/)
       assert.match(body, /<script src="\/bootstrap\/js\/bootstrap.min.js"><\/script>/)
       assert.match(body, /<script src="\/popper\/popper.min.js"><\/script>/)
     })
