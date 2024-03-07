@@ -2671,7 +2671,7 @@ const page = (title, body, user = null) => {
 
     <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
     <div class="container">
-      <a href="https://bootswatch.com/" class="navbar-brand">${NAME}</a>
+      <a href="/" class="navbar-brand">${NAME}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -2710,11 +2710,26 @@ const page = (title, body, user = null) => {
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://bootswatch.com/help/">Help</a>
+            <a class="nav-link" href="/help/">Help</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://blog.bootswatch.com/">Blog</a>
-          </li>
+          
+              ${(user)
+                ? `
+                <li class="nav-item active">
+                  <form action="/logout" method="POST" class="form-inline my-2 my-lg-0">
+                  <button type="submit" class="btn btn-link nav-link">Logout</button>
+                  </form>
+                </li>
+                `
+                : `
+                <li class="nav-item active">
+                  <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/login">Log in</a>
+                </li>
+              `}
+
           <li class="nav-item dropdown" data-bs-theme="light">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="https://bootswatch.com/united/#" id="download" aria-expanded="false">United</a>
             <div class="dropdown-menu" aria-labelledby="download">
@@ -2733,7 +2748,7 @@ const page = (title, body, user = null) => {
         </ul>
         <ul class="navbar-nav ms-md-auto">
           <li class="nav-item">
-            <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/thomaspark/bootswatch/"><i class="bi bi-github"></i><span class="d-lg-none ms-2">GitHub</span></a>
+            <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/socialatm/onepage.pub"><i class="bi bi-github"></i><span class="d-lg-none ms-2">GitHub</span></a>
           </li>
           <li class="nav-item">
             <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i><span class="d-lg-none ms-2">Twitter</span></a>
@@ -2806,40 +2821,22 @@ const page = (title, body, user = null) => {
   </div>
 
       <div class="container mx-auto outer" style="max-width: 600px;">
+
+      <!-- start old navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
           <a class="navbar-brand" href="/">${NAME}</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
-              </li>
-              ${(user)
-                ? `
-                <li class="nav-item active">
-                  <form action="/logout" method="POST" class="form-inline my-2 my-lg-0">
-                  <button type="submit" class="btn btn-link nav-link">Logout</button>
-                  </form>
-                </li>
-                `
-                : `
-                <li class="nav-item active">
-                  <a class="nav-link" href="/register">Register</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="/login">Log in</a>
-                </li>
-              `}
-            </ul>
-          </div>
+         
+
         </nav>
+        <!-- end old /navbar -->
 
         <div class="container">
-          <div class="row">
+          <div class="row mt-4">
             <div class="col">
-              <h1>${title}<i class="bi bi-alarm"></i></h1>
+            <p>
+              <h2>${title}<i class="bi bi-alarm"></i></h2>
+            </p>
               ${body}
             </div>
           </div>
@@ -2849,7 +2846,7 @@ const page = (title, body, user = null) => {
           <div class="container text-center">
           <p>
             One Page Pub ${(version) ? `<span class="version">${version}</span>` : ''}
-            | <a href="https://github.com/evanp/onepage.pub" target="_blank">GitHub</a></p>
+            | <a href="https://github.com/socialatm/onepage.pub" target="_blank">GitHub</a></p>
           </div>
         </div>
       </div>
