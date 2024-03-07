@@ -2655,16 +2655,18 @@ const page = (title, body, user = null) => {
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
       <style>
+      
       .outer {
         margin-bottom: 100px; /* Margin bottom by footer height */
       }
+      
       .footer {
         position: absolute;
         bottom: 0;
         width: 100%;
-        /* background-color: "light grey"; /* Footer background color */
         padding: 10px 0;
       }
+      
       </style>
     </head>
     <body>
@@ -2820,7 +2822,7 @@ const page = (title, body, user = null) => {
     </div>
   </div>
 
-      <!-- start outer <div class="container mx-auto outer" style="max-width: 600px;"> -->
+      <div class="container mx-auto outer">
       
         <div class="container mt-5">
           <div class="row mt-4">
@@ -2832,15 +2834,17 @@ const page = (title, body, user = null) => {
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="footer bg-primary">
-          <div class="container text-center">
-          <p>
-            One Page Pub ${(version) ? `<span class="version">${version}</span>` : ''}
-            | <a href="https://github.com/socialatm/onepage.pub" target="_blank">GitHub</a></p>
-          </div>
-        </div>
-    <!--  </div> end outer -->
+    <footer class="footer mt-auto py-3 bg-body-tertiary">
+  <div class="container">
+    <span>
+      One Page Pub ${(version) ? `<span class="version">${version}</span>` : ''}
+      <a href="https://github.com/socialatm/onepage.pub" target="_blank">GitHub</a>
+          
+    </span>
+  </div>
+</footer>
 
       <script src="/popper/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>
