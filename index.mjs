@@ -2662,7 +2662,7 @@ const page = (title, body, user = null) => {
         position: absolute;
         bottom: 0;
         width: 100%;
-        background-color: "light grey"; /* Footer background color */
+        /* background-color: "light grey"; /* Footer background color */
         padding: 10px 0;
       }
       </style>
@@ -2820,18 +2820,9 @@ const page = (title, body, user = null) => {
     </div>
   </div>
 
-      <div class="container mx-auto outer" style="max-width: 600px;">
-
-      <!-- start old navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        
-          <a class="navbar-brand" href="/">${NAME}</a>
-         
-
-        </nav>
-        <!-- end old /navbar -->
-
-        <div class="container">
+      <!-- start outer <div class="container mx-auto outer" style="max-width: 600px;"> -->
+      
+        <div class="container mt-5">
           <div class="row mt-4">
             <div class="col">
             <p>
@@ -2842,14 +2833,14 @@ const page = (title, body, user = null) => {
           </div>
         </div>
 
-        <div class="footer bg-light" style="max-width: 600px;">
+        <div class="footer bg-primary">
           <div class="container text-center">
           <p>
             One Page Pub ${(version) ? `<span class="version">${version}</span>` : ''}
             | <a href="https://github.com/socialatm/onepage.pub" target="_blank">GitHub</a></p>
           </div>
         </div>
-      </div>
+    <!--  </div> end outer -->
 
       <script src="/popper/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>
