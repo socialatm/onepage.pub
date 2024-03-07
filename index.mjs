@@ -2648,7 +2648,7 @@ app.get('/key', wrap(async (req, res) => {
 const page = (title, body, user = null) => {
   const version = process.env.npm_package_version
   return `<!DOCTYPE html>
-  <html>
+  <html lang="en">
     <head>
       <title>${title} - ${NAME}</title>
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
