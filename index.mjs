@@ -2703,21 +2703,6 @@ const page = (title, body, user = null) => {
                 </li>
               `}
 
-          <li class="nav-item dropdown" data-bs-theme="light">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="https://bootswatch.com/united/#" id="download" aria-expanded="false">United</a>
-            <div class="dropdown-menu" aria-labelledby="download">
-              <a class="dropdown-item" rel="noopener" target="_blank" href="https://jsfiddle.net/bootswatch/1d0z57y6/">Open in JSFiddle</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./Bootswatch_United_files/bootstrap.css" download="">bootstrap.css</a>
-              <a class="dropdown-item" href="https://bootswatch.com/5/united/bootstrap.min.css" download="">bootstrap.min.css</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://bootswatch.com/5/united/bootstrap.rtl.css" download="">bootstrap.rtl.css</a>
-              <a class="dropdown-item" href="https://bootswatch.com/5/united/bootstrap.rtl.min.css" download="">bootstrap.rtl.min.css</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://bootswatch.com/5/united/_variables.scss" download="">_variables.scss</a>
-              <a class="dropdown-item" href="https://bootswatch.com/5/united/_bootswatch.scss" download="">_bootswatch.scss</a>
-            </div>
-          </li>
         </ul>
         <ul class="navbar-nav ms-md-auto">
           <li class="nav-item">
