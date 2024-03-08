@@ -111,7 +111,7 @@ https://github.com/users/evanp/projects/4/views/1
 
 ## Maintainers
 
-[@evanp](https://github.com/evanp) Evan Prodromou
+[@socialatm](https://github.com/socialatm) Ray Peaslee
 
 ## Contributing
 
@@ -123,4 +123,6 @@ Small note: If editing the README, please conform to the [standard-readme](https
 
 ## License
 
-Apache-2.0 © 2023 Evan Prodromou
+Apache-2.0 © 2024 Ray Peaslee
+
+As required by the Apache-2.0 license: Please note that all files dated 12/15/2023 & newer have been modified from the original...
