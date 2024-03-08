@@ -2682,38 +2682,6 @@ const page = (title, body, user = null) => {
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown" data-bs-theme="light">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="https://bootswatch.com/united/#" id="themes">Themes</a>
-            <div class="dropdown-menu" aria-labelledby="themes">
-              <a class="dropdown-item" href="https://bootswatch.com/default/">Default</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://bootswatch.com/cerulean/">Cerulean</a>
-              <a class="dropdown-item" href="https://bootswatch.com/cosmo/">Cosmo</a>
-              <a class="dropdown-item" href="https://bootswatch.com/cyborg/">Cyborg</a>
-              <a class="dropdown-item" href="https://bootswatch.com/darkly/">Darkly</a>
-              <a class="dropdown-item" href="https://bootswatch.com/flatly/">Flatly</a>
-              <a class="dropdown-item" href="https://bootswatch.com/journal/">Journal</a>
-              <a class="dropdown-item" href="https://bootswatch.com/litera/">Litera</a>
-              <a class="dropdown-item" href="https://bootswatch.com/lumen/">Lumen</a>
-              <a class="dropdown-item" href="https://bootswatch.com/lux/">Lux</a>
-              <a class="dropdown-item" href="https://bootswatch.com/materia/">Materia</a>
-              <a class="dropdown-item" href="https://bootswatch.com/minty/">Minty</a>
-              <a class="dropdown-item" href="https://bootswatch.com/morph/">Morph</a>
-              <a class="dropdown-item" href="https://bootswatch.com/pulse/">Pulse</a>
-              <a class="dropdown-item" href="https://bootswatch.com/quartz/">Quartz</a>
-              <a class="dropdown-item" href="https://bootswatch.com/sandstone/">Sandstone</a>
-              <a class="dropdown-item" href="https://bootswatch.com/simplex/">Simplex</a>
-              <a class="dropdown-item" href="https://bootswatch.com/sketchy/">Sketchy</a>
-              <a class="dropdown-item" href="https://bootswatch.com/slate/">Slate</a>
-              <a class="dropdown-item" href="https://bootswatch.com/solar/">Solar</a>
-              <a class="dropdown-item" href="https://bootswatch.com/spacelab/">Spacelab</a>
-              <a class="dropdown-item" href="https://bootswatch.com/superhero/">Superhero</a>
-              <a class="dropdown-item" href="https://bootswatch.com/united/">United</a>
-              <a class="dropdown-item" href="https://bootswatch.com/vapor/">Vapor</a>
-              <a class="dropdown-item" href="https://bootswatch.com/yeti/">Yeti</a>
-              <a class="dropdown-item" href="https://bootswatch.com/zephyr/">Zephyr</a>
-            </div>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="/help/">Help</a>
           </li>
