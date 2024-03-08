@@ -2651,6 +2651,8 @@ const page = (title, body, user = null) => {
   return `<!DOCTYPE html>
   <html lang="en" data-bs-theme="dark">
     <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>${title} - ${NAME}</title>
       <script src="theme/color-modes.js"></script>
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
