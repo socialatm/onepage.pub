@@ -2647,7 +2647,6 @@ app.get('/key', wrap(async (req, res) => {
 }))
 
 const page = (title, body, user = null) => {
-  const version = process.env.npm_package_version
   return `<!DOCTYPE html>
   <html lang="en" data-bs-theme="dark">
     <head>
@@ -2792,14 +2791,14 @@ const page = (title, body, user = null) => {
         </div>
       </div>
 
-    <footer class="footer mt-auto py-3 bg-body-tertiary">
-  <div class="container">
-    <span>
-      One Page Pub ${(version) ? `<span class="version">${version}</span>` : ''}
-      <a href="https://github.com/socialatm/onepage.pub" target="_blank">GitHub</a>
-    </span>
-  </div>
-</footer>
+      <footer class="footer mt-auto py-3 bg-body-tertiary">
+        <div class="container">
+          <span>
+            One Page Pub &copy; 2024
+            <a href="https://github.com/socialatm/onepage.pub" target="_blank">GitHub</a>
+          </span>
+        </div>
+      </footer>
 
       <script src="/popper/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>
