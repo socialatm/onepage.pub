@@ -2682,12 +2682,8 @@ const page = (title, body, user = null) => {
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/help/">Help</a>
-          </li>
-          
-              ${(user)
-                ? `
+      
+            ${(user)? `
                 <li class="nav-item active">
                   <form action="/logout" method="POST" class="form-inline my-2 my-lg-0">
                   <button type="submit" class="btn btn-link nav-link">Logout</button>
@@ -2702,6 +2698,10 @@ const page = (title, body, user = null) => {
                   <a class="nav-link" href="/login">Log in</a>
                 </li>
               `}
+
+          <li class="nav-item">
+            <a class="nav-link" href="/help/">Help</a>
+          </li>
 
         </ul>
         <ul class="navbar-nav ms-md-auto">
