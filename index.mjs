@@ -2619,7 +2619,8 @@ passport.deserializeUser(function (username, done) {
   })()
 })
 
-app.use('/icons', express.static('node_modules/bootstrap-icons/font/')); 
+app.use('/theme', express.static('assets/js/'))
+app.use('/icons', express.static('node_modules/bootstrap-icons/font/')) 
 app.use('/bootswatch/', express.static('node_modules/bootswatch/dist/'))
 app.use('/bootstrap/', express.static('node_modules/bootstrap/dist/'))
 app.use('/popper/', express.static('node_modules/@popperjs/core/dist/umd'))
@@ -2648,9 +2649,10 @@ app.get('/key', wrap(async (req, res) => {
 const page = (title, body, user = null) => {
   const version = process.env.npm_package_version
   return `<!DOCTYPE html>
-  <html lang="en">
+  <html lang="en" data-bs-theme="dark">
     <head>
       <title>${title} - ${NAME}</title>
+      <script src="theme/color-modes.js"></script>
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
       <style>
