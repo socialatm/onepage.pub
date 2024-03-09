@@ -2682,21 +2682,21 @@ const page = (title, body, user = null) => {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
       
-            ${(user)? `
+            ${(user)? ` <!-- show this if user is logged in -->
                 <li class="nav-item active">
                   <form action="/logout" method="POST" class="form-inline my-2 my-lg-0">
                   <button type="submit" class="btn btn-link nav-link">Logout</button>
                   </form>
                 </li>
                 `
-                : `
+                : ` <!-- show this if user is not logged in -->
                 <li class="nav-item active">
                   <a class="nav-link" href="/register">Register</a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="/login">Log in</a>
                 </li>
-              `}
+              `}  <!-- end if user logged in -->
 
           <li class="nav-item">
             <a class="nav-link" href="/help/">Help</a>
@@ -2778,13 +2778,10 @@ const page = (title, body, user = null) => {
   </div>
 
       <div class="container mx-auto outer">
-      
         <div class="container mt-5">
           <div class="row mt-4">
             <div class="col mt-3">
-              
               <h2>${title}<i class="bi bi-alarm"></i></h2>
-              
               ${body}
             </div>
           </div>
