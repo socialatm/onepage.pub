@@ -2961,13 +2961,13 @@ app.post('/login', (req, res, next) => {
       if (redirectTo) {
         res.redirect(redirectTo)
       } else {
-        res.redirect('/login/success')
+        res.redirect('/inbox')
       }
     })
   })(req, res, next)
 })
 
-app.get('/login/success', passport.authenticate('session'), wrap(async (req, res) => {
+app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   if (!req.isAuthenticated()) {
     throw new createError.InternalServerError('Not authenticated')
   }
@@ -2991,8 +2991,12 @@ app.get('/login/success', passport.authenticate('session'), wrap(async (req, res
   res.type('html')
   res.status(200)
   res.end(page('Logged in', `
-    <p>Logged in <a class="actor" href="${user.actorId}">${user.username}</a></p>
-    <p>Personal access token is <span class="token">${token}</span>`, user))
+    <p>
+      Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
+    </p>
+    <p>
+      Personal access token is <span class="token">${token}</span>
+    </p>`, user))
 }))
 
 app.post('/logout', wrap(async (req, res) => {
