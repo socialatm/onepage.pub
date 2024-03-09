@@ -2970,7 +2970,8 @@ app.post('/login', (req, res, next) => {
 
 app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   if (!req.isAuthenticated()) {
-    throw new createError.InternalServerError('Not authenticated')
+    logger.error('Not authenticated')
+    res.redirect('/login')
   }
   const user = req.user
   if (!user) {
