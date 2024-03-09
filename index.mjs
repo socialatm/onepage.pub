@@ -2788,6 +2788,8 @@ const page = (title, body, user = null) => {
         </div>
       </div>
 
+      <!-- only show footer if user is not logged in -->
+      ${(user)? `` : `
       <footer class="footer mt-auto py-3 bg-body-tertiary">
         <div class="container">
           <span>
@@ -2796,6 +2798,8 @@ const page = (title, body, user = null) => {
           </span>
         </div>
       </footer>
+      `}
+      <!-- end only show footer if user is not logged in -->
 
       <script src="/popper/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>
