@@ -2900,16 +2900,7 @@ app.post('/register', csrf, wrap(async (req, res) => {
     }
     res.type('html')
     res.status(200)
-    res.end(page('Registered', `
-      <p>
-        Registered <a class="actor" href="${user.actorId}">${username}</a>
-      </p>
-      <p>
-        Personal access token is <span class="token">${token}</span>
-      </p>
-      <!-- new stuff goes here -->
-      <!-- end new stuff -->
-      `, user))
+    res.redirect('/inbox')
   })
 }))
 
@@ -3169,6 +3160,10 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                   <small>Voluptatibus quaerat suscipit in nostrum
                     necessitatibus</small>
                 </a>
+                <p>
+                Voluptatibus quaerat suscipit in nostrum
+                necessitatibus
+                </p>
               </div>
               <a href="" class="text-muted small ms-3 me-2"><strong>Like</strong></a>
               <a href="" class="text-muted small me-2"><strong>Reply</strong></a>
