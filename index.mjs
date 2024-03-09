@@ -2619,6 +2619,7 @@ passport.deserializeUser(function (username, done) {
   })()
 })
 
+app.use('/img', express.static('assets/img/'))
 app.use('/theme', express.static('assets/js/'))
 app.use('/icons', express.static('node_modules/bootstrap-icons/font/')) 
 app.use('/bootswatch/', express.static('node_modules/bootswatch/dist/'))
@@ -3028,11 +3029,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           </div>
         </div>
         <!-- Media -->
-        <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/people/077.webp" class="w-100" />
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-          </a>
+        <div>
+          <img src="/img/greg-moore.jpg" class="img-fluid" />
         </div>
         <!-- Media -->
         <!-- Interactions -->
@@ -3093,7 +3091,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 <a href="" class="text-dark mb-0">
                   <strong>Malcolm Dosh</strong>
                 </a>
-                <a href="" class="text-muted d-block">
+                <a href="" class="">
                   <small>Lorem ipsum dolor sit amet consectetur,
                     adipisicing elit. Natus, aspernatur!</small>
                 </a>
@@ -3114,7 +3112,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 <a href="" class="text-dark mb-0">
                   <strong>Rhia Wallis</strong>
                 </a>
-                <a href="" class="text-muted d-block">
+                <a href="" class="">
                   <small>Et tempora ad natus autem enim a distinctio
                     quaerat asperiores necessitatibus commodi dolorum
                     nam perferendis labore delectus, aliquid placeat
@@ -3137,7 +3135,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 <a href="" class="text-dark mb-0">
                   <strong>Marcie Mcgee</strong>
                 </a>
-                <a href="" class="text-muted d-block">
+                <a href="" class="">
                   <small>
                     Officia asperiores autem sit rerum architecto a
                     deserunt doloribus obcaecati, velit ab at, ad
@@ -3166,7 +3164,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 <a href="" class="text-dark mb-0">
                   <strong>Hollie James</strong>
                 </a>
-                <a href="" class="text-muted d-block">
+                <a href="" class="">
                   <small>Voluptatibus quaerat suscipit in nostrum
                     necessitatibus</small>
                 </a>
