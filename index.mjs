@@ -3079,14 +3079,14 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 alt="Avatar" style="height: 40px" />
             </a>
             <div>
-              <div class="bg-light rounded-3 px-3 py-1">
+              <div class="border rounded-3 px-3 py-1">
                 <a href="" class="text-dark mb-0">
                   <strong>Malcolm Dosh</strong>
                 </a>
-                <a href="" class="">
-                  <small>Lorem ipsum dolor sit amet consectetur,
-                    adipisicing elit. Natus, aspernatur!</small>
-                </a>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur,
+                  adipisicing elit. Natus, aspernatur!
+                </p>
               </div>
               <a href="" class="text-muted small ms-3 me-2"><strong>Like</strong></a>
               <a href="" class="text-muted small me-2"><strong>Reply</strong></a>
@@ -3100,16 +3100,16 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 alt="Avatar" style="height: 40px" />
             </a>
             <div>
-              <div class="bg-light rounded-3 px-3 py-1">
+              <div class="border rounded-3 px-3 py-1">
                 <a href="" class="text-dark mb-0">
                   <strong>Rhia Wallis</strong>
                 </a>
-                <a href="" class="">
-                  <small>Et tempora ad natus autem enim a distinctio
+                <p>
+                  Et tempora ad natus autem enim a distinctio
                     quaerat asperiores necessitatibus commodi dolorum
                     nam perferendis labore delectus, aliquid placeat
-                    quia nisi magnam.</small>
-                </a>
+                    quia nisi magnam.
+                </p>
               </div>
               <a href="" class="text-muted small ms-3 me-2"><strong>Like</strong></a>
               <a href="" class="text-muted small me-2"><strong>Reply</strong></a>
@@ -3123,12 +3123,11 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 alt="Avatar" style="height: 40px" />
             </a>
             <div>
-              <div class="bg-light rounded-3 px-3 py-1">
+              <div class="border rounded-3 px-3 py-1">
                 <a href="" class="text-dark mb-0">
                   <strong>Marcie Mcgee</strong>
                 </a>
-                <a href="" class="">
-                  <small>
+                <p>
                     Officia asperiores autem sit rerum architecto a
                     deserunt doloribus obcaecati, velit ab at, ad
                     delectus sapiente! Voluptatibus quaerat suscipit
@@ -3137,8 +3136,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                     illo repellendus porro sequi alias perferendis ea
                     soluta maiores nisi eligendi? Mollitia debitis
                     quam ex, voluptates cupiditate magnam
-                    fugiat.</small>
-                </a>
+                    fugiat.
+                </p>
               </div>
               <a href="" class="text-muted small ms-3 me-2"><strong>Like</strong></a>
               <a href="" class="text-muted small me-2"><strong>Reply</strong></a>
@@ -3150,15 +3149,10 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             <a href="">
               <img src="https://mdbcdn.b-cdn.net/img/new/avatars/10.webp" class="border rounded-circle me-2"
                 alt="Avatar" style="height: 40px" />
-            </a>
             <div>
-              <div class="bg-light rounded-3 px-3 py-1">
+              <div class="border rounded-3 px-3 py-1">
                 <a href="" class="text-dark mb-0">
                   <strong>Hollie James</strong>
-                </a>
-                <a href="" class="">
-                  <small>Voluptatibus quaerat suscipit in nostrum
-                    necessitatibus</small>
                 </a>
                 <p>
                 Voluptatibus quaerat suscipit in nostrum
