@@ -2900,7 +2900,16 @@ app.post('/register', csrf, wrap(async (req, res) => {
     }
     res.type('html')
     res.status(200)
-    res.redirect('/inbox')
+    res.end(page('Registered', `
+      <p>
+        Registered <a class="actor" href="${user.actorId}">${username}</a>
+      </p>
+      <p>
+        Personal access token is <span class="token">${token}</span>
+      </p>
+      <!-- new stuff goes here -->
+      <!-- end new stuff -->
+      `, user))
   })
 }))
 
