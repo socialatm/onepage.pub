@@ -3009,9 +3009,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 10h ago
               </p>
             </div>
-            <button type="button" class="btn btn-sm float-end">
-                <i class="bi bi-caret-right-fill"></i> Primary
-              </button>
           </div>
           <!-- Description -->
           <div>
