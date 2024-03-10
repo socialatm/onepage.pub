@@ -2998,12 +2998,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Data -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/18.webp" class="border rounded-circle me-2"
+              <img src="/img/ray.jpg" class="border rounded-circle me-2"
                 alt="Avatar" style="height: 40px" />
             </a>
             <div>
               <a href="" class="text-dark mb-0">
-                <strong>Anna Doe</strong>
+                <strong>Ray Peaslee</strong>
               </a>
               <a href="" class="text-muted d-block" style="margin-top: -6px">
                 <small>10h</small>
@@ -3060,7 +3060,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Input -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/18.webp" class="border rounded-circle me-2"
+              <img src="/img/ray.jpg" class="border rounded-circle me-2"
                 alt="Avatar" style="height: 40px" />
             </a>
             <div class="form-outline w-100">
@@ -3075,13 +3075,13 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Single answer -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="border rounded-circle me-2"
+              <img src="/img/einstein.jpg" class="border rounded-circle me-2"
                 alt="Avatar" style="height: 40px" />
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
                 <a href="" class="text-dark mb-0">
-                  <strong>Malcolm Dosh</strong>
+                  <strong>Albert Einstein</strong>
                 </a>
                 <p>
                   Lorem ipsum dolor sit amet consectetur,
@@ -3096,13 +3096,13 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Single answer -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="border rounded-circle me-2"
+              <img src="/img/mickey.png" class="border rounded-circle me-2"
                 alt="Avatar" style="height: 40px" />
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
                 <a href="" class="text-dark mb-0">
-                  <strong>Rhia Wallis</strong>
+                  <strong>Mickey Mouse</strong>
                 </a>
                 <p>
                   Et tempora ad natus autem enim a distinctio
@@ -3119,13 +3119,13 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Single answer -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/6.webp" class="border rounded-circle me-2"
+              <img src="/img/superman.png" class="border rounded-circle me-2"
                 alt="Avatar" style="height: 40px" />
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
                 <a href="" class="text-dark mb-0">
-                  <strong>Marcie Mcgee</strong>
+                  <strong>Clark Kent</strong>
                 </a>
                 <p>
                     Officia asperiores autem sit rerum architecto a
@@ -3147,12 +3147,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Single answer -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/10.webp" class="border rounded-circle me-2"
+              <img src="/img/batman.jpg" class="border rounded-circle me-2"
                 alt="Avatar" style="height: 40px" />
             <div>
               <div class="border rounded-3 px-3 py-1">
                 <a href="" class="text-dark mb-0">
-                  <strong>Hollie James</strong>
+                  <strong>Bruce Wayne</strong>
                 </a>
                 <p>
                 Voluptatibus quaerat suscipit in nostrum
