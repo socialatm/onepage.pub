@@ -3080,7 +3080,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
-                <a href="" class="mb-0">
+                <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
                   Albert Einstein
                 </a>
                 <p>
@@ -3088,8 +3088,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                   adipisicing elit. Natus, aspernatur!
                 </p>
               </div>
-              <a href="" class="text-muted small ms-3 me-2"><strong>Like</strong></a>
-              <a href="" class="text-muted small me-2"><strong>Reply</strong></a>
+              <a href="" class="text-muted small ms-3 me-2">Like</a>
+              <a href="" class="text-muted small me-2">Reply</a>
             </div>
           </div>
     
@@ -3101,7 +3101,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
-                <a href="" class="mb-0">
+                <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
                   Mickey Mouse
                 </a>
                 <p>
@@ -3111,8 +3111,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                     quia nisi magnam.
                 </p>
               </div>
-              <a href="" class="text-muted small ms-3 me-2"><strong>Like</strong></a>
-              <a href="" class="text-muted small me-2"><strong>Reply</strong></a>
+              <a href="" class="text-muted small ms-3 me-2">Like</a>
+              <a href="" class="text-muted small me-2">Reply</a>
             </div>
           </div>
     
@@ -3124,7 +3124,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
-                <a href="" class="mb-0">
+                <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
                   Clark Kent
                 </a>
                 <p>
@@ -3139,8 +3139,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                     fugiat.
                 </p>
               </div>
-              <a href="" class="text-muted small ms-3 me-2"><strong>Like</strong></a>
-              <a href="" class="text-muted small me-2"><strong>Reply</strong></a>
+              <a href="" class="text-muted small ms-3 me-2">Like</a>
+              <a href="" class="text-muted small me-2">Reply</a>
             </div>
           </div>
     
@@ -3151,7 +3151,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 alt="Avatar" style="height: 40px" />
             <div>
               <div class="border rounded-3 px-3 py-1">
-                <a href="" class="mb-0">
+                <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
                   Bruce Wayne
                 </a>
                 <p>
@@ -3159,8 +3159,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 necessitatibus
                 </p>
               </div>
-              <a href="" class="text-muted small ms-3 me-2"><strong>Like</strong></a>
-              <a href="" class="text-muted small me-2"><strong>Reply</strong></a>
+              <a href="" class="text-muted small ms-3 me-2">Like</a>
+              <a href="" class="text-muted small me-2">Reply</a>
             </div>
           </div>
     
