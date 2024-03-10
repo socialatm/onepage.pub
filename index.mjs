@@ -2998,16 +2998,16 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Data -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="/img/ray.jpg" class="border rounded-circle me-2"
+              <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid"
                 alt="Avatar" style="height: 40px" />
             </a>
             <div>
-              <a href="" class="text-dark mb-0">
-                <strong>Ray Peaslee</strong>
+              <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
+                Ray Peaslee
               </a>
-              <a href="" class="text-muted d-block" style="margin-top: -6px">
-                <small>10h</small>
-              </a>
+              <p class="text-muted d-block" style="margin-top: -6px">
+                10h ago
+              </p>
             </div>
           </div>
           <!-- Description -->
@@ -3080,8 +3080,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
-                <a href="" class="text-dark mb-0">
-                  <strong>Albert Einstein</strong>
+                <a href="" class="mb-0">
+                  Albert Einstein
                 </a>
                 <p>
                   Lorem ipsum dolor sit amet consectetur,
@@ -3101,8 +3101,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
-                <a href="" class="text-dark mb-0">
-                  <strong>Mickey Mouse</strong>
+                <a href="" class="mb-0">
+                  Mickey Mouse
                 </a>
                 <p>
                   Et tempora ad natus autem enim a distinctio
@@ -3124,8 +3124,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
-                <a href="" class="text-dark mb-0">
-                  <strong>Clark Kent</strong>
+                <a href="" class="mb-0">
+                  Clark Kent
                 </a>
                 <p>
                     Officia asperiores autem sit rerum architecto a
@@ -3151,8 +3151,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 alt="Avatar" style="height: 40px" />
             <div>
               <div class="border rounded-3 px-3 py-1">
-                <a href="" class="text-dark mb-0">
-                  <strong>Bruce Wayne</strong>
+                <a href="" class="mb-0">
+                  Bruce Wayne
                 </a>
                 <p>
                 Voluptatibus quaerat suscipit in nostrum
