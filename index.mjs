@@ -3005,7 +3005,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
               <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
                 Ray Peaslee
               </a>
-              <p class="text-muted d-block" style="margin-top: -6px">
+              <p class="text-muted d-inline">
                 10h ago
               </p>
             </div>
@@ -3030,26 +3030,26 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Reactions -->
           <div class="d-flex justify-content-between mb-3">
             <div>
-              <a href="">
+              <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
                 <i class="bi bi-hand-thumbs-up text-primary"></i>
                 <span>124</span>
               </a>
             </div>
             <div>
-              <a href="" class="text-muted"> 8 comments </a>
+              <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
             </div>
           </div>
           <!-- Reactions -->
     
           <!-- Buttons -->
           <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
-            <button type="button" class="btn btn-link btn-lg">
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
             <i class="bi bi-hand-thumbs-up"></i> Like
             </button>
-            <button type="button" class="btn btn-link btn-lg">
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
             <i class="bi bi-chat"></i></i> Comment
             </button>
-            <button type="button" class="btn btn-link btn-lg">
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
             <i class="bi bi-share"></i> Share
             </button>
           </div>
@@ -3088,8 +3088,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                   adipisicing elit. Natus, aspernatur!
                 </p>
               </div>
-              <a href="" class="text-muted small ms-3 me-2">Like</a>
-              <a href="" class="text-muted small me-2">Reply</a>
+              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
+              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
             </div>
           </div>
     
@@ -3111,8 +3111,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                     quia nisi magnam.
                 </p>
               </div>
-              <a href="" class="text-muted small ms-3 me-2">Like</a>
-              <a href="" class="text-muted small me-2">Reply</a>
+              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
+              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
             </div>
           </div>
     
@@ -3139,8 +3139,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                     fugiat.
                 </p>
               </div>
-              <a href="" class="text-muted small ms-3 me-2">Like</a>
-              <a href="" class="text-muted small me-2">Reply</a>
+              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
+              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
             </div>
           </div>
     
@@ -3159,8 +3159,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 necessitatibus
                 </p>
               </div>
-              <a href="" class="text-muted small ms-3 me-2">Like</a>
-              <a href="" class="text-muted small me-2">Reply</a>
+              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
+              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
             </div>
           </div>
     
