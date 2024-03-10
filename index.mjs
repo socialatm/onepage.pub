@@ -2999,7 +2999,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <div class="d-flex mb-3">
             <a href="">
               <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid"
-                alt="Avatar" style="height: 40px" />
+                alt="profile picture" style="height: 40px" />
             </a>
             <div>
               <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
@@ -3009,6 +3009,9 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                 10h ago
               </p>
             </div>
+            <button type="button" class="btn btn-sm float-end">
+                <i class="bi bi-caret-right-fill"></i> Primary
+              </button>
           </div>
           <!-- Description -->
           <div>
