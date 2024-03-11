@@ -2990,7 +2990,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     req.jwtKeyData,
     { algorithm: 'RS256' }
   )
-
   res.type('html')
   res.status(200)
   res.end(page('Logged in', `
@@ -2998,10 +2997,13 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
     </p>
     <p>
+      Logged in <a class="actor" href="https://localhost:65380/orderedcollection/xarcHbBoCZ-PUg1h8Me7w">inbox</a>
+    </p>
+    <p>
       Personal access token is <span class="token">${token}</span>
     </p>
     <!-- new stuff goes here -->
-    <!--Section: Newsfeed-->
+    <!-- start inbox -->
     <section>
       <div class="card" style="max-width: 42rem">
         <div class="card-body">
@@ -3067,7 +3069,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     
           <!-- Comments -->
     
-          <!-- Input -->
+          <!-- start comment form -->
           <div class="d-flex mb-3">
             <a href="">
               <img src="/img/ray.jpg" class="border rounded-circle me-2"
@@ -3078,7 +3080,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
               <label class="form-label" for="textAreaExample">Write a comment</label>
             </div>
           </div>
-          <!-- Input -->
+          <!-- end comment form -->
     
           <!-- Answers -->
     
