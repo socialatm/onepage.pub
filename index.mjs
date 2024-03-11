@@ -2908,6 +2908,7 @@ app.post('/register', csrf, wrap(async (req, res) => {
         Personal access token is <span class="token">${token}</span>
       </p>
       <!-- new stuff goes here -->
+      <a href="/inbox" class="btn btn-primary">Inbox</a>
       <!-- end new stuff -->
       `, user))
   })
