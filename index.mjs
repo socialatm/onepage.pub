@@ -3005,6 +3005,16 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <!-- new stuff goes here -->
     <!-- start inbox -->
     <section>
+      <!-- add new post form-->
+      <form method="POST" action="/inbox">
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <!-- end add new post form -->
       <div class="card" style="max-width: 42rem">
         <div class="card-body">
           <!-- Data -->
