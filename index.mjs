@@ -3011,7 +3011,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary btn-sm mb-3">Submit</button>
       </form>
 
       <!-- end add new post form -->
