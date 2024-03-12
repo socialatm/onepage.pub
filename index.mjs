@@ -3007,10 +3007,19 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <section>
       <!-- add new post form-->
       <form method="POST" action="/inbox">
+      <input type="hidden" id="@context" value="${AS_CONTEXT}">
+      <input type="hidden" id="type" value="Note">
+      <input type="hidden" id="attributedTo" value="${user.actorId}">
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="content" rows="3"></textarea>
       </div>
+      <select class="form-select" aria-label="Default select example" id="to">
+        <option selected>Who can see this?</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="${PUBLIC}">public</option>
+      </select>
       <button type="submit" class="btn btn-primary btn-sm mb-3">Submit</button>
       </form>
 
