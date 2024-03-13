@@ -2974,10 +2974,18 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     logger.error('Not authenticated')
     res.redirect('/login')
   }
+
   const user = req.user
   if (!user) {
     throw new createError.InternalServerError('Invalid user even though isAuthenticated() is true')
   }
+
+ // console.log(`User = ${user}`)
+
+  const actor = await User.fromUsername(user.username)
+  
+  console.log(JSON.stringify(actor, null, 2));
+
 
   const token = await jwtsign(
     {
@@ -2990,8 +2998,20 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     req.jwtKeyData,
     { algorithm: 'RS256' }
   )
+
+    //const signature = new HTTPSignature(await publicKey.id(), user.privateKey, 'GET', id, date)
+    /*
+    const headers = {
+      'Authorization': `Bearer ${token}`,
+      'Signature': signature
+    }
+    */
+    
+
   res.type('html')
   res.status(200)
+  res.set('Authorization', `Bearer ${token}`)
+  console.log(res.getHeaders())
   res.end(page('Logged in', `
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
@@ -3006,7 +3026,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <!-- start inbox -->
     <section>
       <!-- add new post form-->
-      <form method="POST" action="/inbox">
+      <form method="POST" action="https://localhost:65380/orderedcollection/FIYYa-P8XKKGVCNNh2T81">
       <input type="hidden" id="@context" value="${AS_CONTEXT}">
       <input type="hidden" id="type" value="Note">
       <input type="hidden" id="attributedTo" value="${user.actorId}">
@@ -3770,6 +3790,9 @@ app.post('/:type/:id',
     }
     if (full === await owner.prop('outbox')) {
       if (req.auth?.subject !== await owner.id()) {
+
+        console.log('subject', req.auth?.subject)
+        console.log('owner', await owner.id())
         throw new createError.Forbidden('You cannot post to this outbox')
       }
       if (!req.auth?.scope || !req.auth?.scope.split(' ').includes('write')) {
