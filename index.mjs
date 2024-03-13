@@ -2648,7 +2648,7 @@ app.get('/key', wrap(async (req, res) => {
 }))
 
 const page = (title, body, user = null) => {
-  return `<!DOCTYPE html>
+  const pageHTML = `<!DOCTYPE html>
   <html lang="en" data-bs-theme="dark">
     <head>
       <meta charset="utf-8">
@@ -2805,7 +2805,8 @@ const page = (title, body, user = null) => {
       <script src="/popper/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>
     </body>
-  </html>`
+  </html>`;
+  return pageHTML;
 }
 
 app.get('/queue', wrap(async (req, res) => {
@@ -2980,12 +2981,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     throw new createError.InternalServerError('Invalid user even though isAuthenticated() is true')
   }
 
- // console.log(`User = ${user}`)
-
-  const actor = await User.fromUsername(user.username)
-  
-  console.log(JSON.stringify(actor, null, 2));
-
+  console.log(JSON.stringify(user, null, 2));
 
   const token = await jwtsign(
     {
@@ -3010,14 +3006,10 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
 
   res.type('html')
   res.status(200)
-  res.set('Authorization', `Bearer ${token}`)
-  console.log(res.getHeaders())
+  // console.log(res.getHeaders())
   res.end(page('Logged in', `
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
-    </p>
-    <p>
-      Logged in <a class="actor" href="https://localhost:65380/orderedcollection/xarcHbBoCZ-PUg1h8Me7w">inbox</a>
     </p>
     <p>
       Personal access token is <span class="token">${token}</span>
