@@ -2647,7 +2647,10 @@ app.get('/key', wrap(async (req, res) => {
   res.json(await server.getKeyJSON())
 }))
 
-const page = (title, body, user = null) => {
+const page = (title, body, user = null, token = null) => {
+
+console.log(`Token at top of page function = ${token}`)
+
   const pageHTML = `<!DOCTYPE html>
   <html lang="en" data-bs-theme="dark">
     <head>
@@ -2981,7 +2984,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     throw new createError.InternalServerError('Invalid user even though isAuthenticated() is true')
   }
 
-  console.log(JSON.stringify(user, null, 2));
+ // console.log(JSON.stringify(user, null, 2));
 
   const token = await jwtsign(
     {
@@ -3002,7 +3005,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       'Signature': signature
     }
     */
-    
 
   res.type('html')
   res.status(200)
@@ -3217,7 +3219,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <!--Section: Newsfeed-->
     <!-- end new stuff -->
     
-    `, user))
+    `, user, token))
 }))
 
 app.post('/logout', wrap(async (req, res) => {
