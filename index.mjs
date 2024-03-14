@@ -2647,10 +2647,7 @@ app.get('/key', wrap(async (req, res) => {
   res.json(await server.getKeyJSON())
 }))
 
-const page = (title, body, user = null, token = null) => {
-
-console.log(`Token at top of page function = ${token}`)
-
+const page = (title, body, user = null) => {
   const pageHTML = `<!DOCTYPE html>
   <html lang="en" data-bs-theme="dark">
     <head>
@@ -2804,12 +2801,11 @@ console.log(`Token at top of page function = ${token}`)
       </footer>
       `}
       <!-- end only show footer if user is not logged in -->
-
       <script src="/popper/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>
     </body>
   </html>`;
-  return pageHTML;
+  return pageHTML
 }
 
 app.get('/queue', wrap(async (req, res) => {
@@ -3008,7 +3004,10 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
 
   res.type('html')
   res.status(200)
-  // console.log(res.getHeaders())
+  res.set('Authorization', `Bearer ${token}`)
+  res.set('Signature', 'signature')
+  res.header('Access-Control-Expose-Headers', 'Authorization, Signature')
+  console.log(res.getHeaders())
   res.end(page('Logged in', `
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
@@ -3218,8 +3217,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     </section>
     <!--Section: Newsfeed-->
     <!-- end new stuff -->
-    
-    `, user, token))
+    `, user))
 }))
 
 app.post('/logout', wrap(async (req, res) => {
