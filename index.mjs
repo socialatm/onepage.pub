@@ -17,7 +17,6 @@ import { promisify } from 'util'
 import crypto from 'crypto'
 import winston from 'winston'
 import session from 'express-session'
-import cookieParser from 'cookie-parser'
 import querystring from 'node:querystring'
 import multer from 'multer'
 import mime from 'mime'
@@ -2413,7 +2412,6 @@ app.use(express.json({ type: ['application/json', 'application/activity+json', '
 app.use(express.urlencoded({ extended: true })) // for HTML forms
 
 // Enable session management
-app.use(cookieParser())
 app.use(session({
   secret: SESSION_SECRET,
   resave: false,
