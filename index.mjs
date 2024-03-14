@@ -2625,6 +2625,7 @@ app.use('/icons', express.static('node_modules/bootstrap-icons/font/'))
 app.use('/bootswatch/', express.static('node_modules/bootswatch/dist/'))
 app.use('/bootstrap/', express.static('node_modules/bootstrap/dist/'))
 app.use('/popper/', express.static('node_modules/@popperjs/core/dist/umd'))
+app.use('/axios/', express.static('node_modules/axios/dist'))
 
 app.get('/', wrap(async (req, res) => {
   if (req.accepts('html')) {
@@ -2655,6 +2656,8 @@ const page = (title, body, user = null) => {
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>${title} - ${NAME}</title>
       <script src="theme/color-modes.js"></script>
+      <script src="axios/axios.min.js"></script>
+      <script src="theme/twitta.js"></script>
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
       <style>
