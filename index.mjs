@@ -2980,8 +2980,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     throw new createError.InternalServerError('Invalid user even though isAuthenticated() is true')
   }
 
- // console.log(JSON.stringify(user, null, 2));
-
   const token = await jwtsign(
     {
       jwtid: nanoid(),
@@ -2994,20 +2992,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     { algorithm: 'RS256' }
   )
 
-    //const signature = new HTTPSignature(await publicKey.id(), user.privateKey, 'GET', id, date)
-    /*
-    const headers = {
-      'Authorization': `Bearer ${token}`,
-      'Signature': signature
-    }
-    */
-
   res.type('html')
   res.status(200)
-  res.set('Authorization', `Bearer ${token}`)
-  res.set('Signature', 'signature')
-  res.header('Access-Control-Expose-Headers', 'Authorization, Signature')
-  console.log(res.getHeaders())
   res.end(page('Logged in', `
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
