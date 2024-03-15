@@ -2655,7 +2655,9 @@ const page = (title, body, user = null) => {
       <title>${title} - ${NAME}</title>
       <script src="theme/color-modes.js"></script>
       <script src="axios/axios.min.js"></script>
+      <!--
       <script src="theme/twitta.js"></script>
+      -->
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
       <style>
@@ -2804,6 +2806,7 @@ const page = (title, body, user = null) => {
       <!-- end only show footer if user is not logged in -->
       <script src="/popper/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>
+      <script src="theme/twitta.js"></script>
     </body>
   </html>`;
   return pageHTML
@@ -2996,7 +2999,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
 
   res.type('html')
   res.status(200)
-  res.setHeader('Set-Cookie', `jwtToken=${token}`); 
+  res.setHeader('Set-Cookie', `jwtToken=${token}; Secure; SameSite=Lax`);
   res.end(page('Logged in', `
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
@@ -3008,7 +3011,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <!-- start inbox -->
     <section>
       <!-- add new post form-->
-      <form method="POST" action="https://localhost:65380/orderedcollection/FIYYa-P8XKKGVCNNh2T81">
+
+<!--
+      <form id="createPostForm"  method="POST" action="https://localhost:65380/orderedcollection/FIYYa-P8XKKGVCNNh2T81">
+      -->
+
+      <form id="createPostForm">
       <input type="hidden" id="@context" value="${AS_CONTEXT}">
       <input type="hidden" id="type" value="Note">
       <input type="hidden" id="attributedTo" value="${user.actorId}">
@@ -3022,7 +3030,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         <option value="2">Two</option>
         <option value="${PUBLIC}">public</option>
       </select>
-      <button type="submit" class="btn btn-primary btn-sm mb-3">Submit</button>
+      <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm mb-3">Submit</button>
       </form>
 
       <!-- end add new post form -->
