@@ -2979,6 +2979,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   const user = req.user
   if (!user) {
     throw new createError.InternalServerError('Invalid user even though isAuthenticated() is true')
+    res.redirect('/login')
   }
 
   const token = await jwtsign(
@@ -2995,7 +2996,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
 
   res.type('html')
   res.status(200)
- // res.setHeader('Set-Cookie', 'jwtToken', token)
   res.setHeader('Set-Cookie', `jwtToken=${token}`); 
   res.end(page('Logged in', `
     <p>
