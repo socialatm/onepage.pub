@@ -17,7 +17,22 @@ form.addEventListener('submit', (event) => {
 
   // above here is working
 
-  axios.post('https://localhost:65380/orderedcollection/oKIVOg6PQTPq76MTPDTG-', formData )
+  // start from axios
+
+  axios({
+    url: 'https://localhost:65380/orderedcollection/oKIVOg6PQTPq76MTPDTG-', 
+    data: formData, 
+    method: "post",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  })
+  // end from axios
+/*
+  axios.post('https://localhost:65380/orderedcollection/oKIVOg6PQTPq76MTPDTG-', formData,
+  { headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  })
+  */
     .then(response => {
       // Handle the response
       console.log(JSON.stringify(response, null, 2));

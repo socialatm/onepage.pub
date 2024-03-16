@@ -3011,11 +3011,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <!-- start inbox -->
     <section>
       <!-- add new post form-->
-
-<!--
-      <form id="createPostForm"  method="POST" action="https://localhost:65380/orderedcollection/FIYYa-P8XKKGVCNNh2T81">
-      -->
-
       <form id="createPostForm">
       <input type="hidden" id="@context" name="@context" value="${AS_CONTEXT}">
       <input type="hidden" id="type" name="type" value="Note">
@@ -3032,8 +3027,11 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       </select>
       <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm mb-3">Submit</button>
       </form>
-
       <!-- end add new post form -->
+      <!-- start new feed -->
+      <div id="feed">
+      </div>
+      <!-- end new feed -->
       <div class="card" style="max-width: 42rem">
         <div class="card-body">
           <!-- Data -->
