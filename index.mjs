@@ -2381,7 +2381,6 @@ const logger = winston.createLogger({
 })
 
 // verbose output
-
 sqlite3.verbose()
 
 // Initialize SQLite
