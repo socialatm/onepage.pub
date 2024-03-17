@@ -3016,7 +3016,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       <input type="hidden" id="type" name="type" value="Note">
       <input type="hidden" id="attributedTo" name="attributedTo" value="${user.actorId}">
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <label for="content" class="form-label">Example textarea</label>
         <textarea class="form-control" id="content" name="content" rows="3"></textarea>
       </div>
       <select class="form-select" aria-label="Default select example" id="to" name="to">
