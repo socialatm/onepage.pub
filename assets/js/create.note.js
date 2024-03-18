@@ -22,7 +22,8 @@ form.addEventListener('submit', (event) => {
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
   }
-  }).then(({data}) => {console.log(data)
+  }).then(({data}) => {
+    console.log(data)
     document.getElementById('content').value = ''
     document.getElementById('feed').innerHTML = data.object.content + '<br>' + document.getElementById('feed').innerHTML
   }).catch(error => {
