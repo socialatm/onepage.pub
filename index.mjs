@@ -2995,7 +2995,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   res.type('html')
   res.status(200)
   res.setHeader('Set-Cookie', `jwtToken=${token}; Secure; SameSite=Lax`);
-  res.end(page('Logged in', `
+  res.end(page('Inbox', `
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
     </p>
