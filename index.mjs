@@ -23,6 +23,7 @@ import mime from 'mime'
 import path from 'path'
 import { tmpdir } from 'os'
 import { isSSRFSafeURL } from 'ssrfcheck'
+import axios from 'axios'
 
 // Configuration
 
@@ -2979,6 +2980,27 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     throw new createError.InternalServerError('Invalid user even though isAuthenticated() is true')
     res.redirect('/login')
   }
+
+  // let's see if we can get the actor here
+//const actor = fetch(user.actorId)
+
+ // const actor = await User.fromActorId(user.actorId)
+ process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+
+ axios.get(user.actorId)
+  .then((response) => {
+    // Do something with response
+    console.log(response.data)
+  })
+  .catch(function (err) {
+    console.log("Unable to fetch -", err);
+  });
+
+  //console.log(JSON.stringify(actor, null, 2))
+
+
+
+  // end get actor here
 
   const token = await jwtsign(
     {
