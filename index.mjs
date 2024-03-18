@@ -3089,9 +3089,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </button>
           </div>
           <!-- Buttons -->
-    
-          <!-- Comments -->
-    
           <!-- start comment form -->
           <div class="d-flex mb-3">
             <a href="">
@@ -3104,10 +3101,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </div>
           </div>
           <!-- end comment form -->
-    
-          <!-- Answers -->
-    
-          <!-- Single answer -->
+             
           <div class="d-flex mb-3">
             <a href="">
               <img src="/img/einstein.jpg" class="border rounded-circle me-2"
@@ -3128,7 +3122,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </div>
           </div>
     
-          <!-- Single answer -->
           <div class="d-flex mb-3">
             <a href="">
               <img src="/img/mickey.png" class="border rounded-circle me-2"
@@ -3151,7 +3144,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </div>
           </div>
     
-          <!-- Single answer -->
           <div class="d-flex mb-3">
             <a href="">
               <img src="/img/superman.png" class="border rounded-circle me-2"
@@ -3179,7 +3171,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </div>
           </div>
     
-          <!-- Single answer -->
           <div class="d-flex mb-3">
             <a href="">
               <img src="/img/batman.jpg" class="border rounded-circle me-2"
@@ -3198,15 +3189,9 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
               <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
             </div>
           </div>
-    
-          <!-- Answers -->
-    
-          <!-- Comments -->
         </div>
-        <!-- Interactions -->
       </div>
     </section>
-    <!--Section: Newsfeed-->
     <!-- end new stuff -->
     `, user))
 }))
