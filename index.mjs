@@ -3018,7 +3018,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         <option value="2">Two</option>
         <option selected value="${PUBLIC}">public</option>
       </select>
-      <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm mb-3">Submit</button>
+      <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm my-3">Submit</button>
       </form>
       <!-- end add new post form -->
       <!-- start new feed -->
