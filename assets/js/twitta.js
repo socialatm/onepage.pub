@@ -3,9 +3,9 @@ const token = document.cookie
   .find(row => row.startsWith('jwtToken='))
   .split('=')[1];
 
-axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-const form = document.getElementById('createPostForm');
+const form = document.getElementById('createPostForm')
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -22,9 +22,9 @@ form.addEventListener('submit', (event) => {
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
   }
-  }).then(({data}) => console.log(data))
-
-  .catch(error => {
+  }).then(({data}) => {console.log(data)
+    document.getElementById('content').value = ''
+  }).catch(error => {
     console.log(error);
   });
 });
