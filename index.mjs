@@ -3045,7 +3045,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
               </p>
             </div>
           </div>
-          <!-- Description -->
           <div>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -3055,14 +3054,10 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </p>
           </div>
         </div>
-        <!-- Media -->
         <div>
           <img src="/img/greg-moore.jpg" class="img-fluid" />
         </div>
-        <!-- Media -->
-        <!-- Interactions -->
         <div class="card-body">
-          <!-- Reactions -->
           <div class="d-flex justify-content-between mb-3">
             <div>
               <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -3074,9 +3069,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
               <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
             </div>
           </div>
-          <!-- Reactions -->
-    
-          <!-- Buttons -->
           <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
             <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
             <i class="bi bi-hand-thumbs-up"></i> Like
@@ -3088,7 +3080,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             <i class="bi bi-share"></i> Share
             </button>
           </div>
-          <!-- Buttons -->
           <!-- start comment form -->
           <div class="d-flex mb-3">
             <a href="">
