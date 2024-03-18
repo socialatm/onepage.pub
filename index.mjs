@@ -2654,9 +2654,6 @@ const page = (title, body, user = null) => {
       <title>${title} - ${NAME}</title>
       <script src="theme/color-modes.js"></script>
       <script src="axios/axios.min.js"></script>
-      <!--
-      <script src="theme/twitta.js"></script>
-      -->
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
       <style>
