@@ -3015,10 +3015,9 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         <textarea class="form-control" id="content" name="content" rows="3"></textarea>
       </div>
       <select class="form-select" aria-label="Default select example" id="to" name="to">
-        <option selected>Who can see this?</option>
         <option value="1">One</option>
         <option value="2">Two</option>
-        <option value="${PUBLIC}">public</option>
+        <option selected value="${PUBLIC}">public</option>
       </select>
       <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm mb-3">Submit</button>
       </form>
