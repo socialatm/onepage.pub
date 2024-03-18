@@ -3776,9 +3776,6 @@ app.post('/:type/:id',
     }
     if (full === await owner.prop('outbox')) {
       if (req.auth?.subject !== await owner.id()) {
-
-        console.log('subject', req.auth?.subject)
-        console.log('owner', await owner.id())
         throw new createError.Forbidden('You cannot post to this outbox')
       }
       if (!req.auth?.scope || !req.auth?.scope.split(' ').includes('write')) {
