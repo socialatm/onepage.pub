@@ -2995,14 +2995,13 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   res.type('html')
   res.status(200)
   res.setHeader('Set-Cookie', `jwtToken=${token}; Secure; SameSite=Lax`);
-  res.end(page('Inbox', `
+  const inboxHtml =`
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
     </p>
     <p>
       Personal access token is <span class="token">${token}</span>
     </p>
-    <!-- new stuff goes here -->
     <!-- start inbox -->
     <section>
       <!-- add new post form-->
@@ -3182,8 +3181,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       </div>
     </section>
     <script src="theme/create.note.js"></script>
-    <!-- end new stuff -->
-    `, user))
+    `;
+    res.end(page('Inbox', inboxHtml, user))
 }))
 
 app.post('/logout', wrap(async (req, res) => {
