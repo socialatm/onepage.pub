@@ -2981,11 +2981,9 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     res.redirect('/login')
   }
 
-  // let's see if we can get the actor here
-//const actor = fetch(user.actorId)
-
- // const actor = await User.fromActorId(user.actorId)
- process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+  if (process.env.NODE_ENV != 'production') {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+  }
 
  axios.get(user.actorId)
   .then((response) => {
@@ -2995,12 +2993,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   .catch(function (err) {
     console.log("Unable to fetch -", err);
   });
-
-  //console.log(JSON.stringify(actor, null, 2))
-
-
-
-  // end get actor here
 
   const token = await jwtsign(
     {
