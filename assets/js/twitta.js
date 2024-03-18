@@ -24,6 +24,7 @@ form.addEventListener('submit', (event) => {
   }
   }).then(({data}) => {console.log(data)
     document.getElementById('content').value = ''
+    document.getElementById('feed').innerHTML = data.object.content + '<br>' + document.getElementById('feed').innerHTML
   }).catch(error => {
     console.log(error);
   });
