@@ -22,9 +22,11 @@ This project has multiple goals. First, it's a demonstration of how to build an 
 
 ActivityPub defines a client API for creating, reading, updating, and deleting social data, and a server-to-server for delivering that data to remote servers.
 
-onepage.pub implements as much as possible of the ActivityPub API and protocol in a single JavaScript module. It doesn't use any Activity Streams- or ActivityPub-specific libraries. At 2800+ lines of code, it's not exactly a one-page program, but it's still pretty small.
+onepage.pub implements as much as possible of the ActivityPub API and protocol.
 
-It is a **headless** server. It includes only a rudimentary Web UI for registration, login, logout, and OAuth 2.0 authorization flow. Everything else is done through the API.
+It doesn't use any Activity Streams- or ActivityPub-specific libraries.
+
+It includes only a rudimentary Web UI for registration, login, logout, and OAuth 2.0 authorization flow. Everything else is done through the API.
 
 ## Install
 
@@ -52,7 +54,7 @@ npm run production
 
 It takes a few environment variables as configuration options:
 
-- OPP_DATABASE: the path to the SQLite database file for persistent data(default: `:memory:`, no persistence!)
+- OPP_DATABASE: the path to the SQLite database file for persistent data. Default is test.db. You can use  `:memory:` for no persistence.
 - OPP_HOSTNAME: the hostname of the server (default: `localhost`). Once you
 start a server, you can't change this without messing up all your links and
 everyone's links to you.
