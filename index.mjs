@@ -3181,7 +3181,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         </div>
       </div>
     </section>
-    <script src="theme/twitta.js"></script>
+    <script src="theme/create.note.js"></script>
     <!-- end new stuff -->
     `, user))
 }))
