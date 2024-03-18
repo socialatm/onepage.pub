@@ -2802,7 +2802,6 @@ const page = (title, body, user = null) => {
       <!-- end only show footer if user is not logged in -->
       <script src="/popper/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>
-      <script src="theme/twitta.js"></script>
     </body>
   </html>`;
   return pageHTML
@@ -3183,6 +3182,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         </div>
       </div>
     </section>
+    <script src="theme/twitta.js"></script>
     <!-- end new stuff -->
     `, user))
 }))
