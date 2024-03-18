@@ -13,18 +13,31 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const formData = new FormData(form);
-  console.dir(...formData)
+  console.log(...formData)
 
   // above here is working
 
-  // start from axios
+  axios.post('https://localhost:65380/orderedcollection/ncVI8nTvm0ZTXjxIrWkgL', {
+    '@context': 'https://www.w3.org/ns/activitystreams',
+    'type': 'Note',
+    'content': formData.get('content'),
+    'attributedTo': formData.get('attributedTo'),
+    'to': formData.get('to')
+  }, {
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+}).then(({data}) => console.log(data));
 
+  // start from axios
+/*
   axios({
     url: 'https://localhost:65380/orderedcollection/oKIVOg6PQTPq76MTPDTG-', 
     data: formData, 
     method: "post",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
   })
+  */
   // end from axios
 /*
   axios.post('https://localhost:65380/orderedcollection/oKIVOg6PQTPq76MTPDTG-', formData,
@@ -33,6 +46,7 @@ form.addEventListener('submit', (event) => {
     }
   })
   */
+ /*
     .then(response => {
       // Handle the response
       console.log(JSON.stringify(response, null, 2));
@@ -41,4 +55,5 @@ form.addEventListener('submit', (event) => {
       // Handle the error
       console.log(error);
     });
+    */
 });
