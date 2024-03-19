@@ -2984,7 +2984,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   if (process.env.NODE_ENV != 'production') {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
   }
-
+/*
  axios.get(user.actorId)
   .then((response) => {
     // Do something with response
@@ -3002,8 +3002,26 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   });
 
   const outbox = fs.readFileSync('outbox.json', 'utf8');
+*/
 
-  console.log(`outbox = ${outbox}`);
+  async function fetchData(actorId) {
+    try {
+      const response = await axios.get(actorId);
+      return response.data;
+    } catch (err) {
+      console.log("Unable to fetch -", err);
+    }
+  }
+  
+  const responseData = await fetchData(user.actorId);
+  //console.log(responseData);
+
+  console.log(`responseData = ${responseData}`);
+  console.log(JSON.stringify(responseData, null, 2));
+
+  const outbox = responseData.outbox;
+  
+
 
   const token = await jwtsign(
     {
