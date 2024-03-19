@@ -2984,25 +2984,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   if (process.env.NODE_ENV != 'production') {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
   }
-/*
- axios.get(user.actorId)
-  .then((response) => {
-    // Do something with response
-   // console.log(response.data)
-
-    fs.writeFile('outbox.json', JSON.stringify(response.data.outbox), function(err) {
-      if(err) {
-        return console.log(err);
-      }
-      console.log("The file was saved!");
-    })
-  })
-  .catch(function (err) {
-    console.log("Unable to fetch -", err);
-  });
-
-  const outbox = fs.readFileSync('outbox.json', 'utf8');
-*/
 
   async function fetchData(actorId) {
     try {
@@ -3014,15 +2995,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   }
   
   const responseData = await fetchData(user.actorId);
-  //console.log(responseData);
-
-  console.log(`responseData = ${responseData}`);
-  console.log(JSON.stringify(responseData, null, 2));
+  
+  // keep this here for debugging purposes
+  // console.log(JSON.stringify(responseData, null, 2));
 
   const outbox = responseData.outbox;
   
-
-
   const token = await jwtsign(
     {
       jwtid: nanoid(),
