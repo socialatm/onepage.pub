@@ -1,3 +1,4 @@
+//client side
 const token = document.cookie
   .split('; ')
   .find(row => row.startsWith('jwtToken='))
@@ -12,7 +13,7 @@ form.addEventListener('submit', (event) => {
 
   const formData = new FormData(form);
   
-  axios.post('https://localhost:65380/orderedcollection/ncVI8nTvm0ZTXjxIrWkgL', {
+  axios.post(formData.get('outbox'), {
     '@context': 'https://www.w3.org/ns/activitystreams',
     'type': 'Note',
     'content': formData.get('content'),

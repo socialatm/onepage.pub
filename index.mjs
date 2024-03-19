@@ -4,7 +4,7 @@ import sqlite3 from 'sqlite3'
 import passport from 'passport'
 import LocalStrategy from 'passport-local'
 import * as fsp from 'node:fs/promises'
-import fs from 'node:fs'
+import fs, { readFile } from 'node:fs'
 import https from 'https'
 import http from 'http'
 import wrap from 'express-async-handler'
@@ -2988,11 +2988,22 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
  axios.get(user.actorId)
   .then((response) => {
     // Do something with response
-    console.log(response.data)
+   // console.log(response.data)
+
+    fs.writeFile('outbox.json', JSON.stringify(response.data.outbox), function(err) {
+      if(err) {
+        return console.log(err);
+      }
+      console.log("The file was saved!");
+    })
   })
   .catch(function (err) {
     console.log("Unable to fetch -", err);
   });
+
+  const outbox = fs.readFileSync('outbox.json', 'utf8');
+
+  console.log(`outbox = ${outbox}`);
 
   const token = await jwtsign(
     {
@@ -3020,6 +3031,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <section>
       <!-- add new post form-->
       <form id="createPostForm">
+      <input type="hidden" id="outbox" name="outbox" value=${outbox}>
       <input type="hidden" id="@context" name="@context" value="${AS_CONTEXT}">
       <input type="hidden" id="type" name="type" value="Note">
       <input type="hidden" id="attributedTo" name="attributedTo" value="${user.actorId}">
