@@ -482,6 +482,13 @@ class ActivityObject {
     }
   }
 
+  /**
+   * Fetches an ActivityObject from a remote server. 
+   * 
+   * @param {string} id - The ID of the ActivityObject to fetch
+   * @param {Object} [subject=null] - The subject making the request, used for signing
+   * @returns {Promise<ActivityObject>} The fetched ActivityObject, or null if not found
+   */
   static async getFromRemote (id, subject = null) {
     const date = new Date().toISOString()
     const headers = {
