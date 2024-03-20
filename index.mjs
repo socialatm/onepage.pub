@@ -3132,8 +3132,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
              
           <div class="d-flex mb-3">
             <a href="">
-              <img src="/img/einstein.jpg" class="border rounded-circle me-2"
-                alt="Avatar" style="height: 40px" />
+              <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
             </a>
             <div>
               <div class="border rounded-3 px-3 py-1">
@@ -3141,8 +3140,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
                   Albert Einstein
                 </a>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur,
-                  adipisicing elit. Natus, aspernatur!
+                  Put your hand on a hot stove for a minute and it seems like an hour. Sit with a pretty girl for an hour, and it seems like a minute.
                 </p>
               </div>
               <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
