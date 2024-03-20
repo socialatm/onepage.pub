@@ -3029,9 +3029,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
     </p>
-    <p>
-      Personal access token is <span class="token">${token}</span>
-    </p>
     <!-- start inbox -->
     <section>
       <!-- add new post form-->
