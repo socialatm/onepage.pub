@@ -3033,6 +3033,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   res.status(200)
   res.setHeader('Set-Cookie', `jwtToken=${token}; Secure; SameSite=Lax`);
   const inboxHtml =`
+  <!-- add new start here -->
+  <div class="container-fluid">
+  <div class="row text-center my-2">
+    <div class="col border border-primary rounded ms-2">left</div>
+    <div class="col-6 border border-primary rounded ms-2">
+  <!-- end add new start here -->
     <p>
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
     </p>
@@ -3215,6 +3221,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         </div>
       </div>
     </section>
+    <!-- add new end here -->
+    </div>
+    <div class="col border border-primary rounded mx-2">right</div>
+  </div>
+</div>
+    <!-- end add new end here -->
     <script src="theme/create.note.js"></script>
     `;
     res.end(page('Inbox', inboxHtml, user))
