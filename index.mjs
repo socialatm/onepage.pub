@@ -3027,7 +3027,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       <div class="card-body">
         <div class="h5">@RayPeaslee
         </div>
-        <div class="h7 text-muted">Fullname : Miracles Lee Cross
+        <div class="h7 text-muted">Fullname : Raymond E Peaslee
         </div>
         <div class="h7">
           Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js, etc.
