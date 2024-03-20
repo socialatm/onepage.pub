@@ -3023,8 +3023,31 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   <div class="row my-2">
     <div class="col border border-primary rounded ms-2">
     <!-- start left column content -->
-    <div class="card"><div class="card-body"><div class="h5">@LeeCross</div><div class="h7 text-muted">Fullname : Miracles Lee Cross</div><div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
-    etc.</div></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="h6 text-muted">Followers</div><div class="h5">5.2342</div></li><li class="list-group-item"><div class="h6 text-muted">Following</div><div class="h5">6758</div></li><li class="list-group-item">Vestibulum at eros</li></ul></div>
+    <div class="card my-3">
+      <div class="card-body">
+        <div class="h5">@RayPeaslee
+        </div>
+        <div class="h7 text-muted">Fullname : Miracles Lee Cross
+        </div>
+        <div class="h7">
+          Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js, etc.
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="h6 text-muted">Followers
+          </div>
+          <div class="h5">5.2342
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="h6 text-muted">Following</div><div class="h5">6758
+          </div>
+        </li>
+        <li class="list-group-item">Vestibulum at eros
+        </li>
+      </ul>
+    </div>
     <!-- end left column content -->
     </div>
     <div class="col-6 border border-primary rounded ms-2">
@@ -3148,7 +3171,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     </div>
     <div class="col border border-primary rounded mx-2">
       <!-- start right column content -->
-      <div class="card gedf-card">
+      <div class="card my-3">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -3159,7 +3182,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         </div>
       </div>
       
-      <div class="card gedf-card">
+      <div class="card my-3">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
