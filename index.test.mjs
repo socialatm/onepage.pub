@@ -3319,7 +3319,7 @@ describe('onepage.pub', { only: true }, () => {
       )
       assert(body2.includes('Logged in'))
       assert(body2.includes(username))
-      assert(body2.match('<span class="token">.+?</span>'))
+      assert(body2.includes('<form id="createPostForm">'))
     })
   })
 
