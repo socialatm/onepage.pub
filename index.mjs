@@ -2771,9 +2771,9 @@ const page = (title, body, user = null) => {
     </div>
   </div>
 
-      <div class="container mx-auto">
+      <div class="container-fluid">
         <div class="container mt-5">
-          <div class="row mt-4">
+          <div class="row my-2">
             <div class="col mt-3">
               ${body}
             </div>
