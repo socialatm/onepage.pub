@@ -2683,7 +2683,7 @@ const page = (title, body, user = null) => {
 
     <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
     <div class="container">
-      <a href="/" class="navbar-brand">${NAME}</a>
+      <a href="/" class="navbar-brand">${NAME} <i class="bi bi-alarm"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -2789,7 +2789,6 @@ const page = (title, body, user = null) => {
         <div class="container mt-5">
           <div class="row mt-4">
             <div class="col mt-3">
-              <h2>${title}<i class="bi bi-alarm"></i></h2>
               ${body}
             </div>
           </div>
@@ -3035,7 +3034,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   const inboxHtml =`
   <!-- add new start here -->
   <div class="container-fluid">
-  <div class="row text-center my-2">
+  <div class="row my-2">
     <div class="col border border-primary rounded ms-2">left</div>
     <div class="col-6 border border-primary rounded ms-2">
   <!-- end add new start here -->
