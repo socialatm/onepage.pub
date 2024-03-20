@@ -2985,6 +2985,11 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
   }
 
+  /**
+   * Fetches data for a given actor ID.
+   * @param {string} actorId - The ID of the actor.
+   * @returns {Promise<any>} - A promise that resolves to the fetched data.
+   */
   async function fetchData(actorId) {
     try {
       const response = await axios.get(actorId);
@@ -3001,6 +3006,10 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
 
   const outbox = responseData.outbox;
   
+  /**
+   * JSON Web Token (JWT) representing the access token.
+   * @type {string}
+   */
   const token = await jwtsign(
     {
       jwtid: nanoid(),
