@@ -2664,20 +2664,6 @@ const page = (title, body, user = null) => {
       <script src="axios/axios.min.js"></script>
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
-      <style>
-      
-      .outer {
-        margin-bottom: 100px; /* Margin bottom by footer height */
-      }
-      
-      .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        padding: 10px 0;
-      }
-      
-      </style>
     </head>
     <body>
 
@@ -2785,7 +2771,7 @@ const page = (title, body, user = null) => {
     </div>
   </div>
 
-      <div class="container mx-auto outer">
+      <div class="container mx-auto">
         <div class="container mt-5">
           <div class="row mt-4">
             <div class="col mt-3">
@@ -2797,7 +2783,7 @@ const page = (title, body, user = null) => {
 
       <!-- only show footer if user is not logged in -->
       ${(user)? `` : `
-      <footer class="footer mt-auto py-3 bg-body-tertiary">
+      <footer class="footer fixed-bottom mt-auto py-3 bg-body-tertiary">
         <div class="container">
           <span>
             One Page Pub &copy; 2024
