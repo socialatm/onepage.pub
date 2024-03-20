@@ -3130,6 +3130,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           </div>
           <!-- end comment form -->
              
+          <!-- start comment template -->
           <div class="d-flex mb-3">
             <a href="">
               <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
@@ -3147,11 +3148,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
               <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
             </div>
           </div>
-    
-          
-    
-          
-    
+          <!-- end comment template -->
+            
         </div>
       </div>
     </section>
