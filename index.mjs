@@ -3199,24 +3199,6 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             </div>
           </div>
     
-          <div class="d-flex mb-3">
-            <a href="">
-              <img src="/img/batman.jpg" class="border rounded-circle me-2"
-                alt="Avatar" style="height: 40px" />
-            <div>
-              <div class="border rounded-3 px-3 py-1">
-                <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
-                  Bruce Wayne
-                </a>
-                <p>
-                Voluptatibus quaerat suscipit in nostrum
-                necessitatibus
-                </p>
-              </div>
-              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
-              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
