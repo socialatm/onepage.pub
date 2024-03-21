@@ -3085,44 +3085,46 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
 
       <div class="card">
         <div class="card-body">
-          <!-- Data -->
           <div class="d-flex mb-3">
             <a href="">
               <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 40px">
             </a>
-            <div>
-              <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
-                Ray Peaslee
-              </a>
-              <p class="text-muted d-inline">
-                10h ago
-              </p>
-            </div>
-          </div>
           <div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing
-              elit. Atque ex non impedit corporis sunt nisi nam fuga
-              dolor est, saepe vitae delectus fugit, accusantium qui
-              nulla aut adipisci provident praesentium?
+            <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
+              Ray Peaslee
+            </a>
+            <p class="text-muted d-inline">
+              10h ago
             </p>
           </div>
         </div>
         <div>
-          <img src="/img/greg-moore.jpg" class="img-fluid" alt="picture">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing
+            elit. Atque ex non impedit corporis sunt nisi nam fuga
+            dolor est, saepe vitae delectus fugit, accusantium qui
+            nulla aut adipisci provident praesentium?
+          </p>
         </div>
-        <div class="card-body">
-          <div class="d-flex justify-content-between mb-3">
-            <div>
-              <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-                <i class="bi bi-hand-thumbs-up text-primary"></i>
-                <span>124</span>
-              </a>
-            </div>
-            <div>
-              <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
-            </div>
+      </div>
+
+      <div>
+        <img src="/img/greg-moore.jpg" class="img-fluid" alt="picture">
+      </div>
+
+      <div class="card-body">
+        <div class="d-flex justify-content-between mb-3">
+          <div>
+            <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+              <i class="bi bi-hand-thumbs-up text-primary"></i>
+              <span>124</span>
+            </a>
           </div>
+          <div>
+            <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
+          </div>
+        </div>
+        
           <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
             <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
             <i class="bi bi-hand-thumbs-up"></i> Like
