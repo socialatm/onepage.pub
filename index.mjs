@@ -3056,7 +3056,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <div class="col-6 border border-primary rounded ms-2">
   <!-- end add new start here -->
     <p>
-      Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
+      Logged in as: <a class="actor" href="${user.actorId}">${user.username}</a>
     </p>
     <!-- start inbox -->
     <div>
@@ -3149,25 +3149,25 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         </div>
         <!-- end comment form -->
              
-          <!-- start comment template -->
-          <div class="d-flex mb-3">
-            <a href="">
-              <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
-            </a>
-            <div>
-              <div class="border rounded-3 px-3 py-1">
-                <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
-                  Albert Einstein
-                </a>
-                <p>
-                  Put your hand on a hot stove for a minute and it seems like an hour. Sit with a pretty girl for an hour, and it seems like a minute.
-                </p>
-              </div>
+        <!-- start comment template -->
+        <div class="d-flex mb-3">
+          <a href="">
+            <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
+          </a>
+          <div>
+            <div class="border rounded-3 px-3 py-1">
+              <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
+                Albert Einstein
+              </a>
+              <p>
+                Put your hand on a hot stove for a minute and it seems like an hour. Sit with a pretty girl for an hour, and it seems like a minute.
+              </p>
+            </div>
               <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
               <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
-            </div>
           </div>
-          <!-- end comment template -->
+        </div>
+        <!-- end comment template -->
             
         </div>
       </div>
