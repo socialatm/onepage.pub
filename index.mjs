@@ -2996,7 +2996,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   // keep this here for debugging purposes
   // console.log(JSON.stringify(responseData, null, 2));
 
-  const outbox = responseData.outbox;
+  const outbox = responseData.outbox
+  const followers = responseData.followers
   
   /**
    * JSON Web Token (JWT) representing the access token.
@@ -3069,8 +3070,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         <textarea class="form-control" id="content" name="content" rows="3"></textarea>
       </div>
       <select class="form-select" aria-label="Default select example" id="to" name="to">
-        <option value="1">Just Me</option>
-        <option value="2">My Followers</option>
+        <option value="${user.actorId}">Just Me</option>
+        <option value="${followers}">My Followers</option>
         <option selected value="${PUBLIC}">Public</option>
       </select>
       <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm my-3">Submit</button>
