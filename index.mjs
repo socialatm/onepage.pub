@@ -2696,6 +2696,8 @@ const page = (title, body, user = null) => {
           <li class="nav-item">
             <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i><span class="d-lg-none ms-2">Twitter</span></a>
           </li>
+          <!-- start req.isAuthenticated() here -->
+          ${(user)? `
           <li class="nav-item">
             <a target="_blank" rel="noopener" class="nav-link" href=""><i class="bi bi-bell-fill"></i><span class="d-lg-none ms-2">Notifications</span></a>
           </li>
@@ -2741,6 +2743,8 @@ const page = (title, body, user = null) => {
               </li>
             </ul>
           </li>
+          ` : ``}
+          <!-- end req.isAuthenticated()?s here -->
           <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
             <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
             <hr class="d-lg-none my-2 text-white-50">
