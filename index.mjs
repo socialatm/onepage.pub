@@ -2696,12 +2696,15 @@ const page = (title, body, user = null) => {
           <li class="nav-item">
             <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i><span class="d-lg-none ms-2">Twitter</span></a>
           </li>
+          <li class="nav-item">
+            <a target="_blank" rel="noopener" class="nav-link" href=""><i class="bi bi-bell-fill"></i><span class="d-lg-none ms-2">Twitter</span></a>
+          </li>
           <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
             <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
             <hr class="d-lg-none my-2 text-white-50">
           </li>
           <li class="nav-item dropdown" data-bs-theme="light">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="version-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="profile-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
               <span class="d-lg-none me-2">Bootstrap </span>
               <span>v5.3</span>
             </a>
