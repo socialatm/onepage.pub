@@ -3077,10 +3077,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm my-3">Submit</button>
       </form>
       <!-- end add new post form -->
+
       <!-- start new feed -->
       <div id="feed">
       </div>
       <!-- end new feed -->
+
       <div class="card">
         <div class="card-body">
           <!-- Data -->
@@ -3133,6 +3135,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             <i class="bi bi-share"></i> Share
             </button>
           </div>
+          
           <!-- start comment form -->
           <div class="d-flex mb-3">
             <a href="">
