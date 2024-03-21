@@ -3059,7 +3059,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       Logged in <a class="actor" href="${user.actorId}">${user.username}</a>
     </p>
     <!-- start inbox -->
-    <section>
+    <div>
       <!-- add new post form-->
       <form id="createPostForm">
       <input type="hidden" id="outbox" name="outbox" value=${outbox}>
@@ -3088,8 +3088,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- Data -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid"
-                alt="profile picture" style="height: 40px" />
+              <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 40px">
             </a>
             <div>
               <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
@@ -3110,7 +3109,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           </div>
         </div>
         <div>
-          <img src="/img/greg-moore.jpg" class="img-fluid" />
+          <img src="/img/greg-moore.jpg" class="img-fluid" alt="picture">
         </div>
         <div class="card-body">
           <div class="d-flex justify-content-between mb-3">
@@ -3135,12 +3134,11 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             <i class="bi bi-share"></i> Share
             </button>
           </div>
-          
+
           <!-- start comment form -->
           <div class="d-flex mb-3">
             <a href="">
-              <img src="/img/ray.jpg" class="border rounded-circle me-2"
-                alt="Avatar" style="height: 40px" />
+              <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
             </a>
             <div class="form-outline w-100">
               <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
@@ -3171,7 +3169,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             
         </div>
       </div>
-    </section>
+    </div>
     <!-- add new end here -->
     </div>
     <div class="col border border-primary rounded mx-2">
