@@ -2707,7 +2707,7 @@ const page = (title, body, user = null) => {
             <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="profile-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
               <span class="d-lg-none me-2">Bootstrap </span>
               <span>
-                <img src="/img/ray.jpg" class="rounded-circle" alt="profile picture" style="height: 24px">
+                <img src="/img/ray.jpg" class="rounded-circle" alt="profile picture" style="height: 1.5rem">
               </span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -3084,7 +3084,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         <div class="card-body">
           <div class="d-flex mb-3">
             <a href="">
-              <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 40px">
+              <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 2.5rem">
             </a>
           <div>
             <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
@@ -3137,7 +3137,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         <!-- start comment form -->
         <div class="d-flex mb-3">
           <a href="">
-            <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
+            <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
           </a>
           <div class="form-outline w-100">
             <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
@@ -3149,7 +3149,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         <!-- start comment template -->
         <div class="d-flex mb-3">
           <a href="">
-            <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
+            <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
           </a>
           <div>
             <div class="border rounded-3 px-3 py-1">
