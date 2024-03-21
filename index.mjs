@@ -2732,9 +2732,6 @@ const page = (title, body, user = null) => {
                 <hr class="dropdown-divider">
               </li>
               <li>
-                <a href="https://github.com/thomaspark/bootswatch/tags" class="dropdown-item d-flex align-items-center justify-content-between">
-                  <span class="ms-2">All versions</span>
-                </a>
                 <a href="/logout" class="dropdown-item d-flex align-items-center justify-content-between">
                   <span class="ms-2">Logout</span>
                 </a>
