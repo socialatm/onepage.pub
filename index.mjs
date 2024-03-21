@@ -2676,11 +2676,6 @@ const page = (title, body, user = null) => {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
           ${(user)? ` <!-- show this if user is logged in -->
-          <li class="nav-item active">
-            <form action="/logout" method="POST" class="form-inline my-2 my-lg-0">
-              <button type="submit" class="btn btn-link nav-link">Logout</button>
-            </form>
-          </li>
           `
           : ` <!-- show this if user is not logged in -->
           <li class="nav-item active">
@@ -3210,12 +3205,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     res.end(page('Inbox', inboxHtml, user))
 }))
 
-app.post('/logout', wrap(async (req, res) => {
+app.get('/logout', wrap(async (req, res) => {
   req.logout((err) => {
     if (err) {
       throw new createError.InternalServerError('Failed to logout')
     } else {
-      res.redirect('/')
+      res.redirect('/login')
     }
   })
 }))
