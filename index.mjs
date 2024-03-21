@@ -3080,7 +3080,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       <div id="feed">
       </div>
       <!-- end new feed -->
-      <div class="card" style="max-width: 42rem">
+      <div class="card">
         <div class="card-body">
           <!-- Data -->
           <div class="d-flex mb-3">
