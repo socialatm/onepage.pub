@@ -2675,28 +2675,27 @@ const page = (title, body, user = null) => {
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
-      
-            ${(user)? ` <!-- show this if user is logged in -->
-                <li class="nav-item active">
-                  <form action="/logout" method="POST" class="form-inline my-2 my-lg-0">
-                  <button type="submit" class="btn btn-link nav-link">Logout</button>
-                  </form>
-                </li>
-                `
-                : ` <!-- show this if user is not logged in -->
-                <li class="nav-item active">
-                  <a class="nav-link" href="/register">Register</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="/login">Log in</a>
-                </li>
-              `}  <!-- end if user logged in -->
+          ${(user)? ` <!-- show this if user is logged in -->
+          <li class="nav-item active">
+            <form action="/logout" method="POST" class="form-inline my-2 my-lg-0">
+              <button type="submit" class="btn btn-link nav-link">Logout</button>
+            </form>
+          </li>
+          `
+          : ` <!-- show this if user is not logged in -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Log in</a>
+          </li>
+          `}  <!-- end if user logged in -->
 
           <li class="nav-item">
             <a class="nav-link" href="/help/">Help</a>
           </li>
-
         </ul>
+
         <ul class="navbar-nav ms-md-auto">
           <li class="nav-item">
             <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/socialatm/onepage.pub"><i class="bi bi-github"></i><span class="d-lg-none ms-2">GitHub</span></a>
@@ -2740,6 +2739,9 @@ const page = (title, body, user = null) => {
               <li>
                 <a href="https://github.com/thomaspark/bootswatch/tags" class="dropdown-item d-flex align-items-center justify-content-between">
                   <span class="ms-2">All versions</span>
+                </a>
+                <a href="/logout" class="dropdown-item d-flex align-items-center justify-content-between">
+                  <span class="ms-2">Logout</span>
                 </a>
               </li>
             </ul>
