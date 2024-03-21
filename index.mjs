@@ -2634,10 +2634,8 @@ app.use('/axios/', express.static('node_modules/axios/dist'))
 
 app.get('/', wrap(async (req, res) => {
   if (req.accepts('html')) {
-    res.send(page('Home', `
-    <p>This is an <a href="https://www.w3.org/TR/activitypub/">ActivityPub</a> server.</p>
-    <p>It is currently in development.</p>
-`, req.user))
+    // if not logged in, redirect to login page. if logged in, redirect to inbox page.
+    req.isAuthenticated()? res.redirect('/inbox') :res.redirect('/login')
   } else if (req.accepts('json') || req.accepts('application/activity+json') || req.accepts('application/ld+json')) {
     const server = await Server.get()
     res.set('Content-Type', 'application/activity+json')
