@@ -3124,30 +3124,30 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
           </div>
         </div>
-        
-          <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-            <i class="bi bi-hand-thumbs-up"></i> Like
-            </button>
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-            <i class="bi bi-chat"></i> Comment
-            </button>
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-            <i class="bi bi-share"></i> Share
-            </button>
-          </div>
 
-          <!-- start comment form -->
-          <div class="d-flex mb-3">
-            <a href="">
-              <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
-            </a>
-            <div class="form-outline w-100">
-              <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
-              <label class="form-label" for="textAreaExample">Write a comment</label>
-            </div>
+        <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
+          <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+            <i class="bi bi-hand-thumbs-up"></i> Like
+          </button>
+          <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+            <i class="bi bi-chat"></i> Comment
+          </button>
+          <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+            <i class="bi bi-share"></i> Share
+          </button>
+        </div>
+
+        <!-- start comment form -->
+        <div class="d-flex mb-3">
+          <a href="">
+            <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 40px">
+          </a>
+          <div class="form-outline w-100">
+            <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
+            <label class="form-label" for="textAreaExample">Write a comment</label>
           </div>
-          <!-- end comment form -->
+        </div>
+        <!-- end comment form -->
              
           <!-- start comment template -->
           <div class="d-flex mb-3">
