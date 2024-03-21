@@ -3025,23 +3025,25 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
     <!-- start left column content -->
     <div class="card my-3">
       <div class="card-body">
-        <div class="h5">@RayPeaslee
+        <div class="fs-5">@RayPeaslee
         </div>
-        <div class="h7 text-muted">Fullname : Raymond E Peaslee
+        <div class="fs-6 text-muted">Fullname : Raymond E Peaslee
         </div>
-        <div class="h7">
+        <div class="fs-6">
           Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js, etc.
         </div>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          <div class="h6 text-muted">Followers
+          <div class="fs-6 text-muted">Followers
           </div>
-          <div class="h5">5.2342
+          <div class="fs-5">5.2342
           </div>
         </li>
         <li class="list-group-item">
-          <div class="h6 text-muted">Following</div><div class="h5">6758
+          <div class="fs-6 text-muted">Following
+          </div>
+          <div class="fs-5">6758
           </div>
         </li>
         <li class="list-group-item">Vestibulum at eros
