@@ -3128,7 +3128,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
             <i class="bi bi-hand-thumbs-up"></i> Like
             </button>
             <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-            <i class="bi bi-chat"></i></i> Comment
+            <i class="bi bi-chat"></i> Comment
             </button>
             <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
             <i class="bi bi-share"></i> Share
