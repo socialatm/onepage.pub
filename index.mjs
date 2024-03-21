@@ -2706,7 +2706,9 @@ const page = (title, body, user = null) => {
           <li class="nav-item dropdown" data-bs-theme="light">
             <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="profile-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
               <span class="d-lg-none me-2">Bootstrap </span>
-              <span>v5.3</span>
+              <span>
+                <img src="/img/ray.jpg" class="rounded-circle" alt="profile picture" style="height: 24px">
+              </span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
