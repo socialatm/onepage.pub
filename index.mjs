@@ -2664,113 +2664,114 @@ const page = (title, body, user = null) => {
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
     </head>
     <body>
-
-    <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-    <div class="container">
-      <a href="/" class="navbar-brand">${NAME} <i class="bi bi-alarm"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-          ${(user)? ` <!-- show this if user is logged in -->
-          `
-          : ` <!-- show this if user is not logged in -->
-          <li class="nav-item active">
-            <a class="nav-link" href="/register">Register</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/login">Log in</a>
-          </li>
-          `}  <!-- end if user logged in -->
-
-          <li class="nav-item">
-            <a class="nav-link" href="/help/">Help</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav ms-md-auto">
-          <li class="nav-item">
-            <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/socialatm/onepage.pub"><i class="bi bi-github"></i><span class="d-lg-none ms-2">GitHub</span></a>
-          </li>
-          <li class="nav-item">
-            <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i><span class="d-lg-none ms-2">Twitter</span></a>
-          </li>
-          <!-- start req.isAuthenticated() here -->
-          ${(user)? `
-          <li class="nav-item">
-            <a target="_blank" rel="noopener" class="nav-link" href=""><i class="bi bi-bell-fill"></i><span class="d-lg-none ms-2">Notifications</span></a>
-          </li>
-          <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-            <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
-            <hr class="d-lg-none my-2 text-white-50">
-          </li>
-          <li class="nav-item dropdown" data-bs-theme="light">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="" id="profile-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
-              <span class="d-lg-none me-2">Bootstrap </span>
-              <span>
-                <img src="/img/ray.jpg" class="rounded-circle" alt="profile picture" style="height: 1.5rem">
-              </span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a href="https://bootswatch.com/" class="dropdown-item d-flex align-items-center justify-content-between" aria-current="true">
-                  <span class="ms-2">v5.3.x</span><i class="bi bi-check"></i>
-                </a>
+      <!-- start the navbar -->
+      <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
+        <div class="container">
+          <a href="/" class="navbar-brand">${NAME} <i class="bi bi-alarm"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+              ${(user)? ` <!-- show this if user is logged in -->
+              `
+              : ` <!-- show this if user is not logged in -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/register">Register</a>
               </li>
-              <li>
-                <a href="https://bootswatch.com/4/" class="dropdown-item d-flex align-items-center justify-content-between">
-                  <span class="ms-2">v4.6.2</span>
-                </a>
+              <li class="nav-item active">
+                <a class="nav-link" href="/login">Log in</a>
               </li>
-              <li>
-                <a href="https://bootswatch.com/3/" class="dropdown-item d-flex align-items-center justify-content-between">
-                  <span class="ms-2">v3.4.1</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://bootswatch.com/2/" class="dropdown-item d-flex align-items-center justify-content-between">
-                  <span class="ms-2">v2.3.2</span>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li>
-                <a href="/logout" class="dropdown-item d-flex align-items-center justify-content-between">
-                  <span class="ms-2">Logout</span>
-                </a>
+              `}  <!-- end show this if user logged in -->
+              <li class="nav-item">
+                <a class="nav-link" href="/help/">Help</a>
               </li>
             </ul>
-          </li>
-          ` : ``}
-          <!-- end req.isAuthenticated()?s here -->
-          <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-            <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
-            <hr class="d-lg-none my-2 text-white-50">
-          </li>
-          <li class="nav-item dropdown" data-bs-theme="light">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
-              <i class="bi bi-circle-half"></i>
-              <span class="d-lg-none ms-2">Toggle theme</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                  <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
-                </button>
+            <ul class="navbar-nav ms-md-auto">
+              <li class="nav-item">
+                <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/socialatm/onepage.pub"><i class="bi bi-github"></i><span class="d-lg-none ms-2">GitHub</span></a>
               </li>
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
-                  <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
-                </button>
+              <li class="nav-item">
+                <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i><span class="d-lg-none ms-2">Twitter</span></a>
               </li>
+              <!-- start req.isAuthenticated() here -->
+              ${(user)? `
+              <li class="nav-item">
+                <a target="_blank" rel="noopener" class="nav-link" href=""><i class="bi bi-bell-fill"></i><span class="d-lg-none ms-2">Notifications</span></a>
+              </li>
+              <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white">
+                </div>
+                <hr class="d-lg-none my-2 text-white-50">
+              </li>
+              <li class="nav-item dropdown" data-bs-theme="light">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="" id="profile-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+                  <span class="d-lg-none me-2">Bootstrap 
+                  </span>
+                  <span>
+                    <img src="/img/ray.jpg" class="rounded-circle" alt="profile picture" style="height: 1.5rem">
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a href="" class="dropdown-item d-flex align-items-center justify-content-between" aria-current="true">
+                      <span class="ms-2">v5.3.x</span><i class="bi bi-check"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
+                      <span class="ms-2">v4.6.2</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
+                      <span class="ms-2">v3.4.1</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
+                      <span class="ms-2">v2.3.2</span>
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li>
+                    <a href="/logout" class="dropdown-item d-flex align-items-center justify-content-between">
+                      <span class="ms-2">Logout</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              ` : ``}
+              <!-- end req.isAuthenticated()?s here -->
+              <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                <hr class="d-lg-none my-2 text-white-50">
+              </li>
+              <li class="nav-item dropdown" data-bs-theme="light">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+                  <i class="bi bi-circle-half"></i>
+                  <span class="d-lg-none ms-2">Toggle theme</span>
+                </a>
+              </li>  
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                    <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                    <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+                  </button>
+                </li>
+              </ul>
             </ul>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+      <!-- end navbar -->
 
       <div class="container-fluid">
         <div class="container mt-5">
@@ -3020,195 +3021,175 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   res.status(200)
   res.setHeader('Set-Cookie', `jwtToken=${token}; Secure; SameSite=Lax`);
   const inboxHtml =`
-  <!-- add new start here -->
+  <!-- start inboxHtml here -->
   <div class="container-fluid">
-  <div class="row my-2">
-    <div class="col border border-primary rounded ms-2">
-    <!-- start left column content -->
-    <div class="card my-3">
-      <div class="card-body">
-        <div class="fs-5">@RayPeaslee
+    <div class="row my-2">
+      <div class="col border border-primary rounded ms-2">  <!-- start left column -->
+        <div class="card my-3">
+          <div class="card-body">
+            <div class="fs-5">@RayPeaslee
+            </div>
+            <div class="fs-6 text-muted">Fullname : Raymond E Peaslee
+            </div>
+            <div class="fs-6">
+              Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js, etc.
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="fs-6 text-muted">Followers
+              </div>
+              <div class="fs-5">5.2342
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="fs-6 text-muted">Following
+              </div>
+              <div class="fs-5">6758
+              </div>
+            </li>
+            <li class="list-group-item">Vestibulum at eros
+            </li>
+          </ul>
         </div>
-        <div class="fs-6 text-muted">Fullname : Raymond E Peaslee
-        </div>
-        <div class="fs-6">
-          Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js, etc.
-        </div>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <div class="fs-6 text-muted">Followers
+      </div>  <!-- end left column -->
+      
+      <div class="col-6 border border-primary rounded ms-2">  <!-- start center column -->
+        <p>
+          Logged in as: <a class="actor" href="${user.actorId}">${user.username}</a>
+        </p>
+        <!-- start inbox -->
+        <div>
+          <!-- start post form-->
+          <form id="createPostForm">
+            <input type="hidden" id="outbox" name="outbox" value=${outbox}>
+            <input type="hidden" id="@context" name="@context" value="${AS_CONTEXT}">
+            <input type="hidden" id="type" name="type" value="Note">
+            <input type="hidden" id="attributedTo" name="attributedTo" value="${user.actorId}">
+            <div class="mb-3">
+              <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+            </div>
+            <select class="form-select" aria-label="Default select example" id="to" name="to">
+              <option value="${user.actorId}">Just Me</option>
+              <option value="${followers}">My Followers</option>
+              <option selected value="${PUBLIC}">Public</option>
+            </select>
+            <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm my-3">Submit</button>
+          </form>
+          <!-- end post form -->
+          <div id="feed">
+            <!-- actual inbox will go here -->
           </div>
-          <div class="fs-5">5.2342
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex mb-3">
+                <a href="">
+                  <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 2.5rem">
+                </a>
+              <div>
+              <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
+                Ray Peaslee
+              </a>
+              <p class="text-muted d-inline">
+                10h ago
+              </p>
+            </div>
           </div>
-        </li>
-        <li class="list-group-item">
-          <div class="fs-6 text-muted">Following
-          </div>
-          <div class="fs-5">6758
-          </div>
-        </li>
-        <li class="list-group-item">Vestibulum at eros
-        </li>
-      </ul>
-    </div>
-    <!-- end left column content -->
-    </div>
-    <div class="col-6 border border-primary rounded ms-2">
-  <!-- end add new start here -->
-    <p>
-      Logged in as: <a class="actor" href="${user.actorId}">${user.username}</a>
-    </p>
-    <!-- start inbox -->
-    <div>
-      <!-- add new post form-->
-      <form id="createPostForm">
-      <input type="hidden" id="outbox" name="outbox" value=${outbox}>
-      <input type="hidden" id="@context" name="@context" value="${AS_CONTEXT}">
-      <input type="hidden" id="type" name="type" value="Note">
-      <input type="hidden" id="attributedTo" name="attributedTo" value="${user.actorId}">
-      <div class="mb-3">
-        <textarea class="form-control" id="content" name="content" rows="3"></textarea>
-      </div>
-      <select class="form-select" aria-label="Default select example" id="to" name="to">
-        <option value="${user.actorId}">Just Me</option>
-        <option value="${followers}">My Followers</option>
-        <option selected value="${PUBLIC}">Public</option>
-      </select>
-      <button id="createPostSubmitBtn" type="submit" class="btn btn-primary btn-sm my-3">Submit</button>
-      </form>
-      <!-- end add new post form -->
-
-      <!-- start new feed -->
-      <div id="feed">
-      </div>
-      <!-- end new feed -->
-
-      <div class="card">
-        <div class="card-body">
-          <div class="d-flex mb-3">
-            <a href="">
-              <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 2.5rem">
-            </a>
           <div>
-            <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
-              Ray Peaslee
-            </a>
-            <p class="text-muted d-inline">
-              10h ago
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing
+              elit. Atque ex non impedit corporis sunt nisi nam fuga
+              dolor est, saepe vitae delectus fugit, accusantium qui
+              nulla aut adipisci provident praesentium?
             </p>
           </div>
         </div>
         <div>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing
-            elit. Atque ex non impedit corporis sunt nisi nam fuga
-            dolor est, saepe vitae delectus fugit, accusantium qui
-            nulla aut adipisci provident praesentium?
-          </p>
+          <img src="/img/greg-moore.jpg" class="img-fluid" alt="picture">
         </div>
-      </div>
-
-      <div>
-        <img src="/img/greg-moore.jpg" class="img-fluid" alt="picture">
-      </div>
-
-      <div class="card-body">
-        <div class="d-flex justify-content-between mb-3">
-          <div>
-            <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-              <i class="bi bi-hand-thumbs-up text-primary"></i>
-              <span>124</span>
-            </a>
-          </div>
-          <div>
-            <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
-          </div>
-        </div>
-
-        <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
-          <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-            <i class="bi bi-hand-thumbs-up"></i> Like
-          </button>
-          <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-            <i class="bi bi-chat"></i> Comment
-          </button>
-          <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-            <i class="bi bi-share"></i> Share
-          </button>
-        </div>
-
-        <!-- start comment form -->
-        <div class="d-flex mb-3">
-          <a href="">
-            <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
-          </a>
-          <div class="form-outline w-100">
-            <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
-            <label class="form-label" for="textAreaExample">Write a comment</label>
-          </div>
-        </div>
-        <!-- end comment form -->
-             
-        <!-- start comment template -->
-        <div class="d-flex mb-3">
-          <a href="">
-            <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
-          </a>
-          <div>
-            <div class="border rounded-3 px-3 py-1">
-              <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
-                Albert Einstein
+        <div class="card-body">
+          <div class="d-flex justify-content-between mb-3">
+            <div>
+              <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+                <i class="bi bi-hand-thumbs-up text-primary"></i>
+                <span>124</span>
               </a>
-              <p>
-                Put your hand on a hot stove for a minute and it seems like an hour. Sit with a pretty girl for an hour, and it seems like a minute.
-              </p>
             </div>
-              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
-              <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
+            <div>
+              <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+              <i class="bi bi-hand-thumbs-up"></i> Like
+            </button>
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+              <i class="bi bi-chat"></i> Comment
+            </button>
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+              <i class="bi bi-share"></i> Share
+            </button>
+          </div>
+            <!-- start comment form -->
+          <div class="d-flex mb-3">
+            <a href="">
+              <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
+            </a>
+            <div class="form-outline w-100">
+              <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
+              <label class="form-label" for="textAreaExample">Write a comment</label>
+            </div>
+          </div>
+            <!-- end comment form -->
+            <!-- start comment template -->
+          <div class="d-flex mb-3">
+            <a href="">
+              <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
+            </a>
+            <div>
+              <div class="border rounded-3 px-3 py-1">
+                <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
+                  Albert Einstein
+                </a>
+                <p>
+                  Put your hand on a hot stove for a minute and it seems like an hour. Sit with a pretty girl for an hour, and it seems like a minute.
+                </p>
+              </div>
+                <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
+                <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
+            </div>
+          </div>
+            <!-- end comment template -->
+        </div>
+        </div>
+        </div>
+      </div>  <!-- end center column -->
+
+      <div class="col border border-primary rounded mx-2">  <!-- start right column -->
+        <div class="card mt-3">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
           </div>
         </div>
-        <!-- end comment template -->
-            
+        <div class="card mt-3">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- add new end here -->
-    </div>
-
-    <!-- start right column -->
-    <div class="col border border-primary rounded mx-2">
-      <div class="card mt-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      <div class="card mt-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-      
-      
-    </div>
-    <!-- end right column -->
-
+      </div>  <!-- end right column -->
     </div>
   </div>
-</div>
-    <!-- end add new end here -->
-    <script src="theme/create.note.js"></script>
-    `;
-    res.end(page('Inbox', inboxHtml, user))
+  <script src="theme/create.note.js"></script>
+  `;
+  res.end(page('Inbox', inboxHtml, user))
 }))
 
 app.get('/logout', wrap(async (req, res) => {
