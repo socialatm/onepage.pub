@@ -2664,7 +2664,7 @@ const page = (title, body, user = null) => {
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
     </head>
     <body>
-      <nav class="navbar navbar-expand-lg sticky-top bg-primary" data-bs-theme="dark"> <!-- start the navbar -->
+      <nav class="navbar navbar-expand-lg sticky-top bg-primary"> <!-- start the navbar -->
         <div class="container">
           <a href="/" class="navbar-brand">${NAME} <i class="bi bi-alarm"></i></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -2703,7 +2703,7 @@ const page = (title, body, user = null) => {
                 </div>
                 <hr class="d-lg-none my-2 text-white-50">
               </li>
-              <li class="nav-item dropdown" data-bs-theme="light">
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="" id="profile-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
                   <span class="d-lg-none me-2">Bootstrap 
                   </span>
@@ -2748,7 +2748,7 @@ const page = (title, body, user = null) => {
                 <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
                 <hr class="d-lg-none my-2 text-white-50">
               </li>
-              <li class="nav-item dropdown" data-bs-theme="light">
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
                   <i class="bi bi-circle-half"></i>
                   <span class="d-lg-none ms-2">Toggle theme</span>
