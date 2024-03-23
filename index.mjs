@@ -2713,8 +2713,8 @@ const page = (title, body, user = null) => {
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
-                    <a href="" class="dropdown-item d-flex align-items-center justify-content-between" aria-current="true">
-                      <span class="ms-2">v5.3.x</span><i class="bi bi-check"></i>
+                    <a href="${user.actorId}" class="dropdown-item d-flex align-items-center justify-content-between" aria-current="true">
+                      <span class="ms-2">Profile</span><i class="bi bi-check"></i>
                     </a>
                   </li>
                   <li>
