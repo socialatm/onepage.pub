@@ -2748,7 +2748,7 @@ const page = (title, body, user = null) => {
                 <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
                 <hr class="d-lg-none my-2 text-white-50">
               </li>
-              <li class="nav-item dropdown" data-bs-theme="light">
+ <!--             <li class="nav-item dropdown" data-bs-theme="light">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
                   <i class="bi bi-circle-half"></i>
                   <span class="d-lg-none ms-2">Toggle theme</span>
@@ -2767,7 +2767,7 @@ const page = (title, body, user = null) => {
                   </button>
                 </li>
               </ul>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
