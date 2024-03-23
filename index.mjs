@@ -3029,8 +3029,8 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   const inboxHtml =`
   <!-- start inboxHtml here -->
   <div class="container-fluid">
-    <div class="row my-2">
-      <div class="col border border-primary rounded ms-2">  <!-- start left column -->
+    <div class="row m-2">
+      <div class="col border border-primary rounded">  <!-- start left column -->
         <div class="card my-3">
           <div class="card-body">
             <div class="fs-5">@RayPeaslee
@@ -3060,7 +3060,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         </div>
       </div>  <!-- end left column -->
       
-      <div class="col-m-6 border border-primary rounded m-2">  <!-- start center column -->
+      <div class="col-md-6 border border-primary rounded">  <!-- start center column -->
         <p>
           Logged in as: <a class="actor" href="${user.actorId}">${user.username}</a>
         </p>
@@ -3171,7 +3171,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         </div>
       </div>  <!-- end center column -->
 
-      <div class="col border border-primary rounded mx-2">  <!-- start right column -->
+      <div class="col border border-primary rounded">  <!-- start right column -->
         <div class="card mt-3">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
