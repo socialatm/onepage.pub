@@ -2753,7 +2753,8 @@ const page = (title, body, user = null) => {
                   <i class="bi bi-circle-half"></i>
                   <span class="d-lg-none ms-2">Toggle theme</span>
                 </a>
-              </li>  
+              </li>
+              <li> 
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                   <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
@@ -2766,6 +2767,7 @@ const page = (title, body, user = null) => {
                   </button>
                 </li>
               </ul>
+              </li>
             </ul>
           </div>
         </div>
