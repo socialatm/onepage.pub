@@ -2748,26 +2748,24 @@ const page = (title, body, user = null) => {
                 <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
                 <hr class="d-lg-none my-2 text-white-50">
               </li>
- <!--             <li class="nav-item dropdown" data-bs-theme="light">
-                <a class="nav-link dropdown-toggle d-flex align-items-center" href="" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+              <li class="nav-item dropdown" data-bs-theme="light">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
                   <i class="bi bi-circle-half"></i>
                   <span class="d-lg-none ms-2">Toggle theme</span>
                 </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                      <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                      <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+                    </button>
+                  </li>
+                </ul>
               </li>
-              <li> 
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                    <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
-                    <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
-                  </button>
-                </li>
-              </ul>
-              </li> -->
             </ul>
           </div>
         </div>
