@@ -2804,39 +2804,46 @@ app.get('/register', csrf, wrap(async (req, res) => {
     <form method="POST" action="/register">
       ${(!INVITE_CODE || INVITE_CODE.length === 0)
         ? ''
-        : `<div class="form-group row mb-3">
-        <label for="invitecode" class="col-sm-4 col-form-label text-right">Invite code</label>
-        <div class="col-sm-8">
-        <input type="text" name="invitecode" id="invitecode" class="form-control" placeholder="Invite code" />
+        : `
+        <div class="container-fluid">
+          <div class="row my-2">
+            <div class="col border border-primary rounded ms-2 py-3">
+              <div class="form-group row mb-3">
+                <label for="invitecode" class="col-sm-4 col-form-label text-right">Invite code</label>
+                <div class="col-sm-8">
+                  <input type="text" name="invitecode" id="invitecode" class="form-control" placeholder="Invite code" />
+                </div>
+              </div>`}
+              <div class="form-group row mb-3">
+                <label for="username" class="col-sm-4 col-form-label text-right">Username</label>
+                <div class="col-sm-8">
+                  <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+                </div>
+              </div>
+              <div class="form-group row mb-3">
+                <label for="password" class="col-sm-4 col-form-label text-right">Password</label>
+                <div class="col-sm-8">
+                  <input type="password" class="form-control" name="password" id="password">
+                </div>
+              </div>
+              <div class="form-group row mb-3">
+                <label for="confirmation" class="col-sm-4 col-form-label text-right">Confirm</label>
+                <div class="col-sm-8">
+                  <input type="password" class="form-control" name="confirmation" id="confirmation">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-4"></div> <!-- Empty space equivalent to label width -->
+                  <div class="col-sm-8">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <a href='/' class="btn btn-secondary">Cancel</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>`}
-      <div class="form-group row mb-3">
-        <label for="username" class="col-sm-4 col-form-label text-right">Username</label>
-        <div class="col-sm-8">
-        <input type="text" name="username" id="username" class="form-control" placeholder="Username">
-        </div>
-      </div>
-      <div class="form-group row mb-3">
-        <label for="password" class="col-sm-4 col-form-label text-right">Password</label>
-        <div class="col-sm-8">
-          <input type="password" class="form-control" name="password" id="password">
-        </div>
-      </div>
-      <div class="form-group row mb-3">
-        <label for="confirmation" class="col-sm-4 col-form-label text-right">Confirm</label>
-        <div class="col-sm-8">
-          <input type="password" class="form-control" name="confirmation" id="confirmation">
-        </div>
-      </div>
-      <div class="form-group row">
-       <div class="col-sm-4"></div> <!-- Empty space equivalent to label width -->
-       <div class="col-sm-8">
-        <button type="submit" class="btn btn-primary">Register</button>
-        <a href='/' class="btn btn-secondary">Cancel</a>
-        </div>
-      </div>
-    </form>
-  </div>`))
+  `))
 }))
 
 app.post('/register', csrf, wrap(async (req, res) => {
@@ -2883,15 +2890,21 @@ app.post('/register', csrf, wrap(async (req, res) => {
     res.type('html')
     res.status(200)
     res.end(page('Registered', `
-      <p>
-        Registered <a class="actor" href="${user.actorId}">${username}</a>
-      </p>
-      <p>
-        Personal access token is <span class="token">${token}</span>
-      </p>
-      <!-- new stuff goes here -->
-      <a href="/inbox" class="btn btn-primary">Inbox</a>
-      <!-- end new stuff -->
+      <div class="container-fluid">
+        <div class="row my-2">
+          <div class="col border border-primary rounded ms-2">
+            <p>
+              Registered <a class="actor" href="${user.actorId}">${username}</a>
+            </p>
+            <p>
+              Personal access token is <span class="token">${token}</span>
+            </p>
+            <p>
+              <a href="/inbox" class="btn btn-primary">Inbox</a>
+            </p>
+          </div>
+        </div>
+      </div>
       `, user))
   })
 }))
