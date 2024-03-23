@@ -2664,8 +2664,7 @@ const page = (title, body, user = null) => {
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
     </head>
     <body>
-      <!-- start the navbar -->
-      <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
+      <nav class="navbar navbar-expand-lg sticky-top bg-primary" data-bs-theme="dark"> <!-- start the navbar -->
         <div class="container">
           <a href="/" class="navbar-brand">${NAME} <i class="bi bi-alarm"></i></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -2770,19 +2769,8 @@ const page = (title, body, user = null) => {
             </ul>
           </div>
         </div>
-      </div>
-      <!-- end navbar -->
-
-      <div class="container-fluid">
-        <div class="container mt-5">
-          <div class="row my-2">
-            <div class="col mt-3">
-              ${body}
-            </div>
-          </div>
-        </div>
-      </div>
-
+      </nav>  <!-- end navbar -->
+        ${body}
       <!-- only show footer if user is not logged in -->
       ${(user)? `` : `
       <footer class="footer fixed-bottom mt-auto py-3 bg-body-tertiary">
