@@ -2708,7 +2708,7 @@ const page = (title, body, user = null) => {
                   <span class="d-lg-none me-2">Bootstrap 
                   </span>
                   <span>
-                    <img src="/img/ray.jpg" class="rounded-circle" alt="profile picture" style="height: 1.5rem">
+                    <img src="/img/ray.jpg" class="rounded-circle" alt="${user.username}" style="height: 1.5rem">
                   </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -3089,12 +3089,12 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           <div class="card">
             <div class="card-body">
               <div class="d-flex mb-3">
-                <a href="">
+                <a href="${user.actorId}">
                   <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 2.5rem">
                 </a>
               <div>
-              <a href="/img/ray.jpg" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
-                Ray Peaslee
+              <a href="${user.actorId}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
+                ${user.username}
               </a>
               <p class="text-muted d-inline">
                 10h ago
@@ -3138,7 +3138,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
           </div>
             <!-- start comment form -->
           <div class="d-flex mb-3">
-            <a href="">
+            <a href="${user.actorId}">
               <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
             </a>
             <div class="form-outline w-100">
