@@ -3060,10 +3060,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
         </div>
       </div>  <!-- end left column -->
       
-      <div class="col-md-6 ">  <!-- start center column -->
-        <p>
-          Logged in as: <a class="actor" href="${user.actorId}">${user.username}</a>
-        </p>
+      <div class="col-md-6 mt-3">  <!-- start center column -->
         <!-- start inbox -->
         <div>
           <!-- start post form-->
