@@ -7,7 +7,7 @@
     "bootstrap-icons": "^1.11.3",
     "bootswatch": "^5.3.3",
     "config": "^3.3.11",
-    "express": "^4.18.3",
+    "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
     "express-jwt": "^8.4.1",
     "express-rate-limit": "^7.2.0",
