@@ -2665,7 +2665,7 @@ const page = (title, body, user = null) => {
     </head>
     <body>
       <nav class="navbar navbar-expand-lg sticky-top bg-primary"> <!-- start the navbar -->
-        <div class="container">
+        <div class="container-fluid">
           <a href="/" class="navbar-brand">${NAME} <i class="bi bi-alarm"></i></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
