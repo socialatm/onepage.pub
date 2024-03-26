@@ -2664,7 +2664,7 @@ const page = (title, body, user = null) => {
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
     </head>
     <body>
-      <nav class="navbar navbar-expand-lg sticky-top bg-primary"> <!-- start the navbar -->
+      <nav class="navbar navbar-expand-md sticky-top bg-primary"> <!-- start the navbar -->
         <div class="container-fluid">
           <a href="/" class="navbar-brand">${NAME} <i class="bi bi-alarm"></i></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -2688,27 +2688,27 @@ const page = (title, body, user = null) => {
             </ul>
             <ul class="navbar-nav ms-md-auto">
               <li class="nav-item">
-                <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/socialatm/onepage.pub"><i class="bi bi-github"></i><span class="d-lg-none ms-2">GitHub</span></a>
+                <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/socialatm/onepage.pub"><i class="bi bi-github"></i><span class="d-md-none ms-2">GitHub</span></a>
               </li>
               <li class="nav-item">
-                <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i><span class="d-lg-none ms-2">Twitter</span></a>
+                <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="bi bi-twitter"></i><span class="d-md-none ms-2">Twitter</span></a>
               </li>
               <!-- start req.isAuthenticated() here -->
               ${(user)? `
               <li class="nav-item">
-                <a target="_blank" rel="noopener" class="nav-link" href=""><i class="bi bi-bell-fill"></i><span class="d-lg-none ms-2">Notifications</span></a>
+                <a target="_blank" rel="noopener" class="nav-link" href=""><i class="bi bi-bell-fill"></i><span class="d-md-none ms-2">Notifications</span></a>
               </li>
-              <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white">
+              <li class="nav-item py-2 py-md-1 col-12 col-md-auto">
+                <div class="vr d-none d-md-flex h-100 mx-md-2">
                 </div>
-                <hr class="d-lg-none my-2 text-white-50">
+                <hr class="d-md-none my-2">
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="" id="profile-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
-                  <span class="d-lg-none me-2">Bootstrap 
-                  </span>
                   <span>
                     <img src="/img/ray.jpg" class="rounded-circle" alt="${user.username}" style="height: 1.5rem">
+                  </span>
+                  <span class="d-md-none ms-2">Profile Menu 
                   </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -2744,14 +2744,14 @@ const page = (title, body, user = null) => {
               </li>
               ` : ``}
               <!-- end req.isAuthenticated()?s here -->
-              <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
-                <hr class="d-lg-none my-2 text-white-50">
+              <li class="nav-item py-2 py-md-1 col-12 col-md-auto">
+                <div class="vr d-none d-md-flex h-100 mx-md-2"></div>
+                <hr class="d-md-none my-2">
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="https://bootswatch.com/united/#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
                   <i class="bi bi-circle-half"></i>
-                  <span class="d-lg-none ms-2">Toggle theme</span>
+                  <span class="d-md-none ms-2">Toggle theme</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
