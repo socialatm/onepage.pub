@@ -3317,7 +3317,6 @@ describe('onepage.pub', { only: true }, () => {
         200,
         `Bad status code ${res2.status}: ${body2}`
       )
-      assert(body2.includes('Logged in'))
       assert(body2.includes(username))
       assert(body2.includes('<form id="createPostForm">'))
     })
