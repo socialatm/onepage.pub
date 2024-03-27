@@ -15,8 +15,8 @@ router.get('/',  passport.authenticate('session'), (req, res) => {
     res.redirect('/login')
   }
 
-  const actorHtml = `<div>Profile Page</div>`
-  res.send(page('Actor', actorHtml, user));
+  const settingsHtml = `<div>Settings Page</div>`
+  res.send(page('Settings', settingsHtml, user));
 });
 
 export default router

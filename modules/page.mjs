@@ -10,7 +10,7 @@ const page = (title, body, user = null) => {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>${title} - ${NAME}</title>
-        <script src="theme/color-modes.js"></script>
+        <script src="js/color-modes.js"></script>
         <script src="axios/axios.min.js"></script>
         <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
         <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
@@ -70,7 +70,7 @@ const page = (title, body, user = null) => {
                       </a>
                     </li>
                     <li>
-                      <a href="${ORIGIN}/actor/settings" class="dropdown-item d-flex align-items-center justify-content-between">
+                      <a href="${ORIGIN}/settings" class="dropdown-item d-flex align-items-center justify-content-between">
                         <span class="ms-2">Settings</span>
                       </a>
                     </li>

@@ -28,6 +28,7 @@ import axios from 'axios'
 import actorRoutes from './routes/actor.mjs'
 import helpRoutes from './routes/help.mjs'
 import feedbackRoutes from './routes/feedback.mjs'
+import settingsRoutes from './routes/settings.mjs'
 
 // Configuration
 
@@ -2433,6 +2434,7 @@ app.use(session({
 app.use('/actor', actorRoutes)
 app.use('/help', helpRoutes)
 app.use('/feedback', feedbackRoutes)
+app.use('/settings', settingsRoutes)
 
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
@@ -2633,9 +2635,9 @@ passport.deserializeUser(function (username, done) {
   })()
 })
 
-app.use('/img', express.static('assets/img/'))
-app.use('/theme', express.static('assets/js/'))
-app.use('/icons', express.static('node_modules/bootstrap-icons/font/')) 
+app.use('/img/', express.static('assets/img/'))
+app.use('/js/', express.static('assets/js/'))
+app.use('/icons/', express.static('node_modules/bootstrap-icons/font/')) 
 app.use('/bootswatch/', express.static('node_modules/bootswatch/dist/'))
 app.use('/bootstrap/', express.static('node_modules/bootstrap/dist/'))
 app.use('/popper/', express.static('node_modules/@popperjs/core/dist/umd'))
@@ -2667,7 +2669,7 @@ const page = (title, body, user = null) => {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>${title} - ${NAME}</title>
-      <script src="theme/color-modes.js"></script>
+      <script src="js/color-modes.js"></script>
       <script src="axios/axios.min.js"></script>
       <link rel="stylesheet" href="/bootswatch/united/bootstrap.min.css">
       <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
@@ -2727,7 +2729,7 @@ const page = (title, body, user = null) => {
                     </a>
                   </li>
                   <li>
-                    <a href="${ORIGIN}/actor/settings" class="dropdown-item d-flex align-items-center justify-content-between">
+                    <a href="${ORIGIN}/settings" class="dropdown-item d-flex align-items-center justify-content-between">
                       <span class="ms-2">Settings</span>
                     </a>
                   </li>
@@ -3199,7 +3201,7 @@ app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
       </div>  <!-- end right column -->
     </div>
   </div>
-  <script src="theme/create.note.js"></script>
+  <script src="js/create.note.js"></script>
   `;
   res.end(page('Inbox', inboxHtml, user))
 }))
