@@ -2638,7 +2638,7 @@ passport.deserializeUser(function (username, done) {
 })
 
 app.use('/img/', express.static('assets/img/'))
-app.use('/js/', express.static('assets/js/'))
+app.use('/js/', express.static(path.join(OPP_ROOT, 'assets/js/')))
 app.use('/icons/', express.static('node_modules/bootstrap-icons/font/')) 
 app.use('/bootswatch/', express.static('node_modules/bootswatch/dist/'))
 app.use('/bootstrap/', express.static('node_modules/bootstrap/dist/'))
