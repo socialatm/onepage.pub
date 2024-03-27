@@ -35,7 +35,7 @@ const page = (title, body, user = null) => {
                 </li>
                 `}  <!-- end show this if user logged in -->
                 <li class="nav-item">
-                  <a class="nav-link" href="/help/">Help</a>
+                  <a class="nav-link" href="/help">Help</a>
                 </li>
               </ul>
               <ul class="navbar-nav ms-md-auto">
