@@ -2406,11 +2406,6 @@ pq.add(async () => {})
 // Initialize Express
 const app = express()
 
-// Initialize router
-app.use('/actor', actorRoutes)
-app.use('/help', helpRoutes)
-app.use('/feedback', feedbackRoutes)
-
 // Initialize Multer
 const upload = multer({ storage: multer.memoryStorage() })
 
@@ -2433,6 +2428,11 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+
+// Initialize router - must come after session is started
+app.use('/actor', actorRoutes)
+app.use('/help', helpRoutes)
+app.use('/feedback', feedbackRoutes)
 
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
