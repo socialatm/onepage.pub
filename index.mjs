@@ -2719,17 +2719,17 @@ const page = (title, body, user = null) => {
                   </li>
                   <li>
                     <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
-                      <span class="ms-2">v4.6.2</span>
+                      <span class="ms-2">Settings</span>
                     </a>
                   </li>
                   <li>
                     <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
-                      <span class="ms-2">v3.4.1</span>
+                      <span class="ms-2">Help</span>
                     </a>
                   </li>
                   <li>
                     <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
-                      <span class="ms-2">v2.3.2</span>
+                      <span class="ms-2">Feedback</span>
                     </a>
                   </li>
                   <li>
@@ -2800,7 +2800,7 @@ app.get('/register', csrf, wrap(async (req, res) => {
   res.type('html')
   res.status(200)
   res.end(page('Register', `
-    <div class="container mx-auto">
+    <div class="container mx-auto position-absolute top-50 start-50 translate-middle">
     <form method="POST" action="/register">
       ${(!INVITE_CODE || INVITE_CODE.length === 0)
         ? ''
@@ -2913,7 +2913,7 @@ app.get('/login', csrf, wrap(async (req, res) => {
   res.type('html')
   res.status(200)
   res.end(page('Log in', `
-    <div class="container-fluid">
+    <div class="container-fluid position-absolute top-50 start-50 translate-middle">
       <div class="row my-2">
         <div class="col border border-primary rounded mx-2 p-3">  
           <form method="POST" action="/login">
