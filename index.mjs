@@ -45,6 +45,7 @@ const ORIGIN = process.env.OPP_ORIGIN || ((PORT === 443) ? `https://${HOSTNAME}`
 const NAME = process.env.OPP_NAME || (new URL(ORIGIN)).hostname
 const UPLOAD_DIR = process.env.OPP_UPLOAD_DIR || path.join(tmpdir(), nanoid())
 const RATE_LIMIT = process.env.OPP_RATE_LIMIT
+const OPP_ROOT = process.cwd()
 
 // Ensure the Upload directory exists
 if (!fs.existsSync(UPLOAD_DIR)) {
