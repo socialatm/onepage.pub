@@ -15,7 +15,7 @@ router.get('/',  passport.authenticate('session'), (req, res) => {
     res.redirect('/login')
   }
 
-  const actorHtml = `<div>Actor Page</div>`
+  const actorHtml = `<div>Profile Page</div>`
   res.send(page('Actor', actorHtml, user));
 });
 
