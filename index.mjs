@@ -26,6 +26,8 @@ import { isSSRFSafeURL } from 'ssrfcheck'
 import axios from 'axios'
 
 import actorRoutes from './routes/actor.mjs'
+import helpRoutes from './routes/help.mjs'
+import feedbackRoutes from './routes/feedback.mjs'
 
 // Configuration
 
@@ -2405,8 +2407,9 @@ pq.add(async () => {})
 const app = express()
 
 // Initialize router
-app.use('/actor', actorRoutes);
-
+app.use('/actor', actorRoutes)
+app.use('/help', helpRoutes)
+app.use('/feedback', feedbackRoutes)
 
 // Initialize Multer
 const upload = multer({ storage: multer.memoryStorage() })
@@ -2729,12 +2732,12 @@ const page = (title, body, user = null) => {
                     </a>
                   </li>
                   <li>
-                    <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
+                    <a href="${ORIGIN}/help" class="dropdown-item d-flex align-items-center justify-content-between">
                       <span class="ms-2">Help</span>
                     </a>
                   </li>
                   <li>
-                    <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
+                    <a href="${ORIGIN}/feedback" class="dropdown-item d-flex align-items-center justify-content-between">
                       <span class="ms-2">Feedback</span>
                     </a>
                   </li>
