@@ -25,6 +25,8 @@ import { tmpdir } from 'os'
 import { isSSRFSafeURL } from 'ssrfcheck'
 import axios from 'axios'
 
+import actorRoutes from './routes/actor.mjs'
+
 // Configuration
 
 const DATABASE = process.env.OPP_DATABASE
@@ -2402,6 +2404,10 @@ pq.add(async () => {})
 // Initialize Express
 const app = express()
 
+// Initialize router
+app.use('/actor', actorRoutes);
+
+
 // Initialize Multer
 const upload = multer({ storage: multer.memoryStorage() })
 
@@ -2713,12 +2719,12 @@ const page = (title, body, user = null) => {
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
-                    <a href="${user.actorId}" class="dropdown-item d-flex align-items-center justify-content-between" aria-current="true">
+                    <a href="${ORIGIN}/actor" class="dropdown-item d-flex align-items-center justify-content-between" aria-current="true">
                       <span class="ms-2">Profile</span><i class="bi bi-check"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="" class="dropdown-item d-flex align-items-center justify-content-between">
+                    <a href="${ORIGIN}/actor/settings" class="dropdown-item d-flex align-items-center justify-content-between">
                       <span class="ms-2">Settings</span>
                     </a>
                   </li>
