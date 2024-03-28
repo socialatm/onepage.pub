@@ -1,7 +1,9 @@
 import { makeUrl } from './utilities.mjs'
 import { nanoid } from 'nanoid'
+import { toArray, toId } from './utilities.mjs'
 
 const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
+const isString = value => typeof value === 'string' || value instanceof String
 
 class ActivityObject {
   #id

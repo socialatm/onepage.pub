@@ -2,6 +2,7 @@ import Database from './database.mjs'
 import logger from './logger.mjs'
 import ActivityObject from './activity-object.mjs'
 import Collection from './collection.mjs'
+import { toId } from './utilities.mjs'
 
 const DATABASE = process.env.OPP_DATABASE
 const db = new Database(DATABASE)

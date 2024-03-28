@@ -1,3 +1,5 @@
+import ActivityObject from './activity-object.mjs'
+
 const HOSTNAME = process.env.OPP_HOSTNAME
 const PORT = process.env.OPP_PORT
 const ORIGIN = process.env.OPP_ORIGIN || ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
@@ -9,7 +11,37 @@ function makeUrl (relative) {
     return `${ORIGIN}/${relative}`
   }
 
+  function toArray (value) {
+    if (typeof value === 'undefined') {
+      return []
+    } else if (value === null) {
+      return []
+    } else if (Array.isArray(value)) {
+      return value
+    } else {
+      return [value]
+    }
+  }
+
+  async function toId (value) {
+    if (typeof value === 'undefined') {
+      return null
+    } else if (value === null) {
+      return null
+    } else if (value instanceof ActivityObject) {
+      return await value.id()
+    } else if (typeof value === 'string') {
+      return value
+    } else if (typeof value === 'object' && 'id' in value) {
+      return value.id
+    } else {
+      throw new Error(`Can't convert ${JSON.stringify(value)} to id`)
+    }
+  }
+
   export {
-    makeUrl
+    makeUrl,
+    toArray,
+    toId
   }
   

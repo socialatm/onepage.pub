@@ -1,4 +1,7 @@
 import ActivityObject from './activity-object.mjs'
+import { toId } from './utilities.mjs'
+
+const isString = value => typeof value === 'string' || value instanceof String
 
 class Collection extends ActivityObject {
     static async get (id, props = null, actor = null) {
