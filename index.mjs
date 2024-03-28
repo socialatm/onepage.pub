@@ -24,6 +24,7 @@ import { isSSRFSafeURL } from 'ssrfcheck'
 import axios from 'axios'
 import page from './modules/page.mjs'
 import logger from './modules/logger.mjs'
+import Server from './modules/server.mjs'
 
 import actorRoutes from './routes/actor.mjs'
 import helpRoutes from './routes/help.mjs'
@@ -2445,7 +2446,7 @@ class JWTTypeError extends Error {
     this.name = 'JWTTypeError'
   }
 }
-
+/*
 class Server {
   #origin
   #publicKey
@@ -2537,6 +2538,7 @@ class Server {
     }
   }
 }
+*/
 
 // Check token type
 const tokenTypeCheck = wrap(async (req, res, next) => {

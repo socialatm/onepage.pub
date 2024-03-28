@@ -8,11 +8,22 @@ import { nanoid } from 'nanoid'
 import { promisify } from 'util'
 import jwt from 'jsonwebtoken'
 import createError from 'http-errors'
+import Server from '../modules/server.mjs'
+import passport from 'passport'
+import LocalStrategy from 'passport-local'
 
 const INVITE_CODE = process.env.OPP_INVITE_CODE
 const jwtsign = promisify(jwt.sign)
 const router = Router()
 router.use(limiter)
+router.use(passport.initialize()) // Initialize Passport
+router.use(passport.session())
+
+router.use(wrap(async (req, res, next) => {
+  const server = await Server.get()
+  req.jwtKeyData = server.privateKey()
+  return next()
+}))
 
 router.get('/', wrap(async (req, res) => {
   res.type('html')
@@ -100,7 +111,7 @@ router.post('/', wrap(async (req, res) => {
     req.jwtKeyData,
     { algorithm: 'RS256' }
   )
-
+  
   req.login(user, (err) => {
     if (err) {
       throw new createError.InternalServerError('Failed to login')
