@@ -1,7 +1,10 @@
 import { Router } from 'express'
 import page from '../modules/page.mjs'
 import passport from 'passport'
+import limiter from '../modules/rate-limit.mjs'
+
 const router = Router()
+router.use(limiter)
 
 router.get('/',  passport.authenticate('session'), (req, res) => {
   if (!req.isAuthenticated()) {
