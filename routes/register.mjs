@@ -2,11 +2,13 @@ import { Router } from 'express'
 import page from '../modules/page.mjs'
 import limiter from '../modules/rate-limit.mjs'
 import wrap from 'express-async-handler'
+import User from '../modules/user.mjs'
 
+const INVITE_CODE = process.env.OPP_INVITE_CODE
 const router = Router()
 router.use(limiter)
 
-router.get('/register', wrap(async (req, res) => {
+router.get('/', wrap(async (req, res) => {
   res.type('html')
   res.status(200)
   res.end(page('Register', `
@@ -56,7 +58,7 @@ router.get('/register', wrap(async (req, res) => {
   `))
 }))
 
-router.post('/register', wrap(async (req, res) => {
+router.post('/', wrap(async (req, res) => {
   if (req.get('Content-Type') !== 'application/x-www-form-urlencoded') {
     throw new createError.BadRequest('Invalid Content-Type')
   }
