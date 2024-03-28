@@ -1,9 +1,12 @@
 import { makeUrl } from './utilities.mjs'
 import { nanoid } from 'nanoid'
 import { toArray, toId } from './utilities.mjs'
+import Database from './database.mjs'
 
 const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
 const isString = value => typeof value === 'string' || value instanceof String
+const DATABASE = process.env.OPP_DATABASE
+const db = new Database(DATABASE)
 
 class ActivityObject {
   #id
