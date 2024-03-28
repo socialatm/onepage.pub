@@ -5,8 +5,11 @@ import wrap from 'express-async-handler'
 import User from '../modules/user.mjs'
 import { makeUrl } from '../modules/utilities.mjs'
 import { nanoid } from 'nanoid'
+import { promisify } from 'util'
+import jwt from 'jsonwebtoken'
 
 const INVITE_CODE = process.env.OPP_INVITE_CODE
+const jwtsign = promisify(jwt.sign)
 const router = Router()
 router.use(limiter)
 
