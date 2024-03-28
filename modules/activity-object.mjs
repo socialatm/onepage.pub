@@ -1,3 +1,6 @@
+import { makeUrl } from './utilities.mjs'
+import { nanoid } from 'nanoid'
+
 class ActivityObject {
   #id
   #json
