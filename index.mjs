@@ -1,5 +1,5 @@
 import express from 'express'
-import rateLimit from 'express-rate-limit'
+// import rateLimit from 'express-rate-limit'
 import sqlite3 from 'sqlite3'
 import passport from 'passport'
 import LocalStrategy from 'passport-local'
@@ -30,6 +30,7 @@ import actorRoutes from './routes/actor.mjs'
 import helpRoutes from './routes/help.mjs'
 import feedbackRoutes from './routes/feedback.mjs'
 import settingsRoutes from './routes/settings.mjs'
+import limiter from './modules/rate-limit.mjs'
 
 // Configuration
 
@@ -44,7 +45,7 @@ const BLOCK_LIST = process.env.OPP_BLOCK_LIST
 const ORIGIN = process.env.OPP_ORIGIN || ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
 const NAME = process.env.OPP_NAME || (new URL(ORIGIN)).hostname
 const UPLOAD_DIR = process.env.OPP_UPLOAD_DIR || path.join(tmpdir(), nanoid())
-const RATE_LIMIT = process.env.OPP_RATE_LIMIT
+// const RATE_LIMIT = process.env.OPP_RATE_LIMIT
 const OPP_ROOT = process.cwd()
 
 // Ensure the Upload directory exists
@@ -2426,7 +2427,7 @@ app.use('/actor', actorRoutes)
 app.use('/help', helpRoutes)
 app.use('/feedback', feedbackRoutes)
 app.use('/settings', settingsRoutes)
-
+/*
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
 	limit: RATE_LIMIT, // Limit each IP to 900 requests per `window` (here, per 15 minutes). Equals 1 per second.
@@ -2434,6 +2435,7 @@ const limiter = rateLimit({
 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
 	// store: ... , // Use an external store for consistency across multiple server instances.
 })
+*/
 // Apply the rate limiting middleware to all requests.
 app.use(limiter)
 
