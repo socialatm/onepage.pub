@@ -7,6 +7,7 @@ import { makeUrl } from '../modules/utilities.mjs'
 import { nanoid } from 'nanoid'
 import { promisify } from 'util'
 import jwt from 'jsonwebtoken'
+import createError from 'http-errors'
 
 const INVITE_CODE = process.env.OPP_INVITE_CODE
 const jwtsign = promisify(jwt.sign)

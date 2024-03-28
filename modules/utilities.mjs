@@ -59,10 +59,28 @@ function makeUrl (relative) {
     )
   }
 
+  function toSpki (pem) {
+    if (pem.startsWith('-----BEGIN RSA PUBLIC KEY-----')) {
+      const key = crypto.createPublicKey(pem)
+      pem = key.export({ type: 'spki', format: 'pem' })
+    }
+    return pem
+  }
+  
+  function toPkcs8 (pem) {
+    if (pem.startsWith('-----BEGIN RSA PRIVATE KEY-----')) {
+      const key = crypto.createPrivateKey(pem)
+      pem = key.export({ type: 'pkcs8', format: 'pem' })
+    }
+    return pem
+  }
+
   export {
     makeUrl,
     toArray,
     toId,
-    newKeyPair
+    newKeyPair,
+    toSpki,
+    toPkcs8,
   }
   
