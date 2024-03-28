@@ -2393,7 +2393,7 @@ const logger = winston.createLogger({
   transports: [
     new winston.transports.Console()
   ]
-})
+})  // end logger
 
 // verbose output
 sqlite3.verbose()
