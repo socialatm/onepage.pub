@@ -1,6 +1,8 @@
 import { makeUrl } from './utilities.mjs'
 import { nanoid } from 'nanoid'
 
+const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
+
 class ActivityObject {
   #id
   #json

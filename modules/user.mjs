@@ -1,9 +1,11 @@
 import Database from './database.mjs'
 import logger from './logger.mjs'
 import ActivityObject from './activity-object.mjs'
+import Collection from './collection.mjs'
 
 const DATABASE = process.env.OPP_DATABASE
 const db = new Database(DATABASE)
+const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
 
 class User {
     constructor (username, password = null) {
