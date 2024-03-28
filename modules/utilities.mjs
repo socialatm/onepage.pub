@@ -39,9 +39,27 @@ function makeUrl (relative) {
     }
   }
 
+  const newKeyPair = async () => {
+    return await generateKeyPair(
+      'rsa',
+      {
+        modulusLength: 2048,
+        privateKeyEncoding: {
+          type: 'pkcs8',
+          format: 'pem'
+        },
+        publicKeyEncoding: {
+          type: 'spki',
+          format: 'pem'
+        }
+      }
+    )
+  }
+
   export {
     makeUrl,
     toArray,
-    toId
+    toId,
+    newKeyPair
   }
   
