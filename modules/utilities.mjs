@@ -1,8 +1,11 @@
 import ActivityObject from './activity-object.mjs'
+import { promisify } from 'util'
+import crypto from 'crypto'
 
 const HOSTNAME = process.env.OPP_HOSTNAME
 const PORT = process.env.OPP_PORT
 const ORIGIN = process.env.OPP_ORIGIN || ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
+const generateKeyPair = promisify(crypto.generateKeyPair)
 
 function makeUrl (relative) {
     if (relative.length > 0 && relative[0] === '/') {
