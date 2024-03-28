@@ -15,7 +15,6 @@ import { expressjwt } from 'express-jwt'
 import jwt from 'jsonwebtoken'
 import { promisify } from 'util'
 import crypto from 'crypto'
-import winston from 'winston'
 import session from 'express-session'
 import querystring from 'node:querystring'
 import multer from 'multer'
@@ -25,6 +24,7 @@ import { tmpdir } from 'os'
 import { isSSRFSafeURL } from 'ssrfcheck'
 import axios from 'axios'
 import page from './modules/page.mjs'
+import logger from './modules/logger.mjs'
 
 import actorRoutes from './routes/actor.mjs'
 import helpRoutes from './routes/help.mjs'
@@ -38,7 +38,6 @@ const HOSTNAME = process.env.OPP_HOSTNAME
 const PORT = process.env.OPP_PORT
 const KEY = process.env.OPP_KEY
 const CERT = process.env.OPP_CERT
-const LOG_LEVEL = process.env.OPP_LOG_LEVEL
 const SESSION_SECRET = process.env.OPP_SESSION_SECRET
 const INVITE_CODE = process.env.OPP_INVITE_CODE
 const BLOCK_LIST = process.env.OPP_BLOCK_LIST
@@ -2384,16 +2383,6 @@ class Upload {
 }
 
 // Server
-
-const logger = winston.createLogger({
-  level: LOG_LEVEL,
-  format: winston.format.printf((info) => {
-    return `${(new Date()).toISOString()} ${info.level}: ${info.message}`
-  }),
-  transports: [
-    new winston.transports.Console()
-  ]
-})  // end logger
 
 // verbose output
 sqlite3.verbose()
