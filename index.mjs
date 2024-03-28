@@ -29,6 +29,7 @@ import actorRoutes from './routes/actor.mjs'
 import helpRoutes from './routes/help.mjs'
 import feedbackRoutes from './routes/feedback.mjs'
 import settingsRoutes from './routes/settings.mjs'
+import registerRoutes from './routes/register.mjs'
 import limiter from './modules/rate-limit.mjs'
 
 // Configuration
@@ -2424,7 +2425,8 @@ app.use(session({
 app.use('/actor', actorRoutes)
 app.use('/help', helpRoutes)
 app.use('/feedback', feedbackRoutes)
-app.use('/settings', settingsRoutes)
+app.use('/settings', settingsRoutes);
+app.use('/register', registerRoutes);
 
 // Apply the rate limiting middleware to all requests.
 app.use(limiter)
@@ -2651,6 +2653,7 @@ app.get('/queue', wrap(async (req, res) => {
   res.json(pq.count)
 }))
 
+/*
 app.get('/register', csrf, wrap(async (req, res) => {
   res.type('html')
   res.status(200)
@@ -2763,6 +2766,7 @@ app.post('/register', csrf, wrap(async (req, res) => {
       `, user))
   })
 }))
+*/
 
 app.get('/login', csrf, wrap(async (req, res) => {
   res.type('html')
