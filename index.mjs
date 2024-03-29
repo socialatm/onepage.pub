@@ -25,6 +25,7 @@ import axios from 'axios'
 import page from './modules/page.mjs'
 import logger from './modules/logger.mjs'
 import Server from './modules/server.mjs'
+import Database from './modules/database.mjs'
 
 import actorRoutes from './routes/actor.mjs'
 import helpRoutes from './routes/help.mjs'
@@ -183,7 +184,7 @@ function digestBody (body) {
 }
 
 // Classes
-
+/*
 class Database {
   #path = null
   #db = null
@@ -264,6 +265,7 @@ class Database {
     }
   }
 }
+*/
 
 class HTTPSignature {
   constructor (keyId, privateKey = null, method = null, url = null, date = null, digest = null) {
@@ -2562,6 +2564,7 @@ app.get('/queue', wrap(async (req, res) => {
   res.json(pq.count)
 }))
 
+/*
 app.get('/register', csrf, wrap(async (req, res) => {
   res.type('html')
   res.status(200)

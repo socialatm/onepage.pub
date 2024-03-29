@@ -1,5 +1,6 @@
 import sqlite3 from 'sqlite3'
 import logger from './logger.mjs'
+import Server from './server.mjs'
 
 class Database {
     #path = null
