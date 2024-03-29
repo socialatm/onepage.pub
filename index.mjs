@@ -42,10 +42,8 @@ const PORT = process.env.OPP_PORT
 const KEY = process.env.OPP_KEY
 const CERT = process.env.OPP_CERT
 const SESSION_SECRET = process.env.OPP_SESSION_SECRET
-const INVITE_CODE = process.env.OPP_INVITE_CODE
 const BLOCK_LIST = process.env.OPP_BLOCK_LIST
 const ORIGIN = process.env.OPP_ORIGIN || ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
-const NAME = process.env.OPP_NAME || (new URL(ORIGIN)).hostname
 const UPLOAD_DIR = process.env.OPP_UPLOAD_DIR || path.join(tmpdir(), nanoid())
 const OPP_ROOT = process.cwd()
 
