@@ -1,4 +1,4 @@
-import { makeUrl, db } from '../index.mjs'
+import { makeUrl, db, newKeyPair } from '../index.mjs'
 
 class Server {
     #origin
