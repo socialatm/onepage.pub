@@ -1,4 +1,3 @@
-import Database from './database.mjs'
 import logger from './logger.mjs'
 import ActivityObject from './activity-object.mjs'
 import Collection from './collection.mjs'
