@@ -1,5 +1,5 @@
 import ActivityObject from './activity-object.mjs'
-import { toId } from './utilities.mjs'
+import { toId } from '../index.mjs'
 
 const isString = value => typeof value === 'string' || value instanceof String
 

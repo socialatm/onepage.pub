@@ -115,7 +115,7 @@ export async function toId (value) {
   }
 }
 
-function toArray (value) {
+export function toArray (value) {
   if (typeof value === 'undefined') {
     return []
   } else if (value === null) {
@@ -159,7 +159,7 @@ function domainIsBlocked (url) {
   return BLOCKED_DOMAINS.includes(hostname)
 }
 
-function toSpki (pem) {
+export function toSpki (pem) {
   if (pem.startsWith('-----BEGIN RSA PUBLIC KEY-----')) {
     const key = crypto.createPublicKey(pem)
     pem = key.export({ type: 'spki', format: 'pem' })
@@ -167,7 +167,7 @@ function toSpki (pem) {
   return pem
 }
 
-function toPkcs8 (pem) {
+export function toPkcs8 (pem) {
   if (pem.startsWith('-----BEGIN RSA PRIVATE KEY-----')) {
     const key = crypto.createPrivateKey(pem)
     pem = key.export({ type: 'pkcs8', format: 'pem' })
@@ -2374,7 +2374,7 @@ const tokenTypeCheck = wrap(async (req, res, next) => {
   }
 })
 
-const newKeyPair = async () => {
+export const newKeyPair = async () => {
   return await generateKeyPair(
     'rsa',
     {

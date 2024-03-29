@@ -1,9 +1,8 @@
 import logger from './logger.mjs'
 import ActivityObject from './activity-object.mjs'
 import Collection from './collection.mjs'
-import { toId, newKeyPair, toSpki, toPkcs8 } from './utilities.mjs'
 import bcrypt from 'bcrypt'
-import {db} from '../index.mjs'
+import {db, toId, newKeyPair, toSpki, toPkcs8} from '../index.mjs'
 
 const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
 

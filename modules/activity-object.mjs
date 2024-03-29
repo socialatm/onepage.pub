@@ -1,7 +1,5 @@
-import { makeUrl } from './utilities.mjs'
 import { nanoid } from 'nanoid'
-import { toArray, toId } from './utilities.mjs'
-import {db} from '../index.mjs'
+import {db, toArray, toId, makeUrl } from '../index.mjs'
 
 const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
 const isString = value => typeof value === 'string' || value instanceof String
