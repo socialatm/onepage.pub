@@ -10,7 +10,6 @@ import jwt from 'jsonwebtoken'
 import createError from 'http-errors'
 import Server from '../modules/server.mjs'
 import passport from 'passport'
-import LocalStrategy from 'passport-local'
 
 const INVITE_CODE = process.env.OPP_INVITE_CODE
 const jwtsign = promisify(jwt.sign)
