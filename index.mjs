@@ -2655,7 +2655,6 @@ app.get('/queue', wrap(async (req, res) => {
   res.json(pq.count)
 }))
 
-/*
 app.get('/register', csrf, wrap(async (req, res) => {
   res.type('html')
   res.status(200)
