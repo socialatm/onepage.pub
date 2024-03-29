@@ -1,5 +1,12 @@
 import { makeUrl, db, newKeyPair } from '../index.mjs'
 
+const AS_CONTEXT = 'https://www.w3.org/ns/activitystreams'
+const SEC_CONTEXT = 'https://w3id.org/security'
+const BLOCKED_CONTEXT = 'https://purl.archive.org/socialweb/blocked'
+const PENDING_CONTEXT = 'https://purl.archive.org/socialweb/pending'
+const WEBFINGER_CONTEXT = 'https://purl.archive.org/socialweb/webfinger'
+const CONTEXT = [AS_CONTEXT, SEC_CONTEXT, BLOCKED_CONTEXT, PENDING_CONTEXT, WEBFINGER_CONTEXT]
+
 class Server {
     #origin
     #publicKey
