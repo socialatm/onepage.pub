@@ -325,7 +325,7 @@ class PromiseQueue {
   }
 }
 
-class ActivityObject {
+export class ActivityObject {
   #id
   #json
   #owner
@@ -1584,7 +1584,7 @@ class Activity extends ActivityObject {
   }
 }
 
-class Collection extends ActivityObject {
+ export class Collection extends ActivityObject {
   static async get (id, props = null, actor = null) {
     const ao = await super.get(id, props, actor)
     if (ao) {
