@@ -99,7 +99,7 @@ const base64URLEncode = (str) =>
     .replace(/\//g, '_')
     .replace(/=/g, '')
 
-async function toId (value) {
+export async function toId (value) {
   if (typeof value === 'undefined') {
     return null
   } else if (value === null) {
@@ -127,7 +127,7 @@ function toArray (value) {
   }
 }
 
-function makeUrl (relative) {
+export function makeUrl (relative) {
   if (relative.length > 0 && relative[0] === '/') {
     relative = relative.slice(1)
   }

@@ -1,5 +1,4 @@
-import { makeUrl } from './utilities.mjs'
-import {db} from '../index.mjs'
+import { makeUrl, db } from '../index.mjs'
 
 class Server {
     #origin
