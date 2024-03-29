@@ -1,4 +1,3 @@
-//import Database from './database.mjs'
 import { makeUrl } from './utilities.mjs'
 import {db} from '../index.mjs'
 
