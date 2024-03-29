@@ -2309,7 +2309,7 @@ class Upload {
 sqlite3.verbose()
 
 // Initialize SQLite
-const db = new Database(DATABASE)
+export const db = new Database(DATABASE)
 
 // Initialize PromiseQueue
 

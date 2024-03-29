@@ -1,8 +1,6 @@
 import Database from './database.mjs'
 import { makeUrl } from './utilities.mjs'
-
-const DATABASE = process.env.OPP_DATABASE
-const db = new Database(DATABASE)
+import {db} from '../index.mjs'
 
 class Server {
     #origin

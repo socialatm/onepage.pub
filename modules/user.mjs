@@ -4,9 +4,8 @@ import ActivityObject from './activity-object.mjs'
 import Collection from './collection.mjs'
 import { toId, newKeyPair, toSpki, toPkcs8 } from './utilities.mjs'
 import bcrypt from 'bcrypt'
+import {db} from '../index.mjs'
 
-const DATABASE = process.env.OPP_DATABASE
-const db = new Database(DATABASE)
 const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
 
 class User {
