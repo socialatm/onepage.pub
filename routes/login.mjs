@@ -42,4 +42,32 @@ router.get('/',  wrap(async (req, res) => {
   res.send(page('Login', loginHtml, user))
 }))
 
+// post starts here
+router.post('/', (req, res, next) => {
+  const redirectTo = req.session.redirectTo
+  passport.authenticate('local', (err, user, info) => {
+    if (err) {
+      res.redirect('/login?error=1')
+      return
+    }
+    if (!user) {
+      res.redirect('/login')
+      return
+    }
+    req.login(user, (err) => {
+      if (err) {
+        next(err)
+        return
+      }
+      if (redirectTo) {
+        res.redirect(redirectTo)
+      } else {
+        res.redirect('/inbox')
+      }
+    })
+  })(req, res, next)
+})
+
+// post ends here
+
 export default router
