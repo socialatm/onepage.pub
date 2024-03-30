@@ -66,9 +66,6 @@ everyone's links to you.
 - OPP_INVITE_CODE: If this is non-blank, then only users who have this code can register.
 - OPP_BLOCK_LIST: a blocklist file for blocking domains. In Mastodon
 blockfile format. Null by default, which is bad.
-- OPP_ORIGIN: The origin part of URLs, like 'https://host.example:53443'. If this is set, the server will use it for all generated
-URLs, and listen on http instead of https. This is what you want
-if you're using Kubernetes or another proxy to terminate SSL.
 - OPP_NAME: a name to show for the server. Defaults to the hostname part
   of the origin.
 - OPP_UPLOAD_DIR: a directory to store uploaded files. Defaults to a temporary dir, which changes every time you run it. You should set this to a permanent directory.
