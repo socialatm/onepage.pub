@@ -44,7 +44,7 @@ const KEY = process.env.OPP_KEY
 const CERT = process.env.OPP_CERT
 const SESSION_SECRET = process.env.OPP_SESSION_SECRET
 const BLOCK_LIST = process.env.OPP_BLOCK_LIST
-const ORIGIN = process.env.OPP_ORIGIN || ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
+const ORIGIN = ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
 const UPLOAD_DIR = process.env.OPP_UPLOAD_DIR || path.join(tmpdir(), nanoid())
 const OPP_ROOT = process.cwd()
 
@@ -3369,9 +3369,7 @@ process.on('exit', (code) => {
 // If we're public, run with ORIGIN. Otherwise,
 // run with HTTPS
 
-const server = (process.env.OPP_ORIGIN)
-  ? http.createServer(app)
-  : https.createServer({
+const server = https.createServer({
     key: KEY_DATA,
     cert: CERT_DATA
   }, app)

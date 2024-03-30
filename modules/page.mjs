@@ -1,6 +1,6 @@
 const HOSTNAME = process.env.OPP_HOSTNAME
 const PORT = process.env.OPP_PORT
-const ORIGIN = process.env.OPP_ORIGIN || ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
+const ORIGIN = ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
 const NAME = process.env.OPP_NAME || (new URL(ORIGIN)).hostname
 
 const page = (title, body, user = null) => {

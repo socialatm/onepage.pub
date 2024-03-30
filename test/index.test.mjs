@@ -4396,7 +4396,7 @@ describe('onepage.pub', { only: true }, () => {
       const username = 'proxyuser1'
       const password = 'proxypassword1'
       const invitecode = INVITE_CODE
-      const reg = await fetch(`http://localhost:${THIRD_PORT}/register`, {
+      const reg = await fetch(`https://localhost:${THIRD_PORT}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: querystring.stringify({
@@ -4411,11 +4411,11 @@ describe('onepage.pub', { only: true }, () => {
       assert.ok(reg.headers.get('Set-Cookie'))
     })
     it('readiness endpoint works', async () => {
-      const res = await fetch(`http://localhost:${THIRD_PORT}/ready`)
+      const res = await fetch(`https://localhost:${THIRD_PORT}/ready`)
       assert.strictEqual(res.status, 200)
     })
     it('liveness endpoint works', async () => {
-      const res = await fetch(`http://localhost:${THIRD_PORT}/live`)
+      const res = await fetch(`https://localhost:${THIRD_PORT}/live`)
       assert.strictEqual(res.status, 200)
     })
   })
