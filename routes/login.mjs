@@ -2,9 +2,11 @@ import { Router } from 'express'
 import page from '../modules/page.mjs'
 import passport from 'passport'
 import limiter from '../modules/rate-limit.mjs'
+import wrap from 'express-async-handler'
 
 const router = Router()
 router.use(limiter)
+const user = null
 
 router.get('/',  wrap(async (req, res) => {
   res.type('html')

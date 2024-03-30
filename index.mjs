@@ -26,13 +26,15 @@ import logger from './modules/logger.mjs'
 import Server from './modules/server.mjs'
 import Database from './modules/database.mjs'
 import User from './modules/user.mjs'
+import limiter from './modules/rate-limit.mjs'
 
 import actorRoutes from './routes/actor.mjs'
 import helpRoutes from './routes/help.mjs'
 import feedbackRoutes from './routes/feedback.mjs'
 import settingsRoutes from './routes/settings.mjs'
 import registerRoutes from './routes/register.mjs'
-import limiter from './modules/rate-limit.mjs'
+import loginRoutes from './routes/login.mjs'
+
 
 // Configuration
 
@@ -2232,8 +2234,9 @@ app.use(session({
 app.use('/actor', actorRoutes)
 app.use('/help', helpRoutes)
 app.use('/feedback', feedbackRoutes)
-app.use('/settings', settingsRoutes);
-app.use('/register', registerRoutes);
+app.use('/settings', settingsRoutes)
+app.use('/register', registerRoutes)
+app.use('/login', loginRoutes)
 
 // Apply the rate limiting middleware to all requests.
 app.use(limiter)
@@ -2367,7 +2370,7 @@ app.get('/queue', wrap(async (req, res) => {
   res.type('json')
   res.json(pq.count)
 }))
-
+/*
 app.get('/login', csrf, wrap(async (req, res) => {
   res.type('html')
   res.status(200)
@@ -2427,7 +2430,7 @@ app.post('/login', (req, res, next) => {
     })
   })(req, res, next)
 })
-
+*/
 app.get('/inbox', passport.authenticate('session'), wrap(async (req, res) => {
   if (!req.isAuthenticated()) {
     logger.error('Not authenticated')
