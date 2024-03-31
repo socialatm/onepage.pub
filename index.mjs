@@ -34,6 +34,7 @@ import feedbackRoutes from './routes/feedback.mjs'
 import settingsRoutes from './routes/settings.mjs'
 import registerRoutes from './routes/register.mjs'
 import loginRoutes from './routes/login.mjs'
+import inboxRoutes from './routes/inbox.mjs'
 
 
 // Configuration
@@ -2237,6 +2238,7 @@ app.use('/feedback', feedbackRoutes)
 app.use('/settings', settingsRoutes)
 app.use('/register', registerRoutes)
 app.use('/login', loginRoutes)
+app.use('/inbox', inboxRoutes)
 
 // Apply the rate limiting middleware to all requests.
 app.use(limiter)
