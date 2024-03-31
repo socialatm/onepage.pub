@@ -1,9 +1,26 @@
 import { Router } from 'express'
 import page from '../modules/page.mjs'
 import limiter from '../modules/rate-limit.mjs'
+import passport from 'passport'
+import wrap from 'express-async-handler'
+import axios from 'axios'
+import jwt from 'jsonwebtoken'
+import { promisify } from 'util'
+import { nanoid } from 'nanoid'
+import { makeUrl } from '../index.mjs'
+import Server from '../modules/server.mjs'
 
 const router = Router()
 router.use(limiter)
+const jwtsign = promisify(jwt.sign)
+const AS_CONTEXT = 'https://www.w3.org/ns/activitystreams'
+const PUBLIC = 'https://www.w3.org/ns/activitystreams#Public'
+
+router.use(wrap(async (req, res, next) => {
+  const server = await Server.get()
+  req.jwtKeyData = server.privateKey()
+  return next()
+}))
 
 router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
   if (!req.isAuthenticated()) {
