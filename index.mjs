@@ -3308,9 +3308,7 @@ process.on('exit', (code) => {
   console.log(`About to exit with code: ${code}`)
 })
 
-// If we're public, run with ORIGIN. Otherwise,
-// run with HTTPS
-
+// Start the server
 const server = https.createServer({
     key: KEY_DATA,
     cert: CERT_DATA
