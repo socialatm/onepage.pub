@@ -2226,7 +2226,8 @@ app.use(express.urlencoded({ extended: true })) // for HTML forms
 app.use(session({
   secret: SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  secure: true
 }))
 
 // Initialize router - must come after session is started
