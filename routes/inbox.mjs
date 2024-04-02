@@ -132,7 +132,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
             <input type="hidden" id="type" name="type" value="Note">
             <input type="hidden" id="attributedTo" name="attributedTo" value="${user.actorId}">
             <div class="mb-3">
-              <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+              <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
             </div>
             <select class="form-select" aria-label="Default select example" id="to" name="to">
               <option value="${user.actorId}">Just Me</option>
