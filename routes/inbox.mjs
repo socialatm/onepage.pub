@@ -67,7 +67,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
 
   const inbox = await fetchData(responseData.inbox);
   const first = inbox.last.id
-  console.log(JSON.stringify(first, null, 2));
+  //console.log(JSON.stringify(first, null, 2));
 
   const last = await fetchData(first);
   //console.log(JSON.stringify(last.orderedItems[1].object.content, null, 2));
@@ -75,7 +75,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
   let feed = ""
   last.orderedItems.forEach((item) => {
     console.log( item.object.content )
-    feed += item.object.content
+    feed += `<div> ${item.object.content} </div>`
   })
   
 
