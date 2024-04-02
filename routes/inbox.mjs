@@ -40,14 +40,18 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
   }
 
+  
   /**
-   * Fetches data for a given actor ID.
-   * @param {string} actorId - The ID of the actor.
-   * @returns {Promise<any>} - A promise that resolves to the fetched data.
+   * Fetches data from a given URL.
+   *
+   * @param {string} url - The URL to fetch data from.
+   *
+   * @returns {Promise} Promise that resolves with the fetched data on success,
+   * or rejects with an error on failure.
    */
-  async function fetchData(actorId) {
+  async function fetchData(url) {
     try {
-      const response = await axios.get(actorId);
+      const response = await axios.get(url);
       return response.data;
     } catch (err) {
       console.log("Unable to fetch -", err);
