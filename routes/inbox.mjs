@@ -39,7 +39,6 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
   if (process.env.NODE_ENV != 'production') {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
   }
-
   
   /**
    * Fetches data from a given URL.
@@ -71,7 +70,13 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
   console.log(JSON.stringify(first, null, 2));
 
   const last = await fetchData(first);
-  console.log(JSON.stringify(last.orderedItems[1].object.content, null, 2));
+  //console.log(JSON.stringify(last.orderedItems[1].object.content, null, 2));
+
+  let feed = ""
+  last.orderedItems.forEach((item) => {
+    console.log( item.object.content )
+    feed += item.object.content
+  })
   
 
   
@@ -150,6 +155,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
           <!-- end post form -->
           <div id="feed">
             <!-- actual inbox will go here -->
+            ${feed}
           </div>
           <div class="card">
             <div class="card-body">
