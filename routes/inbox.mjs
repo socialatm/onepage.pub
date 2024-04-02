@@ -59,6 +59,15 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
 
   const outbox = responseData.outbox
   const followers = responseData.followers
+
+  const inbox = await fetchData(responseData.inbox);
+  const first = inbox.last.id
+  console.log(JSON.stringify(first, null, 2));
+
+  const last = await fetchData(first);
+  console.log(JSON.stringify(last.orderedItems[1].object.content, null, 2));
+  
+
   
   /**
    * JSON Web Token (JWT) representing the access token.
