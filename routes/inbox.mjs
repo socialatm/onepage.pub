@@ -91,7 +91,29 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
         </h5>
         <p class="card-text">${ item.object.content }</p>
       </div>
-      <img src="/img/greg-moore.jpg" class="card-img-bottom img-fluid" alt="Greg Moore">
+      <img src="/img/greg-moore.jpg" class="img-fluid" alt="Greg Moore">
+      <div class="d-flex justify-content-between mb-3">
+            <div>
+              <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+                <i class="bi bi-hand-thumbs-up text-primary"></i>
+                <span>124</span>
+              </a>
+            </div>
+            <div>
+              <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+              <i class="bi bi-hand-thumbs-up"></i> Like
+            </button>
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+              <i class="bi bi-chat"></i> Comment
+            </button>
+            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+              <i class="bi bi-share"></i> Share
+            </button>
+          </div>
     </div>
     `
   })
