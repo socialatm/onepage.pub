@@ -74,8 +74,17 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
 
   let feed = ""
   last.orderedItems.forEach((item) => {
-    console.log( item.object.content )
-    feed += `<div> ${item.object.content} </div>`
+    //console.log( item.object.content )
+    feed += `
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+        <p class="card-text">${ item.object.content }</p>
+      </div>
+      <img src="/img/greg-moore.jpg" class="card-img-bottom img-fluid" alt="Greg Moore">
+    </div>
+    `
   })
   
 
