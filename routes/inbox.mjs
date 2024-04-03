@@ -93,27 +93,46 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
       </div>
       <img src="/img/greg-moore.jpg" class="img-fluid" alt="Greg Moore">
       <div class="d-flex justify-content-between mb-3">
+        <div>
+          <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+            <i class="bi bi-hand-thumbs-up text-primary"></i>
+            <span>124</span>
+          </a>
+        </div>
+        <div>
+          <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
+        <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+          <i class="bi bi-hand-thumbs-up"></i> Like
+        </button>
+        <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+          <i class="bi bi-chat"></i> Comment
+        </button>
+        <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+          <i class="bi bi-share"></i> Share
+        </button>
+      </div>
+      <!-- start comment template -->
+          <div class="d-flex mb-3">
+            <a href="">
+              <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
+            </a>
             <div>
-              <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-                <i class="bi bi-hand-thumbs-up text-primary"></i>
-                <span>124</span>
-              </a>
-            </div>
-            <div>
-              <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
+              <div class="border rounded-3 px-3 py-1">
+                <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
+                  Albert Einstein
+                </a>
+                <p>
+                  Put your hand on a hot stove for a minute and it seems like an hour. Sit with a pretty girl for an hour, and it seems like a minute.
+                </p>
+              </div>
+                <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Like</a>
+                <a href="" class="text-muted mx-2 fs-6 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">Reply</a>
             </div>
           </div>
-          <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-              <i class="bi bi-hand-thumbs-up"></i> Like
-            </button>
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-              <i class="bi bi-chat"></i> Comment
-            </button>
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-              <i class="bi bi-share"></i> Share
-            </button>
-          </div>
+            <!-- end comment template -->
     </div>
     `
   })
