@@ -82,7 +82,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
           <a href="${user.actorId}">
             <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 2.5rem">
           </a>
-          <a href="${user.actorId}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
+          <a href="${user.actorId}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0 text-capitalize">
             ${user.username}
           </a>
             <span class="text-muted fs-6">
