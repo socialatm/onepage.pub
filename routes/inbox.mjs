@@ -147,8 +147,15 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
               <input type="hidden" id="@context" name="@context" value="${AS_CONTEXT}">
               <input type="hidden" id="type" name="type" value="Note">
               <input type="hidden" id="inReplyTo" name="inReplyTo" value="${item.id}">
+              <input type="hidden" id="attributedTo" name="attributedTo" value="${user.actorId}">
               <textarea class="form-control" id="content" rows="2" required></textarea>
               <label class="form-label" for="content">Write a reply</label>
+              <select class="form-select" aria-label="Default select example" id="to" name="to">
+                <option value="${user.actorId}">Just Me</option>
+                <option value="${followers}">My Followers</option>
+                <option selected value="${PUBLIC}">Public</option>
+              </select>
+              <button id="createReplySubmitBtn" type="submit" class="btn btn-primary btn-sm my-3">Submit</button>
             </form>
           </div>
             <!-- end comment form -->
