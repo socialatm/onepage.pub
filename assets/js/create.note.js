@@ -31,3 +31,14 @@ form.addEventListener('submit', (event) => {
     console.log(error);
   });
 });
+
+/*  start submit replies  */
+
+const replyForms = document.querySelectorAll(".reply-form");
+
+replyForms.forEach(form => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('reply form submitted');
+  });
+});
