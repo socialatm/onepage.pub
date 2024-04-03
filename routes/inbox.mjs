@@ -230,66 +230,14 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
           <div class="card">
             <div class="card-body">
               <div class="d-flex mb-3">
-                <a href="${user.actorId}">
-                  <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 2.5rem">
-                </a>
+                
               <div>
-              <a href="${user.actorId}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
-                ${user.username}
-              </a>
-              <p class="text-muted d-inline">
-                10h ago
-              </p>
+              
             </div>
           </div>
-          <div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing
-              elit. Atque ex non impedit corporis sunt nisi nam fuga
-              dolor est, saepe vitae delectus fugit, accusantium qui
-              nulla aut adipisci provident praesentium?
-            </p>
-          </div>
+          
         </div>
-        <div>
-          <img src="/img/greg-moore.jpg" class="img-fluid" alt="picture">
-        </div>
-        <div class="card-body">
-          <div class="d-flex justify-content-between mb-3">
-            <div>
-              <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-                <i class="bi bi-hand-thumbs-up text-primary"></i>
-                <span>124</span>
-              </a>
-            </div>
-            <div>
-              <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
-            </div>
-          </div>
-          <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-              <i class="bi bi-hand-thumbs-up"></i> Like
-            </button>
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-              <i class="bi bi-chat"></i> Comment
-            </button>
-            <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-              <i class="bi bi-share"></i> Share
-            </button>
-          </div>
-            <!-- start comment form -->
-          <div class="d-flex mb-3">
-            <a href="${user.actorId}">
-              <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
-            </a>
-            <div class="form-outline w-100">
-              <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
-              <label class="form-label" for="textAreaExample">Write a comment</label>
-            </div>
-          </div>
-            <!-- end comment form -->
-            
-        </div>
+                
         </div>
         </div>
       </div>  <!-- end center column -->
