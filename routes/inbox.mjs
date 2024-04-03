@@ -78,17 +78,17 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
     feed += `
     <div class="card mb-3">
       <div class="card-body">
-        <h5 class="card-title">
+        <p class="card-title fs-5">
           <a href="${user.actorId}">
             <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 2.5rem">
           </a>
           <a href="${user.actorId}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0">
             ${user.username}
           </a>
-            <p class="text-muted d-inline">
+            <span class="text-muted d-inline fs-6">
               10h ago
-            </p>
-        </h5>
+            </span>
+        </p>
         <p class="card-text">${ item.object.content }</p>
       </div>
       <img src="/img/greg-moore.jpg" class="img-fluid" alt="Greg Moore">
