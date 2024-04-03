@@ -11,6 +11,7 @@ import { nanoid } from 'nanoid'
 import { makeUrl } from '../index.mjs'
 import Server from '../modules/server.mjs'
 import createError from 'http-errors'
+import { format } from 'timeago.js';
 
 const router = Router()
 router.use(limiter)
@@ -86,7 +87,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
             ${user.username}
           </a>
           <span class="text-muted fs-6">
-            10h ago
+            ${ format( item.published, 'en_US' )}
           </span>
           <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
             <i class="bi bi-person-plus"></i> Follow

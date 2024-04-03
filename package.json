@@ -23,6 +23,7 @@
     "passport-oauth2": "^1.8.0",
     "sqlite3": "^5.1.7",
     "ssrfcheck": "^1.1.1",
+    "timeago.js": "^4.0.2",
     "winston": "^3.13.0"
   },
   "devDependencies": {
