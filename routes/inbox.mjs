@@ -142,10 +142,10 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
             <a href="${user.actorId}">
               <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
             </a>
-            <div class="form-outline w-100">
-              <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
-              <label class="form-label" for="textAreaExample">Write a comment</label>
-            </div>
+            <form id="${item.id}" class="w-100">
+              <textarea class="form-control" id="content" rows="2"></textarea>
+              <label class="form-label" for="content">Write a comment</label>
+            </form>
           </div>
             <!-- end comment form -->
     </div>
