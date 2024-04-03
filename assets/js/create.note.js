@@ -42,6 +42,25 @@ replyForms.forEach(form => {
     alert('reply form submitted')
 
     const formData = new FormData(form)
-    
+
+    axios.post(formData.get('outbox'), {
+      '@context': 'https://www.w3.org/ns/activitystreams',
+      'type': 'Note',
+      'content': formData.get('content'),
+      'attributedTo': formData.get('attributedTo'),
+      'to': formData.get('to'),
+      'inReplyTo': formData.get('inReplyTo')
+    }, {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    }).then(({data}) => {
+      console.log(data)
+      document.getElementById('content').value = ''
+      document.getElementById('feed').insertAdjacentHTML('afterbegin', `${data.object.content}<br>`);
+    }).catch(error => {
+      console.log(error);
+    });
+
   })
 })
