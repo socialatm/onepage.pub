@@ -227,18 +227,6 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
             <!-- actual inbox will go here -->
             ${feed}
           </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex mb-3">
-                
-              <div>
-              
-            </div>
-          </div>
-          
-        </div>
-                
-        </div>
         </div>
       </div>  <!-- end center column -->
 
