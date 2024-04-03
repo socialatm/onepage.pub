@@ -143,9 +143,11 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
               <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
             </a>
             <form class="reply-form w-100">
+              <input type="hidden" id="outbox" name="outbox" value=${outbox}>
+              <input type="hidden" id="@context" name="@context" value="${AS_CONTEXT}">
               <input type="hidden" id="type" name="type" value="Note">
               <input type="hidden" id="inReplyTo" name="inReplyTo" value="${item.id}">
-              <textarea class="form-control" id="content" rows="2"></textarea>
+              <textarea class="form-control" id="content" rows="2" required></textarea>
               <label class="form-label" for="content">Write a reply</label>
             </form>
           </div>
