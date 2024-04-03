@@ -133,6 +133,17 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
             </div>
           </div>
             <!-- end comment template -->
+            <!-- start comment form -->
+          <div class="d-flex mb-3">
+            <a href="${user.actorId}">
+              <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
+            </a>
+            <div class="form-outline w-100">
+              <textarea class="form-control" id="textAreaExample" rows="2"></textarea>
+              <label class="form-label" for="textAreaExample">Write a comment</label>
+            </div>
+          </div>
+            <!-- end comment form -->
     </div>
     `
   })
