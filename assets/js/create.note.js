@@ -11,7 +11,7 @@ const form = document.getElementById('createPostForm')
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const formData = new FormData(form);
+  const formData = new FormData(form)
   
   axios.post(formData.get('outbox'), {
     '@context': 'https://www.w3.org/ns/activitystreams',
@@ -40,5 +40,8 @@ replyForms.forEach(form => {
   form.addEventListener('submit', (event) => {
     event.preventDefault()
     alert('reply form submitted')
+
+    const formData = new FormData(form)
+    
   })
 })
