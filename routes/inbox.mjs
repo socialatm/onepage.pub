@@ -92,7 +92,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
         <p class="card-text">${ item.object.content }</p>
       </div>
       <img src="/img/greg-moore.jpg" class="img-fluid" alt="Greg Moore">
-      <div class="d-flex justify-content-between mb-3">
+      <div class="d-flex justify-content-between m-3">
         <div>
           <a href="" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
             <i class="bi bi-hand-thumbs-up text-primary"></i>
