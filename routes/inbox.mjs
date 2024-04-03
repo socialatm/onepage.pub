@@ -82,7 +82,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
           <a href="${user.actorId}">
             <img src="/img/ray.jpg" class="border rounded-circle me-2 img-fluid" alt="profile picture" style="height: 2.5rem">
           </a>
-          <a href="${user.actorId}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover mb-0 text-capitalize">
+          <a href="${user.actorId}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover text-capitalize">
             ${user.username}
           </a>
             <span class="text-muted fs-6">
@@ -115,7 +115,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
         </button>
       </div>
       <!-- start comment template -->
-          <div class="d-flex mb-3">
+          <div class="d-flex m-3">
             <a href="">
               <img src="/img/einstein.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
             </a>
@@ -134,7 +134,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
           </div>
             <!-- end comment template -->
             <!-- start comment form -->
-          <div class="d-flex mb-3">
+          <div class="d-flex m-3">
             <a href="${user.actorId}">
               <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
             </a>
