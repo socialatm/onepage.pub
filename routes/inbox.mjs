@@ -85,9 +85,12 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
           <a href="${user.actorId}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover text-capitalize">
             ${user.username}
           </a>
-            <span class="text-muted fs-6">
-              10h ago
-            </span>
+          <span class="text-muted fs-6">
+            10h ago
+          </span>
+          <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+            <i class="bi bi-person-plus"></i> Follow
+          </button>
         </p>
         <p class="card-text">${ item.object.content }</p>
       </div>
