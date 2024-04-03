@@ -104,7 +104,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
           </a>
         </div>
         <div>
-          <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 comments </a>
+          <a href="" class="text-muted link-underline link-underline-opacity-0 link-underline-opacity-100-hover"> 8 replies </a>
         </div>
       </div>
       <div class="d-flex justify-content-between text-center border-top border-bottom mb-4">
@@ -112,7 +112,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
           <i class="bi bi-hand-thumbs-up"></i> Like
         </button>
         <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-          <i class="bi bi-chat"></i> Comment
+          <i class="bi bi-chat"></i> Reply
         </button>
         <button type="button" class="btn btn-link btn-md link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
           <i class="bi bi-share"></i> Share
@@ -142,9 +142,11 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
             <a href="${user.actorId}">
               <img src="/img/ray.jpg" class="border rounded-circle me-2" alt="Avatar" style="height: 2.5rem">
             </a>
-            <form id="${item.id}" class="w-100">
+            <form class="reply-form w-100">
+              <input type="hidden" id="type" name="type" value="Note">
+              <input type="hidden" id="inReplyTo" name="inReplyTo" value="${item.id}">
               <textarea class="form-control" id="content" rows="2"></textarea>
-              <label class="form-label" for="content">Write a comment</label>
+              <label class="form-label" for="content">Write a reply</label>
             </form>
           </div>
             <!-- end comment form -->
