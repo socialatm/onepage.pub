@@ -44,14 +44,17 @@ replyForms.forEach(form => {
     const formData = new FormData(form)
 
     axios.post(formData.get('outbox'), {
-      '@context': 'https://www.w3.org/ns/activitystreams',
-      'type': 'Note',
-      'content': formData.get('content'),
-      'attributedTo': formData.get('attributedTo'),
-      'to': formData.get('to'),
-      'inReplyTo': formData.get('inReplyTo')
-    }, {
-    headers: {
+      "@context": "https://www.w3.org/ns/activitystreams",
+      "type": "Create",
+      "to": [formData.get('to')],
+      "actor": formData.get('attributedTo'),
+      "object": { "type": "Note",
+                  "attributedTo": formData.get('attributedTo'),
+                  "to": [formData.get('to')],
+                  "inReplyTo": formData.get('inReplyTo'),
+                  "content": formData.get('content')
+    }}, 
+    { headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
     }).then(({data}) => {

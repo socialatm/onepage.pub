@@ -12,6 +12,8 @@ import { makeUrl } from '../index.mjs'
 import Server from '../modules/server.mjs'
 import createError from 'http-errors'
 import { format } from 'timeago.js';
+import { HTTPSignature } from '../index.mjs'
+import { digestBody } from '../index.mjs'
 
 const router = Router()
 router.use(limiter)
@@ -59,7 +61,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
   }
   
   const responseData = await fetchData(user.actorId);
-  
+    
   // keep this here for debugging purposes
   // console.log(JSON.stringify(responseData, null, 2));
 
@@ -68,11 +70,9 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
 
   const inbox = await fetchData(responseData.inbox);
   const first = inbox.last.id
-  //console.log(JSON.stringify(first, null, 2));
-
+  
   const last = await fetchData(first);
-  //console.log(JSON.stringify(last.orderedItems[1].object.content, null, 2));
-
+  
   let feed = ""
   last.orderedItems.forEach((item) => {
     //console.log( item.object.content )
@@ -148,7 +148,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
               <input type="hidden" id="type" name="type" value="Note">
               <input type="hidden" id="inReplyTo" name="inReplyTo" value="${item.id}">
               <input type="hidden" id="attributedTo" name="attributedTo" value="${user.actorId}">
-              <textarea class="form-control" id="content" rows="2" required></textarea>
+              <textarea class="form-control" id="content" name="content" rows="2" required></textarea>
               <label class="form-label" for="content">Write a reply</label>
               <select class="form-select" aria-label="Default select example" id="to" name="to">
                 <option value="${user.actorId}">Just Me</option>
@@ -162,9 +162,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
     </div>
     `
   })
-  
-
-  
+    
   /**
    * JSON Web Token (JWT) representing the access token.
    * @type {string}
@@ -181,9 +179,20 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
     { algorithm: 'RS256' }
   )
 
+  /* add signature here */
+  const date = new Date().toUTCString()
+  const keyId = responseData.publicKey.id
+  const digest = digestBody('')
+  const signature = new HTTPSignature(keyId, user.privateKey, 'POST', inbox, date, digest)
+  console.log(signature)
+
+  /* end signature here */
+
   res.type('html')
   res.status(200)
   res.setHeader('Set-Cookie', `jwtToken=${token}; Secure; SameSite=Lax`);
+  res.setHeader('Set-Cookie', `signature=${signature}; Secure; SameSite=Lax`);
+
   const inboxHtml =`
   <!-- start inboxHtml here -->
   <div class="container-fluid">

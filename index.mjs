@@ -176,7 +176,7 @@ export function toPkcs8 (pem) {
   return pem
 }
 
-function digestBody (body) {
+export function digestBody (body) {
   const hash = crypto.createHash('sha256')
   hash.update(body)
   return `sha-256=${hash.digest('base64')}`
@@ -184,7 +184,7 @@ function digestBody (body) {
 
 // Classes
 
-class HTTPSignature {
+export class HTTPSignature {
   constructor (keyId, privateKey = null, method = null, url = null, date = null, digest = null) {
     if (!privateKey) {
       const sigHeader = keyId
@@ -2921,6 +2921,7 @@ app.post('/:type/:id',
   HTTPSignature.authenticate,
   wrap(async (req, res) => {
     const full = makeUrl(req.originalUrl)
+    console.log(full)
     const obj = new ActivityObject(full)
     if (!obj) {
       throw new createError.NotFound('Object not found')
