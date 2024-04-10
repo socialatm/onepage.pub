@@ -14,6 +14,7 @@ import createError from 'http-errors'
 import { format } from 'timeago.js';
 import { HTTPSignature } from '../index.mjs'
 import { digestBody } from '../index.mjs'
+import { ORIGIN } from '../index.mjs'
 
 const router = Router()
 router.use(limiter)
@@ -32,7 +33,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
     logger.error('Not authenticated')
     res.redirect('/login')
   }
-
+  
   const user = req.user
   if (!user) {
     throw new createError.InternalServerError('Invalid user even though isAuthenticated() is true')
@@ -69,7 +70,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
   const followers = responseData.followers
 
   const inbox = await fetchData(responseData.inbox);
-  const first = inbox.last.id
+  const first = inbox.first.id
   
   const last = await fetchData(first);
   
@@ -184,14 +185,19 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
   const keyId = responseData.publicKey.id
   const digest = digestBody('')
   const signature = new HTTPSignature(keyId, user.privateKey, 'POST', inbox, date, digest)
-  console.log(signature)
-
+  //console.log(signature)
+  //signature.sign()
+  console.log(digest)
+ 
   /* end signature here */
 
   res.type('html')
   res.status(200)
-  res.setHeader('Set-Cookie', `jwtToken=${token}; Secure; SameSite=Lax`);
-  res.setHeader('Set-Cookie', `signature=${signature}; Secure; SameSite=Lax`);
+  res.setHeader('set-cookie', `jwtToken=${token}; Secure; SameSite=Lax`);
+  res.setHeader('signature', signature.header)
+  res.setHeader('access-control-expose-headers', 'signature')
+  console.log(res.getHeaders())
+  
 
   const inboxHtml =`
   <!-- start inboxHtml here -->

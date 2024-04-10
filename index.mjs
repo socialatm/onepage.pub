@@ -44,7 +44,7 @@ const KEY = process.env.OPP_KEY
 const CERT = process.env.OPP_CERT
 const SESSION_SECRET = process.env.OPP_SESSION_SECRET
 const BLOCK_LIST = process.env.OPP_BLOCK_LIST
-const ORIGIN = ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
+export const ORIGIN = ((PORT === 443) ? `https://${HOSTNAME}` : `https://${HOSTNAME}:${PORT}`)
 const UPLOAD_DIR = process.env.OPP_UPLOAD_DIR || path.join(tmpdir(), nanoid())
 const OPP_ROOT = process.cwd()
 
@@ -2921,8 +2921,8 @@ app.post('/:type/:id',
   HTTPSignature.authenticate,
   wrap(async (req, res) => {
     const full = makeUrl(req.originalUrl)
-    console.log(full)
     const obj = new ActivityObject(full)
+    console.log(obj)
     if (!obj) {
       throw new createError.NotFound('Object not found')
     }
