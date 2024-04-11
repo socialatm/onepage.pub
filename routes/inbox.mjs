@@ -282,7 +282,7 @@ router.get('/', passport.authenticate('session'), wrap(async (req, res) => {
       </div>  <!-- end right column -->
     </div>
   </div>
-  <script src="js/create.note.js"></script>
+  <script src="js/create.note.mjs" type="module"></script>
   `;
   res.end(page('Inbox', inboxHtml, user))
 }))
